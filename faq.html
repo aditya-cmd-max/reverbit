@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exonova - FAQ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f0f13;
+      color: #e0e0e0;
+      min-height: 100vh;
+      transition: all 0.3s ease;
+    }
+    
+    .gradient-text {
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .gradient-bg {
+      background: var(--primary-gradient);
+    }
+    
+    .nav-gradient {
+      background: rgba(15, 15, 19, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    
+    .faq-card {
+      background: rgba(30, 30, 40, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .faq-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+      border-color: rgba(102, 126, 234, 0.3);
+    }
+    
+    .active-faq {
+      border-left: 4px solid #667eea;
+      background: rgba(40, 40, 50, 0.7);
+    }
+    
+    .hamburger span {
+      transition: all 0.3s ease;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -8px);
+    }
+    
+    .nav-menu {
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .nav-menu.active {
+      transform: translateX(0);
+    }
+    
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: rgba(30, 30, 40, 0.5);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-gradient);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="relative overflow-x-hidden">
+  <!-- Navigation -->
+  <header class="nav-gradient fixed w-full z-50 top-0 left-0 border-b border-gray-800">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img src="https://aditya-cmd-max.github.io/exonova-/exonova-logo.png" alt="Exonova Logo" class="h-10 mr-3">
+            <span class="text-2xl font-bold gradient-text">Exonova</span>
+          </div>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#" class="text-gray-300 hover:text-white transition">Home</a>
+          <a href="#" class="text-gray-300 hover:text-white transition">Products</a>
+          <a href="#" class="text-white font-medium gradient-text">FAQ</a>
+          <a href="#" class="text-gray-300 hover:text-white transition">Contact</a>
+          <button class="gradient-bg text-white px-6 py-2 rounded-full font-medium hover:opacity-90 transition">
+            Get Started
+          </button>
+        </nav>
+        
+        <!-- Mobile Hamburger -->
+        <div class="md:hidden">
+          <button id="hamburger" class="hamburger flex flex-col justify-center items-center w-8 h-8">
+            <span class="block w-6 h-0.5 bg-white mb-1.5"></span>
+            <span class="block w-6 h-0.5 bg-white mb-1.5"></span>
+            <span class="block w-6 h-0.5 bg-white"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Menu -->
+  <div id="navMenu" class="nav-menu fixed top-0 right-0 w-64 h-full nav-gradient z-40 pt-20 px-6 border-l border-gray-800">
+    <div class="flex flex-col space-y-6">
+      <a href="#" class="text-gray-300 hover:text-white transition border-b border-gray-800 pb-2">Home</a>
+      <a href="#" class="text-gray-300 hover:text-white transition border-b border-gray-800 pb-2">Products</a>
+      <a href="#" class="text-white font-medium gradient-text border-b border-gray-800 pb-2">FAQ</a>
+      <a href="#" class="text-gray-300 hover:text-white transition border-b border-gray-800 pb-2">Contact</a>
+      <button class="gradient-bg text-white px-6 py-2 rounded-full font-medium hover:opacity-90 transition w-full mt-4">
+        Get Started
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="pt-28 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <!-- Hero Section -->
+    <section class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Frequently Asked <span class="gradient-text">Questions</span></h1>
+      <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+        Find quick answers to common questions about Exonova products and services. Can't find what you're looking for? 
+        <a href="#" class="text-purple-400 hover:underline">Contact our support team</a>.
+      </p>
+      
+      <!-- Search Bar -->
+      <div class="max-w-2xl mx-auto mt-8 relative">
+        <input 
+          type="text" 
+          placeholder="Search FAQs..." 
+          class="w-full bg-gray-900 border border-gray-700 rounded-full py-3 px-6 pr-12 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+          id="searchInput"
+        >
+        <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- FAQ Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Category 1 -->
+      <div class="faq-card rounded-xl p-6">
+        <div class="flex items-center mb-4">
+          <div class="gradient-bg p-2 rounded-lg mr-4">
+            <i class="fas fa-rocket text-white text-lg"></i>
+          </div>
+          <h3 class="text-xl font-bold">Getting Started</h3>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="faq-item active-faq p-4 rounded-lg cursor-pointer transition">
+            <div class="flex justify-between items-center">
+              <h4 class="font-medium">How do I create an Exonova account?</h4>
+              <i class="fas fa-chevron-down text-sm text-purple-400 transition transform"></i>
+            </div>
+            <div class="faq-answer mt-3 text-gray-400">
+              <p>Creating an account is simple! Click on the "Sign Up" button at the top right corner of our website, fill in your details, and verify your email address. You'll be ready to explore Exonova in under 2 minutes.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item p-4 rounded-lg cursor-pointer transition">
+            <div class="flex justify-between items-center">
+              <h4 class="font-medium">What are the system requirements?</h4>
+              <i class="fas fa-chevron-down text-sm text-purple-400 transition transform"></i>
+            </div>
+            <div class="faq-answer hidden mt-3 text-gray-400">
+              <p>Exonova works on all modern browsers (Chrome, Firefox, Safari, Edge) on both Windows and macOS. For mobile access, we recommend using our iOS or Android apps for the best experience.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item p-4 rounded-lg cursor-pointer transition">
+            <div class="flex justify-between items-center">
+              <h4 class="font-medium">Is there a free trial available?</h4>
+              <i class="fas fa-chevron-down text-sm text-purple-400 transition transform"></i>
+            </div>
+            <div class="faq-answer hidden mt-3 text-gray-400">
+              <p>Yes! We offer a 14-day free trial for all new users with access to all premium features. No credit card required to start your trial.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Category 2 -->
+      <div class="faq-card rounded-xl p-6">
+        <div class="flex items-center mb-4">
+          <div class="gradient-bg p-2 rounded-lg mr-4">
+            <i class="fas fa-credit-card text-white text-lg"></i>
+          </div>
+          <h3 class="text-xl font-bold">Billing & Plans</h3>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="faq-item p-4 rounded-lg cursor-pointer transition">
+            <div class="flex justify-between items-center">
+              <h4 class="font-medium">What payment methods do you accept?</h4>
+              <i class="fas fa-chevron-down text-sm text-purple-400 transition transform"></i>
+            </div>
+            <div class="faq-answer hidden mt-3 text-gray-400">
+              <p>We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers. For enterprise plans, we also accept cryptocurrency payments.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item p-4 rounded-lg cursor-pointer transition">
+            <div class="flex justify-between items-center">
+              <h4 class="font-medium">Can I upgrade or downgrade my plan?</h4>
+              <i class="fas fa-chevron-down text-sm text-purple-400 transition transform"></i>
+            </div>
+            <div class="faq-answer hidden mt-3 text-gray-400">
+              <p>Absolutely! You can change your plan at any time from your account settings. Plan changes take effect immediately with pro-rated billing adjustments.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item p-4 rounded-lg cursor-pointer transition">
+            <div class="flex justify-between items-center">
+              <h4 class="font-medium">How do I cancel my subscription?</h4>
+              <i class="fas fa-chevron-down text-sm text-purple-400 transition transform"></i>
+            </div>
+            <div class="faq-answer hidden mt-3 text-gray-400">
+              <p>You can cancel anytime from your account settings. Your subscription will remain active until the end of your current billing period, and you'll retain access until then.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Category 3 -->
+      <div class="faq-card rounded-xl p-6">
+        <div class="flex items-center mb-4">
+          <div class="gradient-bg p-2 rounded-lg mr-4">
+            <i class="fas fa-lock text-white text-lg"></i>
+          </div>
+          <h3 class="text-xl font-bold">Security & Privacy</h3>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="faq-item p-4 rounded-lg cursor-pointer transition">
+            <div class="flex justify-between items-center">
+              <h4 class="font-medium">How is my data protected?</h4>
+              <i class="fas fa-chevron-down text-sm text-purple-400 transition transform"></i>
+            </div>
+            <div class="faq-answer hidden mt-3 text-gray-400">
+              <p>We use enterprise-grade 256-bit AES encryption for data at rest and TLS 1.3 for data in transit. Our infrastructure is hosted on SOC 2 Type II compliant data centers with regular security audits.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item p-4 rounded-lg cursor-pointer transition">
+            <div class="flex justify-between items-center">
+              <h4 class="font-medium">Do you comply with GDPR?</h4>
+              <i class="fas fa-chevron-down text-sm text-purple-400 transition transform"></i>
+            </div>
+            <div class="faq-answer hidden mt-3 text-gray-400">
+              <p>Yes, Exonova is fully GDPR compliant. We provide data processing agreements (DPAs) and have appointed a Data Protection Officer to ensure compliance with all relevant regulations.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item p-4 rounded-lg cursor-pointer transition">
+            <div class="flex justify-between items-center">
+              <h4 class="font-medium">Where is my data stored?</h4>
+              <i class="fas fa-chevron-down text-sm text-purple-400 transition transform"></i>
+            </div>
+            <div class="faq-answer hidden mt-3 text-gray-400">
+              <p>Customer data is stored in geographically redundant AWS data centers located in the United States and European Union, depending on your selected region during signup.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Category 4 -->
+      <div class="faq-card rounded-xl p-6">
+        <div class="flex items-center mb-4">
+          <div class="gradient-bg p-2 rounded-lg mr-4">
+            <i class="fas fa-cog text-white text-lg"></i>
+          </div>
+          <h3 class="text-xl font-bold">Features & Usage</h3>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="faq-item p-4 rounded-lg cursor-pointer transition">
+            <div class="flex justify-between items-center">
+              <h4 class="font-medium">How do I integrate with other tools?</h4>
+              <i class="fas fa-chevron-down text-sm text-purple-400 transition transform"></i>
+            </div>
+            <div class="faq-answer hidden mt-3 text-gray-400">
+              <p>Exonova offers native integrations with over 50 popular tools through our API and pre-built connectors. Visit our Integrations page for setup guides and documentation.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item p-4 rounded-lg cursor-pointer transition">
+            <div class="flex justify-between items-center">
+              <h4 class="font-medium">Can I use Exonova on mobile?</h4>
+              <i class="fas fa-chevron-down text-sm text-purple-400 transition transform"></i>
+            </div>
+            <div class="faq-answer hidden mt-3 text-gray-400">
+              <p>Yes! We have fully-featured iOS and Android apps available on their respective app stores. Our mobile apps offer offline capabilities and push notifications.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item p-4 rounded-lg cursor-pointer transition">
+            <div class="flex justify-between items-center">
+              <h4 class="font-medium">How often are new features released?</h4>
+              <i class="fas fa-chevron-down text-sm text-purple-400 transition transform"></i>
+            </div>
+            <div class="faq-answer hidden mt-3 text-gray-400">
+              <p>We deploy updates weekly with minor improvements and bug fixes. Major feature releases happen quarterly, based on customer feedback and our product roadmap.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Still Need Help Section -->
+    <div class="mt-16 text-center gradient-bg rounded-2xl p-8 md:p-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Still need help?</h2>
+      <p class="text-gray-200 mb-6 max-w-2xl mx-auto">
+        Our support team is available 24/7 to answer your questions and help you get the most out of Exonova.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="bg-white text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition">
+          <i class="fas fa-envelope mr-2"></i> Email Support
+        </button>
+        <button class="border-2 border-white text-white px-6 py-3 rounded-full font-medium hover:bg-white hover:text-gray-900 transition">
+          <i class="fas fa-comment-alt mr-2"></i> Live Chat
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 border-t border-gray-800 py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center mb-4">
+            <img src="https://aditya-cmd-max.github.io/exonova-/exonova-logo.png" alt="Exonova Logo" class="h-8 mr-2">
+            <span class="text-xl font-bold gradient-text">Exonova</span>
+          </div>
+          <p class="text-gray-400">Innovative solutions for tomorrow's challenges.</p>
+          <div class="flex space-x-4 mt-4">
+            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-medium mb-4">Product</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Features</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Pricing</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Integrations</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Roadmap</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-medium mb-4">Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Documentation</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Tutorials</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">API Reference</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-medium mb-4">Company</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Careers</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm">© 2023 Exonova. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a href="#" class="text-gray-400 hover:text-white text-sm transition">Privacy Policy</a>
+          <a href="#" class="text-gray-400 hover:text-white text-sm transition">Terms of Service</a>
+          <a href="#" class="text-gray-400 hover:text-white text-sm transition">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile Menu Toggle
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+      
+      hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+      
+      // FAQ Accordion
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('h4');
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('i');
+        
+        question.addEventListener('click', () => {
+          // Close all other items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active-faq');
+              otherItem.querySelector('.faq-answer').classList.add('hidden');
+              otherItem.querySelector('i').classList.remove('rotate-180');
+            }
+          });
+          
+          // Toggle current item
+          item.classList.toggle('active-faq');
+          answer.classList.toggle('hidden');
+          icon.classList.toggle('rotate-180');
+        });
+      });
+      
+      // FAQ Search Functionality
+      const searchInput = document.getElementById('searchInput');
+      
+      searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        
+        if (searchTerm.length > 2) {
+          faqItems.forEach(item => {
+            const question = item.querySelector('h4').textContent.toLowerCase();
+            const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+            
+            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+              item.style.display = 'block';
+              item.classList.add('active-faq');
+              item.querySelector('.faq-answer').classList.remove('hidden');
+              item.querySelector('i').classList.add('rotate-180');
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        } else {
+          faqItems.forEach(item => {
+            item.style.display = 'block';
+            item.classList.remove('active-faq');
+            item.querySelector('.faq-answer').classList.add('hidden');
+            item.querySelector('i').classList.remove('rotate-180');
+          });
+        }
+      });
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            if (navMenu.classList.contains('active')) {
+              hamburger.classList.remove('active');
+              navMenu.classList.remove('active');
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
