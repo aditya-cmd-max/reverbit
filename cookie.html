@@ -1,0 +1,208 @@
+<!-- Cookie consent with Google Analytics -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  /* Cookie banner styles */
+  #ex-cookie-consent {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 920px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    padding: 20px;
+    z-index: 99999;
+    display: none;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  #ex-cookie-consent.ex-active { display: block; animation: ex-slideUp .36s ease-out; }
+  @keyframes ex-slideUp {
+    from { transform: translate(-50%, 60px); opacity: 0; } to { transform: translate(-50%, 0); opacity: 1; }
+  }
+  #ex-cookie-consent .ex-row { display:flex; gap:16px; align-items:flex-start; }
+  #ex-cookie-consent .ex-left { flex:1; }
+  #ex-cookie-consent h3 { margin:0 0 6px; font-size:18px; display:flex; align-items:center; gap:8px; }
+  #ex-cookie-consent p { margin:0; color:#475569; font-size:14px; line-height:1.35; }
+  .ex-cookie-settings { margin-top:14px; display:none; }
+  .ex-cookie-settings.ex-open { display:block; animation: ex-fade .2s ease; }
+  @keyframes ex-fade { from {opacity:0} to {opacity:1} }
+  .ex-cookie-item { display:flex; justify-content:space-between; gap:12px; padding:10px 0; border-bottom:1px solid #f1f5f9; }
+  .ex-cookie-item:last-child { border-bottom: none; }
+  .ex-toggle { position:relative; width:48px; height:26px; display:inline-block; }
+  .ex-toggle input { opacity:0; width:0; height:0; }
+  .ex-slider { position:absolute; cursor:pointer; inset:0; background:#e2e8f0; border-radius:999px; transition:.18s; }
+  .ex-slider:before { content:""; position:absolute; left:4px; top:4px; height:18px; width:18px; background:#fff; border-radius:50%; transition:.18s; }
+  .ex-toggle input:checked + .ex-slider { background:#4f46e5; }
+  .ex-toggle input:checked + .ex-slider:before { transform: translateX(22px); }
+  .ex-btn { display:inline-block; padding:10px 14px; border-radius:10px; font-weight:600; cursor:pointer; text-align:center; }
+  .ex-accept { background: linear-gradient(90deg,#4f46e5,#7c3aed); color:#fff; border: none; }
+  .ex-save { background: transparent; color:#4f46e5; border: 1px solid #4f46e5; }
+  .ex-customize { background:transparent; color:#64748b; font-size:13px; border:none; padding:8px 6px; }
+  @media (max-width:640px){
+    #ex-cookie-consent { padding:16px; bottom:18px; }
+    .ex-row { flex-direction:column; }
+    .ex-left { order:0; }
+  }
+</style>
+
+<div id="ex-cookie-consent" aria-hidden="true" role="dialog" aria-label="Cookie preferences">
+  <div class="ex-row">
+    <div class="ex-left">
+      <h3>
+        <i class="fas fa-cookie-bite" aria-hidden="true" style="color:#4f46e5"></i>
+        Cookie Preferences
+      </h3>
+      <p>We use cookies to improve experience, analyze traffic, and support marketing. Customize below or accept all.</p>
+
+      <div class="ex-cookie-settings" id="ex-cookie-settings">
+        <div class="ex-cookie-item">
+          <div>
+            <strong>Necessary Cookies</strong>
+            <div style="font-size:13px;color:#64748b">Required for site functionality. Can't be disabled.</div>
+          </div>
+          <label class="ex-toggle">
+            <input type="checkbox" checked disabled>
+            <span class="ex-slider"></span>
+          </label>
+        </div>
+
+        <div class="ex-cookie-item">
+          <div>
+            <strong>Analytics Cookies</strong>
+            <div style="font-size:13px;color:#64748b">Helps us understand usage and improve the site.</div>
+          </div>
+          <label class="ex-toggle">
+            <input type="checkbox" id="ex-analytics-checkbox" checked>
+            <span class="ex-slider"></span>
+          </label>
+        </div>
+
+        <div class="ex-cookie-item">
+          <div>
+            <strong>Marketing Cookies</strong>
+            <div style="font-size:13px;color:#64748b">Used for ads and tracking across sites.</div>
+          </div>
+          <label class="ex-toggle">
+            <input type="checkbox" id="ex-marketing-checkbox">
+            <span class="ex-slider"></span>
+          </label>
+        </div>
+
+        <div class="ex-cookie-item">
+          <div>
+            <strong>Preference Cookies</strong>
+            <div style="font-size:13px;color:#64748b">Remember choices like theme or language.</div>
+          </div>
+          <label class="ex-toggle">
+            <input type="checkbox" id="ex-preference-checkbox" checked>
+            <span class="ex-slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;min-width:140px;align-items:stretch">
+      <button id="ex-accept-all" class="ex-btn ex-accept">Accept All</button>
+      <button id="ex-save-prefs" class="ex-btn ex-save">Save Preferences</button>
+      <button id="ex-toggle-customize" class="ex-customize ex-btn"><i class="fas fa-sliders-h" style="margin-right:8px"></i>Customize</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    const banner = document.getElementById('ex-cookie-consent');
+    const settings = document.getElementById('ex-cookie-settings');
+    const btnCustomize = document.getElementById('ex-toggle-customize');
+    const btnAcceptAll = document.getElementById('ex-accept-all');
+    const btnSave = document.getElementById('ex-save-prefs');
+
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + d.toUTCString();
+      }
+      document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/; SameSite=Lax";
+    }
+
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i=0;i<ca.length;i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(nameEQ) === 0) return decodeURIComponent(c.substring(nameEQ.length));
+      }
+      return null;
+    }
+
+    function initFromCookies() {
+      if (getCookie('ex_cookie_consent')) {
+        initCookies();
+        return;
+      }
+      setTimeout(()=> banner.classList.add('ex-active'), 800);
+    }
+
+    function initCookies() {
+      // Load Analytics only if allowed
+      if (getCookie('ex_analytics') === 'true') {
+        console.log('Analytics enabled');
+        loadGoogleAnalytics('G-GS6V9ZCN0K'); // <-- replace with your Measurement ID
+      }
+      if (getCookie('ex_marketing') === 'true') {
+        console.log('Marketing enabled');
+        // Example: add marketing pixel here
+      }
+      if (getCookie('ex_preferences') === 'true') {
+        console.log('Preferences enabled');
+      }
+    }
+
+    // Function to load Google Analytics dynamically
+    function loadGoogleAnalytics(id) {
+      let gtagScript = document.createElement('script');
+      gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
+      gtagScript.async = true;
+      document.head.appendChild(gtagScript);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      window.gtag = gtag;
+
+      gtag('js', new Date());
+      gtag('config', id);
+    }
+
+    btnCustomize.addEventListener('click', function(){
+      const open = settings.classList.toggle('ex-open');
+      btnCustomize.innerHTML = open ? '<i class="fas fa-times" style="margin-right:8px"></i>Close' : '<i class="fas fa-sliders-h" style="margin-right:8px"></i>Customize';
+    });
+
+    btnAcceptAll.addEventListener('click', function(){
+      setCookie('ex_cookie_consent', 'all', 365);
+      setCookie('ex_analytics', 'true', 365);
+      setCookie('ex_marketing', 'true', 365);
+      setCookie('ex_preferences', 'true', 365);
+      banner.classList.remove('ex-active');
+      initCookies();
+    });
+
+    btnSave.addEventListener('click', function(){
+      const a = document.getElementById('ex-analytics-checkbox').checked ? 'true' : 'false';
+      const m = document.getElementById('ex-marketing-checkbox').checked ? 'true' : 'false';
+      const p = document.getElementById('ex-preference-checkbox').checked ? 'true' : 'false';
+      setCookie('ex_cookie_consent', 'custom', 365);
+      setCookie('ex_analytics', a, 365);
+      setCookie('ex_marketing', m, 365);
+      setCookie('ex_preferences', p, 365);
+      banner.classList.remove('ex-active');
+      initCookies();
+    });
+
+    document.addEventListener('DOMContentLoaded', initFromCookies);
+  })();
+</script>
