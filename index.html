@@ -469,7 +469,7 @@
             background: var(--md-surface-variant);
         }
 
-        /* Mobile Menu Button - IMPROVED */
+        /* Mobile Menu Button - UPDATED FOR HAMBURGER/CROSS */
         .mobile-menu-btn {
             display: none;
             background: transparent;
@@ -483,11 +483,41 @@
             justify-content: center;
             transition: var(--md-transition);
             flex-shrink: 0;
+            position: relative;
         }
 
         .mobile-menu-btn:hover {
             background: var(--md-surface-variant);
+        }
+
+        /* Hamburger and Cross Icons */
+        .hamburger-icon, .cross-icon {
+            position: absolute;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .hamburger-icon {
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+
+        .cross-icon {
+            opacity: 0;
+            transform: rotate(-90deg);
+        }
+
+        .mobile-menu-btn.active {
+            background: var(--md-primary-container);
+        }
+
+        .mobile-menu-btn.active .hamburger-icon {
+            opacity: 0;
             transform: rotate(90deg);
+        }
+
+        .mobile-menu-btn.active .cross-icon {
+            opacity: 1;
+            transform: rotate(0deg);
         }
 
         /* Mobile Navigation - IMPROVED */
@@ -1857,9 +1887,10 @@
             </button>
         </div>
 
-        <!-- Mobile Menu Button -->
+        <!-- Mobile Menu Button with Hamburger/Cross -->
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
-            <span class="material-icons-round">menu</span>
+            <span class="material-icons-round hamburger-icon">menu</span>
+            <span class="material-icons-round cross-icon">close</span>
         </button>
     </nav>
 
@@ -3060,23 +3091,59 @@
             }
         }
 
-        // Mobile Navigation
+        // Mobile Navigation with Hamburger/Cross Toggle
         mobileMenuBtn.addEventListener('click', () => {
             mobileNav.classList.add('active');
+            mobileMenuBtn.classList.add('active'); // Add active class to button
             document.body.style.overflow = 'hidden';
+            
+            // Update aria-label for accessibility
+            mobileMenuBtn.setAttribute('aria-label', 'Close menu');
         });
 
         mobileNavClose.addEventListener('click', () => {
             mobileNav.classList.remove('active');
+            mobileMenuBtn.classList.remove('active'); // Remove active class from button
             document.body.style.overflow = 'auto';
+            
+            // Update aria-label for accessibility
+            mobileMenuBtn.setAttribute('aria-label', 'Open menu');
         });
 
         // Close mobile nav when clicking on links
         mobileNav.querySelectorAll('.mobile-nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 mobileNav.classList.remove('active');
+                mobileMenuBtn.classList.remove('active'); // Remove active class from button
                 document.body.style.overflow = 'auto';
+                
+                // Update aria-label for accessibility
+                mobileMenuBtn.setAttribute('aria-label', 'Open menu');
             });
+        });
+
+        // Close mobile nav when clicking outside (optional enhancement)
+        document.addEventListener('click', (e) => {
+            if (mobileNav.classList.contains('active') && 
+                !mobileNav.contains(e.target) && 
+                !mobileMenuBtn.contains(e.target)) {
+                mobileNav.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                mobileMenuBtn.setAttribute('aria-label', 'Open menu');
+            }
+        });
+
+        // Handle window resize - reset menu state when switching to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1024) {
+                if (mobileNav.classList.contains('active')) {
+                    mobileNav.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    mobileMenuBtn.setAttribute('aria-label', 'Open menu');
+                }
+            }
         });
 
         // Set active nav link based on scroll position
@@ -3123,7 +3190,9 @@
                     // Close mobile nav if open
                     if (mobileNav.classList.contains('active')) {
                         mobileNav.classList.remove('active');
+                        mobileMenuBtn.classList.remove('active');
                         document.body.style.overflow = 'auto';
+                        mobileMenuBtn.setAttribute('aria-label', 'Open menu');
                     }
                 });
             });
@@ -3302,27 +3371,14 @@
             });
         });
 
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 1024 && mobileNav.classList.contains('active')) {
-                mobileNav.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-            
-            // Update navbar spacing for mobile
-            if (window.innerWidth <= 768) {
-                floatingNavbar.style.padding = 'var(--md-spacing-xs) var(--md-spacing-md)';
-            } else {
-                floatingNavbar.style.padding = 'var(--md-spacing-sm) var(--md-spacing-lg)';
-            }
-        });
-
         // NEW: Keyboard navigation improvements
         document.addEventListener('keydown', (e) => {
             // Close mobile nav on Escape key
             if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
                 mobileNav.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
                 document.body.style.overflow = 'auto';
+                mobileMenuBtn.setAttribute('aria-label', 'Open menu');
             }
             
             // Theme toggle with Shift+T
