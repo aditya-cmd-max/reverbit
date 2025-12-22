@@ -1632,6 +1632,38 @@
                 gap: 0;
             }
         }
+
+/* Breadcrumb Navigation */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: var(--md-spacing-sm);
+            margin-bottom: var(--md-spacing-lg);
+            font-family: var(--md-font-heading);
+            font-size: 0.875rem;
+            color: var(--md-on-surface-variant);
+        }
+
+        .breadcrumb a {
+            color: var(--md-primary);
+            text-decoration: none;
+            transition: var(--md-transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--md-on-primary-container);
+            text-decoration: underline;
+        }
+
+        .breadcrumb-separator {
+            color: var(--md-on-surface-variant);
+        }
+
+        .breadcrumb-current {
+            color: var(--md-on-surface);
+            font-weight: 500;
+        }
+      
     </style>
 </head>
 <body class="light-theme">
@@ -1785,7 +1817,15 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
+    
+    <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="https://aditya-cmd-max.github.io/reverbit">Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">About</span>
+        </nav>
+  
+  <!-- Hero Section -->
     <section class="hero-section" id="hero">
         <div class="hero-content">
             <div class="portrait-container">
