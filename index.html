@@ -23,7 +23,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+<!-- Preload auth.js for user authentication -->
+<script src="https://aditya-cmd-max.github.io/js/auth.js" defer></script>
      
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -1859,33 +1860,78 @@
             <span class="nav-name">Reverbit</span>
         </a>
 
-        <!-- Desktop Navigation Links (Right side) -->
-        <div class="desktop-nav">
-            <a href="#home" class="nav-link active">
-                <i class="fas fa-home" style="font-size: 0.9rem; margin-right: 4px;"></i>
-                Home
-            </a>
-            <a href="https://aditya-cmd-max.github.io/reverbit/circuit" class="nav-link">
-                <i class="fas fa-blog" style="font-size: 0.9rem; margin-right: 4px;"></i>
-                Blogs
-            </a>
-            <a href="https://aditya-cmd-max.github.io/reverbit/about/" class="nav-link">
-                <i class="fas fa-bullseye" style="font-size: 0.9rem; margin-right: 4px;"></i>
-                The Creator
-            </a>
-            <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="nav-link">
-                <i class="fas fa-tools" style="font-size: 0.9rem; margin-right: 4px;"></i>
-               Tools
-            </a>
-            <a href="https://aditya-cmd-max.github.io/signin" class="btn btn-filled">
-                <i class="fas fa-sign-in-alt" style="font-size: 0.9rem; margin-right: 4px;"></i>
-                Sign In
-            </a>
-            <!-- RESTORED: Theme Toggle Button -->
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                <span class="material-icons-round">dark_mode</span>
-            </button>
+       <!-- Desktop Navigation Links (Right side) -->
+<div class="desktop-nav">
+    <a href="#home" class="nav-link active">
+        <i class="fas fa-home" style="font-size: 0.9rem; margin-right: 4px;"></i>
+        Home
+    </a>
+    <a href="https://aditya-cmd-max.github.io/reverbit/circuit" class="nav-link">
+        <i class="fas fa-blog" style="font-size: 0.9rem; margin-right: 4px;"></i>
+        Blogs
+    </a>
+    <a href="https://aditya-cmd-max.github.io/reverbit/about/" class="nav-link">
+        <i class="fas fa-bullseye" style="font-size: 0.9rem; margin-right: 4px;"></i>
+        The Creator
+    </a>
+    <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="nav-link">
+        <i class="fas fa-tools" style="font-size: 0.9rem; margin-right: 4px;"></i>
+       Tools
+    </a>
+    
+    <!-- Sign In Button (Shows when NOT signed in) -->
+    <div class="signin-container hide-when-signed-in">
+        <a href="https://aditya-cmd-max.github.io/signin" class="btn btn-filled">
+            <i class="fas fa-sign-in-alt" style="font-size: 0.9rem; margin-right: 4px;"></i>
+            Sign In
+        </a>
+    </div>
+    
+    <!-- User Avatar (Shows when signed in) -->
+    <div class="show-when-signed-in">
+        <div class="user-avatar" id="userAvatar">
+            <!-- Avatar content will be populated by JavaScript -->
         </div>
+        
+        <!-- Profile Dropdown -->
+        <div class="profile-dropdown" id="profileDropdown">
+            <div class="profile-header">
+                <div class="avatar-large" id="profileAvatarLarge">
+                    <!-- Large avatar -->
+                </div>
+                <h3 id="profileUserName">Loading...</h3>
+                <p id="profileUserEmail">...</p>
+            </div>
+            
+            <div class="profile-menu">
+                <a href="https://aditya-cmd-max.github.io/dashboard" class="profile-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="https://aditya-cmd-max.github.io/profile" class="profile-item">
+                    <i class="fas fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+                <a href="https://aditya-cmd-max.github.io/settings" class="profile-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+                
+                <div class="profile-divider"></div>
+                
+                <div class="profile-item logout-btn" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sign Out</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="material-icons-round">dark_mode</span>
+    </button>
+</div>
 
         <!-- Mobile Menu Button with Hamburger/Cross -->
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
@@ -1893,57 +1939,74 @@
             <span class="material-icons-round cross-icon">close</span>
         </button>
     </nav>
-
-    <!-- Mobile Navigation Menu -->
-    <div class="mobile-nav" id="mobileNav">
-        <div class="mobile-nav-header">
-            <div class="nav-brand">
-                <div class="nav-logo">
-                    <img src="https://aditya-cmd-max.github.io/reverbit/logo-insvg.svg" alt="Reverbit Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='R';">
-                </div>
-                <span class="nav-name">Reverbit</span>
+<!-- Mobile Navigation Menu -->
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+        <div class="nav-brand">
+            <div class="nav-logo">
+                <img src="https://aditya-cmd-max.github.io/reverbit/logo-insvg.svg" alt="Reverbit Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='R';">
             </div>
-            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
-                <span class="material-icons-round">close</span>
-            </button>
+            <span class="nav-name">Reverbit</span>
         </div>
-        
-        <a href="#home" class="mobile-nav-link active">
-            <i class="fas fa-home"></i>
-            Home
-        </a>
-        <a href="https://aditya-cmd-max.github.io/reverbit/circuit" class="mobile-nav-link">
-            <i class="fas fa-blog"></i>
-            Blogs
-        </a>
-        <a href="https://aditya-cmd-max.github.io/reverbit/about" class="mobile-nav-link">
-            <i class="fas fa-bullseye"></i>
-            The creator
-        </a>
-        <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="mobile-nav-link">
-            <i class="fas fa-tools"></i>
-            Tools
-        </a>
-        <a href="https://aditya-cmd-max.github.io/signin" class="mobile-nav-link">
-            <i class="fas fa-sign-in-alt"></i>
-            Sign In
-        </a>
-        
-        <!-- Mobile Theme Toggle -->
-        <div class="mobile-theme-toggle">
-            <span>Theme</span>
-            <button class="mobile-theme-btn" id="mobileThemeToggle" aria-label="Toggle theme">
-                <span class="material-icons-round">dark_mode</span>
-            </button>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+            <span class="material-icons-round">close</span>
+        </button>
+    </div>
+    
+    <a href="#home" class="mobile-nav-link active">
+        <i class="fas fa-home"></i>
+        Home
+    </a>
+    <a href="https://aditya-cmd-max.github.io/reverbit/circuit" class="mobile-nav-link">
+        <i class="fas fa-blog"></i>
+        Blogs
+    </a>
+    <a href="https://aditya-cmd-max.github.io/reverbit/about" class="mobile-nav-link">
+        <i class="fas fa-bullseye"></i>
+        The creator
+    </a>
+    <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="mobile-nav-link">
+        <i class="fas fa-tools"></i>
+        Tools
+    </a>
+    
+    <!-- Sign In Link for mobile (shows when NOT signed in) -->
+    <a href="https://aditya-cmd-max.github.io/signin" class="mobile-nav-link hide-when-signed-in">
+        <i class="fas fa-sign-in-alt"></i>
+        Sign In
+    </a>
+    
+    <!-- User profile items for mobile (shows when signed in) -->
+    <div class="show-when-signed-in">
+        <div class="mobile-nav-link" id="mobileUserProfile">
+            <i class="fas fa-user-circle"></i>
+            <span id="mobileUserName">Profile</span>
         </div>
-        
-        <div style="margin-top: auto; padding-top: var(--md-spacing-xl);">
-            <button class="btn btn-filled" style="width: 100%;" onclick="document.getElementById('mobileNavClose').click()">
-                <i class="fas fa-rocket" style="margin-right: 8px;"></i>
-                Get Started
-            </button>
+        <a href="https://aditya-cmd-max.github.io/dashboard" class="mobile-nav-link">
+            <i class="fas fa-tachometer-alt"></i>
+            Dashboard
+        </a>
+        <div class="mobile-nav-link logout-btn" id="mobileLogoutBtn">
+            <i class="fas fa-sign-out-alt"></i>
+            Sign Out
         </div>
     </div>
+    
+    <!-- Mobile Theme Toggle -->
+    <div class="mobile-theme-toggle">
+        <span>Theme</span>
+        <button class="mobile-theme-btn" id="mobileThemeToggle" aria-label="Toggle theme">
+            <span class="material-icons-round">dark_mode</span>
+        </button>
+    </div>
+    
+    <div style="margin-top: auto; padding-top: var(--md-spacing-xl);">
+        <button class="btn btn-filled" style="width: 100%;" onclick="document.getElementById('mobileNavClose').click()">
+            <i class="fas fa-rocket" style="margin-right: 8px;"></i>
+            Get Started
+        </button>
+    </div>
+</div>
 
     <!-- Hero Section -->
     <section class="hero-section" id="home">
@@ -2500,6 +2563,167 @@
                 background-size: 20px 20px; /* Even smaller mesh on mobile */
             }
         }
+      
+      /* User Profile Avatar */
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--md-on-primary);
+    cursor: pointer;
+    transition: var(--md-transition);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--md-primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.user-avatar:hover {
+    transform: scale(1.1);
+    box-shadow: var(--md-elevation-2);
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--md-surface);
+    border-radius: var(--md-radius-large);
+    box-shadow: var(--md-elevation-4);
+    min-width: 280px;
+    z-index: 1001;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border: 1px solid var(--md-outline);
+    overflow: hidden;
+}
+
+.profile-dropdown.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.profile-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    width: 16px;
+    height: 16px;
+    background: var(--md-surface);
+    transform: rotate(45deg);
+    border-left: 1px solid var(--md-outline);
+    border-top: 1px solid var(--md-outline);
+}
+
+.profile-header {
+    padding: var(--md-spacing-xl);
+    background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
+    color: var(--md-on-primary);
+    text-align: center;
+}
+
+.profile-header .avatar-large {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin: 0 auto var(--md-spacing-md);
+    border: 3px solid var(--md-on-primary);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-header h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.profile-header p {
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+.profile-menu {
+    padding: var(--md-spacing-md) 0;
+}
+
+.profile-item {
+    display: flex;
+    align-items: center;
+    gap: var(--md-spacing-md);
+    padding: var(--md-spacing-md) var(--md-spacing-xl);
+    color: var(--md-on-surface);
+    text-decoration: none;
+    transition: var(--md-transition);
+    cursor: pointer;
+}
+
+.profile-item:hover {
+    background: var(--md-surface-variant);
+}
+
+.profile-item i {
+    width: 20px;
+    color: var(--md-on-surface-variant);
+}
+
+.profile-divider {
+    height: 1px;
+    background: var(--md-outline);
+    margin: var(--md-spacing-sm) var(--md-spacing-xl);
+}
+
+.logout-btn {
+    color: #dc3545 !important;
+}
+
+.logout-btn i {
+    color: #dc3545 !important;
+}
+
+.logout-btn:hover {
+    background: rgba(220, 53, 69, 0.1) !important;
+}
+
+/* Sign In Button Container */
+.signin-container {
+    position: relative;
+}
+
+/* Hide/show based on auth state */
+.hide-when-signed-in {
+    display: flex !important;
+}
+
+.show-when-signed-in {
+    display: none !important;
+}
+
+.user-signed-in .hide-when-signed-in {
+    display: none !important;
+}
+
+.user-signed-in .show-when-signed-in {
+    display: flex !important;
+}
+      
+      
     </style>
 </head>
 <body>
@@ -3404,7 +3628,253 @@
                 e.preventDefault();
             }
         }, { passive: false });
-    </script>
+   
+  
+  // User Authentication Functions
+async function checkAuthStatus() {
+    try {
+        // Check if auth.js is loaded
+        if (typeof window.AuthManager !== 'undefined') {
+            const isAuthenticated = await window.AuthManager.isAuthenticated();
+            return isAuthenticated ? window.AuthManager.getCurrentUser() : null;
+        }
+        
+        // Fallback: Check localStorage
+        const userData = localStorage.getItem('reverbit_user');
+        if (userData) {
+            return JSON.parse(userData);
+        }
+        
+        return null;
+    } catch (error) {
+        console.error('Error checking auth status:', error);
+        return null;
+    }
+}
+
+function updateUIForAuthState(user) {
+    const body = document.body;
+    
+    if (user) {
+        // User is signed in
+        body.classList.add('user-signed-in');
+        
+        // Update desktop avatar
+        const userAvatar = document.getElementById('userAvatar');
+        const profileAvatarLarge = document.getElementById('profileAvatarLarge');
+        const profileUserName = document.getElementById('profileUserName');
+        const profileUserEmail = document.getElementById('profileUserEmail');
+        const mobileUserName = document.getElementById('mobileUserName');
+        
+        // Set user initials/avatar
+        const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+        const initials = getInitials(displayName);
+        const avatarColor = getAvatarColor(user.email || displayName);
+        
+        // Update desktop avatar
+        if (userAvatar) {
+            userAvatar.style.background = avatarColor;
+            if (user.photoURL) {
+                userAvatar.innerHTML = `<img src="${user.photoURL}" alt="${displayName}" onerror="this.style.display='none'; this.parentElement.innerHTML='${initials}'">`;
+            } else {
+                userAvatar.textContent = initials;
+            }
+        }
+        
+        // Update profile dropdown
+        if (profileAvatarLarge) {
+            profileAvatarLarge.style.background = avatarColor;
+            if (user.photoURL) {
+                profileAvatarLarge.innerHTML = `<img src="${user.photoURL}" alt="${displayName}" onerror="this.style.display='none'; this.parentElement.innerHTML='${initials}'">`;
+            } else {
+                profileAvatarLarge.textContent = initials;
+            }
+        }
+        
+        if (profileUserName) {
+            profileUserName.textContent = displayName;
+        }
+        
+        if (profileUserEmail) {
+            profileUserEmail.textContent = user.email || '';
+        }
+        
+        if (mobileUserName) {
+            mobileUserName.textContent = displayName;
+        }
+    } else {
+        // User is not signed in
+        body.classList.remove('user-signed-in');
+    }
+}
+
+function getInitials(name) {
+    return name
+        .split(' ')
+        .map(part => part.charAt(0))
+        .join('')
+        .toUpperCase()
+        .substring(0, 2);
+}
+
+function getAvatarColor(str) {
+    // Generate a consistent color based on the string
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    
+    const colors = [
+        'linear-gradient(135deg, #1a73e8, #4285f4)', // Blue
+        'linear-gradient(135deg, #0d8a72, #34a853)', // Green
+        'linear-gradient(135deg, #fbbc05, #ea4335)', // Yellow/Red
+        'linear-gradient(135deg, #673ab7, #9c27b0)', // Purple
+        'linear-gradient(135deg, #ff6d00, #ffab00)', // Orange
+    ];
+    
+    const index = Math.abs(hash) % colors.length;
+    return colors[index];
+}
+
+// Profile Dropdown Functions
+function initProfileDropdown() {
+    const userAvatar = document.getElementById('userAvatar');
+    const profileDropdown = document.getElementById('profileDropdown');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const mobileLogoutBtn = document.getElementById('mobileLogoutBtn');
+    
+    if (userAvatar && profileDropdown) {
+        // Toggle dropdown on avatar click
+        userAvatar.addEventListener('click', (e) => {
+            e.stopPropagation();
+            profileDropdown.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!userAvatar.contains(e.target) && !profileDropdown.contains(e.target)) {
+                profileDropdown.classList.remove('active');
+            }
+        });
+        
+        // Close dropdown on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                profileDropdown.classList.remove('active');
+            }
+        });
+    }
+    
+    // Logout functionality
+    async function handleLogout() {
+        try {
+            // Try to use auth.js logout if available
+            if (typeof window.AuthManager !== 'undefined') {
+                await window.AuthManager.signOut();
+            } else {
+                // Fallback: Clear local storage
+                localStorage.removeItem('reverbit_user');
+                localStorage.removeItem('reverbit_auth');
+                document.cookie = 'reverbit_auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            }
+            
+            // Reload page to update UI
+            window.location.reload();
+        } catch (error) {
+            console.error('Logout error:', error);
+            alert('Error signing out. Please try again.');
+        }
+    }
+    
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', handleLogout);
+    }
+    
+    if (mobileLogoutBtn) {
+        mobileLogoutBtn.addEventListener('click', handleLogout);
+    }
+}
+
+// Mobile user profile click handler
+function initMobileProfile() {
+    const mobileUserProfile = document.getElementById('mobileUserProfile');
+    if (mobileUserProfile) {
+        mobileUserProfile.addEventListener('click', () => {
+            // Close mobile nav
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            if (mobileNav && mobileNav.classList.contains('active')) {
+                mobileNav.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                mobileMenuBtn.setAttribute('aria-label', 'Open menu');
+            }
+            
+            // Open profile dropdown if on desktop, or navigate to profile page
+            if (window.innerWidth > 1024) {
+                const profileDropdown = document.getElementById('profileDropdown');
+                if (profileDropdown) {
+                    profileDropdown.classList.add('active');
+                }
+            } else {
+                window.location.href = 'https://aditya-cmd-max.github.io/dashboard';
+            }
+        });
+    }
+}
+
+// Initialize authentication when DOM is loaded
+async function initAuth() {
+    // Wait for auth.js to load if it exists
+    if (typeof window.AuthManager === 'undefined') {
+        // If auth.js is not loaded, check every 100ms for 5 seconds
+        let attempts = 0;
+        const maxAttempts = 50;
+        
+        const checkAuthJS = setInterval(() => {
+            attempts++;
+            if (typeof window.AuthManager !== 'undefined' || attempts >= maxAttempts) {
+                clearInterval(checkAuthJS);
+                continueInit();
+            }
+        }, 100);
+    } else {
+        continueInit();
+    }
+    
+    async function continueInit() {
+        try {
+            const user = await checkAuthStatus();
+            updateUIForAuthState(user);
+            initProfileDropdown();
+            initMobileProfile();
+            
+            // Listen for auth state changes if auth.js is available
+            if (typeof window.AuthManager !== 'undefined') {
+                window.AuthManager.onAuthStateChanged((user) => {
+                    updateUIForAuthState(user);
+                });
+            }
+        } catch (error) {
+            console.error('Error initializing auth:', error);
+        }
+    }
+}
+
+// Call initAuth when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // ... existing DOMContentLoaded code ...
+    
+    // Initialize authentication
+    initAuth();
+    
+
+});
+  
+  
+  
+  
+  </script>
   
   
 </body>
