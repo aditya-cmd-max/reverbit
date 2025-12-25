@@ -1,5 +1,3 @@
-
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -455,6 +453,36 @@
             border-radius: var(--md-radius-pill);
         }
 
+        /* Profile Avatar Button */
+        .profile-avatar-button {
+            width: 36px !important;
+            height: 36px !important;
+            border-radius: 50% !important;
+            border: 2px solid var(--md-primary, #1a73e8) !important;
+            cursor: pointer !important;
+            background: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            overflow: hidden !important;
+            transition: transform 0.2s ease !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0;
+        }
+
+        .profile-avatar-button:hover {
+            transform: scale(1.1) !important;
+            box-shadow: 0 2px 8px rgba(var(--md-primary-rgb, 26, 115, 232), 0.3) !important;
+        }
+
+        .profile-avatar-img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+        }
+
         /* Theme Toggle Button */
         .theme-toggle {
             background: transparent;
@@ -597,6 +625,95 @@
         .mobile-nav-link i {
             width: 24px;
             text-align: center;
+        }
+
+        /* Mobile Profile Avatar */
+        .mobile-avatar-container {
+            display: none;
+            flex-direction: column;
+            gap: var(--md-spacing-sm);
+            padding: var(--md-spacing-md) var(--md-spacing-lg);
+            border-bottom: 1px solid var(--md-outline);
+            margin-bottom: var(--md-spacing-md);
+        }
+
+        body.user-signed-in .mobile-avatar-container {
+            display: flex;
+        }
+
+        .mobile-user-info {
+            display: flex;
+            align-items: center;
+            gap: var(--md-spacing-md);
+            padding: var(--md-spacing-sm);
+            background: var(--md-surface-variant);
+            border-radius: var(--md-radius-medium);
+            margin-bottom: var(--md-spacing-md);
+        }
+
+        .mobile-user-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--md-primary);
+            background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--md-on-primary);
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .mobile-user-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mobile-user-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .mobile-user-name {
+            font-weight: 600;
+            color: var(--md-on-surface);
+            margin-bottom: 2px;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .mobile-user-email {
+            font-size: 0.8rem;
+            color: var(--md-on-surface-variant);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .mobile-logout-btn {
+            display: flex;
+            align-items: center;
+            gap: var(--md-spacing-md);
+            background: none;
+            border: none;
+            color: var(--md-error);
+            padding: var(--md-spacing-md) var(--md-spacing-lg);
+            border-radius: var(--md-radius-medium);
+            cursor: pointer;
+            font-family: var(--md-font-heading);
+            font-size: 1rem;
+            width: 100%;
+            transition: background-color 0.2s ease;
+            margin-top: var(--md-spacing-sm);
+        }
+
+        .mobile-logout-btn:hover {
+            background: var(--md-surface-variant);
         }
 
         /* Mobile Theme Toggle */
@@ -1617,6 +1734,24 @@
             transition: width 0.1s ease;
         }
 
+        /* Show sign in button when user is signed out */
+        body:not(.user-signed-in) #signInButton {
+            display: inline-flex !important;
+        }
+
+        body:not(.user-signed-in) #mobileSignInLink {
+            display: flex !important;
+        }
+
+        /* Hide sign in button when user is signed in */
+        body.user-signed-in #signInButton {
+            display: none !important;
+        }
+
+        body.user-signed-in #mobileSignInLink {
+            display: none !important;
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .desktop-nav {
@@ -1778,147 +1913,6 @@
             }
         }
       
-      
-     /* Profile Avatar Container */
-.navbar-avatar-container {
-    display: none;
-    align-items: center;
-    gap: var(--md-spacing-sm);
-}
-
-/* Show when user is signed in */
-body.user-signed-in .navbar-avatar-container {
-    display: flex;
-}
-
-/* Profile Avatar Button */
-.reverbit-profile-avatar {
-    width: 36px !important;
-    height: 36px !important;
-    border-radius: 50% !important;
-    border: 2px solid var(--md-primary, #1a73e8) !important;
-    cursor: pointer !important;
-    background: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden !important;
-    transition: transform 0.2s ease !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-.reverbit-profile-avatar:hover {
-    transform: scale(1.1) !important;
-    box-shadow: 0 2px 8px rgba(var(--md-primary-rgb, 26, 115, 232), 0.3) !important;
-}
-
-.reverbit-avatar-img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    display: block !important;
-}
-
-/* Hide sign in button when user is signed in */
-body.user-signed-in #signInButton {
-    display: none !important;
-}
-
-body.user-signed-in #mobileSignInLink {
-    display: none !important;
-}
-
-/* Mobile avatar styling */
-.mobile-avatar-container {
-    display: none;
-    flex-direction: column;
-    gap: var(--md-spacing-sm);
-    padding: var(--md-spacing-md) var(--md-spacing-lg);
-    border-bottom: 1px solid var(--md-outline);
-    margin-bottom: var(--md-spacing-md);
-}
-
-body.user-signed-in .mobile-avatar-container {
-    display: flex;
-}
-
-.mobile-user-info {
-    display: flex;
-    align-items: center;
-    gap: var(--md-spacing-md);
-    padding: var(--md-spacing-sm);
-    background: var(--md-surface-variant);
-    border-radius: var(--md-radius-medium);
-    margin-bottom: var(--md-spacing-md);
-}
-
-.mobile-user-avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid var(--md-primary);
-    background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--md-on-primary);
-    font-weight: 600;
-    flex-shrink: 0;
-}
-
-.mobile-user-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.mobile-user-details {
-    flex: 1;
-    min-width: 0;
-}
-
-.mobile-user-name {
-    font-weight: 600;
-    color: var(--md-on-surface);
-    margin-bottom: 2px;
-    font-size: 0.95rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.mobile-user-email {
-    font-size: 0.8rem;
-    color: var(--md-on-surface-variant);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.mobile-logout-btn {
-    display: flex;
-    align-items: center;
-    gap: var(--md-spacing-md);
-    background: none;
-    border: none;
-    color: var(--md-error);
-    padding: var(--md-spacing-md) var(--md-spacing-lg);
-    border-radius: var(--md-radius-medium);
-    cursor: pointer;
-    font-family: var(--md-font-heading);
-    font-size: 1rem;
-    width: 100%;
-    transition: background-color 0.2s ease;
-    margin-top: var(--md-spacing-sm);
-}
-
-.mobile-logout-btn:hover {
-    background: var(--md-surface-variant);
-}
-      
-
         /* NEW: Utility classes */
         .mt-4 { margin-top: var(--md-spacing-md); }
         .mt-6 { margin-top: var(--md-spacing-xl); }
@@ -2023,7 +2017,7 @@ body.user-signed-in .mobile-avatar-container {
     </a>
     
     <!-- Profile Avatar Container (Will be auto-populated by auth.js) -->
-    <div class="navbar-avatar-container" id="navbarAvatarContainer"></div>
+    <div id="desktopAvatar"></div>
     
     <!-- Sign In Button (Will be hidden when user is signed in) -->
     <a href="https://aditya-cmd-max.github.io/signin" class="btn btn-filled" id="signInButton">
@@ -2059,7 +2053,7 @@ body.user-signed-in .mobile-avatar-container {
     </div>
     
     <!-- Mobile Avatar Container (Will be auto-populated by auth.js) -->
-    <div id="mobileAvatarContainer"></div>
+    <div id="mobileAvatar"></div>
     
     <a href="#home" class="mobile-nav-link active">
         <i class="fas fa-home"></i>
@@ -2613,8 +2607,8 @@ body.user-signed-in .mobile-avatar-container {
         .exonova-component .tagline-container .hero span::after {
             content: attr(data-text);
             position: absolute;
+            bottom: 0;
             left: 0;
-            top: 0;
             width: 100%;
             color: #fff;
             filter: blur(10px); /* Reduced blur */
@@ -3561,11 +3555,9 @@ body.user-signed-in .mobile-avatar-container {
         }, { passive: false });
    
   
-  
-  
 // Initialize the avatar system
 function initAvatarSystem() {
-    // Check if auth.js is loaded
+    // Wait for auth.js to load
     if (typeof window.ReverbitAuth !== 'undefined') {
         // Listen for auth state changes
         window.ReverbitAuth.auth.onAuthStateChanged(async (user) => {
@@ -3595,6 +3587,9 @@ function initAvatarSystem() {
             addDesktopAvatar(user);
             addMobileAvatar(user);
         }
+    } else {
+        // If auth.js hasn't loaded yet, check again after a delay
+        setTimeout(initAvatarSystem, 100);
     }
 }
 
@@ -3608,18 +3603,17 @@ function addDesktopAvatar(user) {
     
     // Create avatar container
     const avatarContainer = document.createElement('div');
-    avatarContainer.className = 'navbar-avatar-container';
     avatarContainer.id = 'desktopAvatar';
     
     // Create avatar button
     const avatarBtn = document.createElement('button');
-    avatarBtn.className = 'reverbit-profile-avatar';
+    avatarBtn.className = 'profile-avatar-button';
     avatarBtn.setAttribute('aria-label', 'User profile menu');
     avatarBtn.setAttribute('title', 'Profile menu');
     
     // Create avatar image
     const avatarImg = document.createElement('img');
-    avatarImg.className = 'reverbit-avatar-img';
+    avatarImg.className = 'profile-avatar-img';
     
     // Set image source
     if (user.photoURL) {
@@ -3629,8 +3623,8 @@ function addDesktopAvatar(user) {
         const displayName = user.displayName || user.email?.split('@')[0] || 'User';
         const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
         avatarBtn.textContent = initials;
-        avatarBtn.style.background = 'linear-gradient(135deg, #4285f4, #34a853)';
-        avatarBtn.style.color = '#fff';
+        avatarBtn.style.background = 'linear-gradient(135deg, var(--md-primary), var(--md-secondary))';
+        avatarBtn.style.color = 'var(--md-on-primary)';
         avatarBtn.style.fontWeight = '600';
         avatarBtn.style.fontSize = '14px';
     }
@@ -3640,8 +3634,8 @@ function addDesktopAvatar(user) {
         const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
         this.style.display = 'none';
         this.parentElement.textContent = initials;
-        this.parentElement.style.background = 'linear-gradient(135deg, #4285f4, #34a853)';
-        this.parentElement.style.color = '#fff';
+        this.parentElement.style.background = 'linear-gradient(135deg, var(--md-primary), var(--md-secondary))';
+        this.parentElement.style.color = 'var(--md-on-primary)';
         this.parentElement.style.fontWeight = '600';
         this.parentElement.style.fontSize = '14px';
     };
@@ -3802,10 +3796,8 @@ function removeMobileAvatar() {
 
 // Initialize avatar system when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Wait a bit for auth.js to load
-    setTimeout(() => {
-        initAvatarSystem();
-    }, 500);
+    // Start the avatar system initialization
+    initAvatarSystem();
 });
       
       
