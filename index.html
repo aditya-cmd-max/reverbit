@@ -3602,83 +3602,59 @@ function initAvatarSystem() {
     }
 }
 
-// Add desktop avatar
+// Add desktop avatar - Simplified version
 function addDesktopAvatar(user) {
     const desktopNav = document.querySelector('.desktop-nav');
     if (!desktopNav) return;
     
-    // Remove existing avatar
     removeDesktopAvatar();
     
-    // Create avatar container
     const avatarContainer = document.createElement('div');
     avatarContainer.id = 'desktopAvatar';
     
-    // Create avatar button
     const avatarBtn = document.createElement('button');
-    avatarBtn.className = 'profile-avatar-button';
+    avatarBtn.className = 'profile-avatar-button reverbit-profile-avatar';
     avatarBtn.setAttribute('aria-label', 'User profile menu');
-    avatarBtn.setAttribute('title', 'Profile menu');
     
-    // Create avatar image
-    const avatarImg = document.createElement('img');
-    avatarImg.className = 'profile-avatar-img';
-    
-    // Set image source
     if (user.photoURL) {
+        const avatarImg = document.createElement('img');
+        avatarImg.className = 'profile-avatar-img reverbit-avatar-img';
         avatarImg.src = user.photoURL;
         avatarImg.alt = user.displayName || 'User';
+        avatarImg.onerror = function() {
+            const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+            const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+            avatarBtn.textContent = initials;
+            avatarBtn.style.background = 'linear-gradient(135deg, var(--md-primary), var(--md-secondary))';
+            avatarBtn.style.color = 'var(--md-on-primary)';
+        };
+        avatarBtn.appendChild(avatarImg);
     } else {
         const displayName = user.displayName || user.email?.split('@')[0] || 'User';
         const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
         avatarBtn.textContent = initials;
         avatarBtn.style.background = 'linear-gradient(135deg, var(--md-primary), var(--md-secondary))';
         avatarBtn.style.color = 'var(--md-on-primary)';
-        avatarBtn.style.fontWeight = '600';
-        avatarBtn.style.fontSize = '14px';
     }
     
-    avatarImg.onerror = function() {
-        const displayName = user.displayName || user.email?.split('@')[0] || 'User';
-        const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
-        this.style.display = 'none';
-        this.parentElement.textContent = initials;
-        this.parentElement.style.background = 'linear-gradient(135deg, var(--md-primary), var(--md-secondary))';
-        this.parentElement.style.color = 'var(--md-on-primary)';
-        this.parentElement.style.fontWeight = '600';
-        this.parentElement.style.fontSize = '14px';
-    };
-    
-    if (user.photoURL) {
-        avatarBtn.appendChild(avatarImg);
-    }
-    
-    // Add click handler
+    // Use auth.js popup
     avatarBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         if (window.ReverbitAuth && window.ReverbitAuth.toggleProfilePopup) {
-            window.ReverbitAuth.toggleProfilePopup(e);
-        } else {
-            // Fallback: Redirect to dashboard
-            window.location.href = 'https://aditya-cmd-max.github.io/dashboard';
+            window.ReverbitAuth.toggleProfilePopup();
         }
     });
     
     avatarContainer.appendChild(avatarBtn);
     
-    // Find sign in button
+    // Insert into navbar
     const signInButton = document.getElementById('signInButton');
-    
-    // Insert avatar before sign in button
     if (signInButton) {
         desktopNav.insertBefore(avatarContainer, signInButton);
     } else {
-        // Fallback: insert before theme toggle
         const themeToggle = document.getElementById('theme-toggle');
         if (themeToggle) {
             desktopNav.insertBefore(avatarContainer, themeToggle);
-        } else {
-            desktopNav.appendChild(avatarContainer);
         }
     }
 }
