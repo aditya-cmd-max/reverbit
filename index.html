@@ -3602,69 +3602,215 @@ function initAvatarSystem() {
     }
 }
 
-// Add desktop avatar
+// Add desktop avatar - Updated to use auth.js popup
 function addDesktopAvatar(user) {
-    const desktopNav = document.querySelector('.desktop-nav');
-    if (!desktopNav) return;
+    console.log("Adding desktop avatar for:", user.email);
     
-    // Remove existing avatar
+    const desktopNav = document.querySelector('.desktop-nav');
+    if (!desktopNav) {
+        console.log("Desktop nav not found");
+        return;
+    }
+    
+    // Remove existing avatar first
     removeDesktopAvatar();
+    
+    // Check if auth.js has already created an avatar
+    const existingAuthAvatar = document.querySelector('.reverbit-profile-avatar');
+    if (existingAuthAvatar && existingAuthAvatar.parentNode) {
+        console.log("Auth.js avatar already exists, using it...");
+        
+        // Clone and reposition the auth.js avatar
+        const avatarClone = existingAuthAvatar.cloneNode(true);
+        const avatarContainer = document.createElement('div');
+        avatarContainer.id = 'desktopAvatar';
+        avatarContainer.style.display = 'flex';
+        avatarContainer.style.alignItems = 'center';
+        avatarContainer.appendChild(avatarClone);
+        
+        // Remove old click listeners and add new one
+        avatarClone.removeEventListener('click', window.ReverbitAuth.toggleProfilePopup);
+        avatarClone.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (window.ReverbitAuth && window.ReverbitAuth.toggleProfilePopup) {
+                window.ReverbitAuth.toggleProfilePopup();
+            }
+        });
+        
+        // Insert into navbar
+        insertAvatarIntoNavbar(avatarContainer, desktopNav);
+        return;
+    }
     
     // Create avatar container
     const avatarContainer = document.createElement('div');
     avatarContainer.id = 'desktopAvatar';
+    avatarContainer.style.display = 'flex';
+    avatarContainer.style.alignItems = 'center';
     
     // Create avatar button
     const avatarBtn = document.createElement('button');
-    avatarBtn.className = 'profile-avatar-button';
+    avatarBtn.className = 'profile-avatar-button reverbit-profile-avatar';
     avatarBtn.setAttribute('aria-label', 'User profile menu');
     avatarBtn.setAttribute('title', 'Profile menu');
+    avatarBtn.style.marginLeft = '8px';
+    avatarBtn.style.cursor = 'pointer';
     
-    // Create avatar image
-    const avatarImg = document.createElement('img');
-    avatarImg.className = 'profile-avatar-img';
-    
-    // Set image source
+    // Set avatar content
     if (user.photoURL) {
+        const avatarImg = document.createElement('img');
+        avatarImg.className = 'profile-avatar-img';
         avatarImg.src = user.photoURL;
         avatarImg.alt = user.displayName || 'User';
-    } else {
-        const displayName = user.displayName || user.email?.split('@')[0] || 'User';
-        const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
-        avatarBtn.textContent = initials;
-        avatarBtn.style.background = 'linear-gradient(135deg, var(--md-primary), var(--md-secondary))';
-        avatarBtn.style.color = 'var(--md-on-primary)';
-        avatarBtn.style.fontWeight = '600';
-        avatarBtn.style.fontSize = '14px';
-    }
-    
-    avatarImg.onerror = function() {
-        const displayName = user.displayName || user.email?.split('@')[0] || 'User';
-        const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
-        this.style.display = 'none';
-        this.parentElement.textContent = initials;
-        this.parentElement.style.background = 'linear-gradient(135deg, var(--md-primary), var(--md-secondary))';
-        this.parentElement.style.color = 'var(--md-on-primary)';
-        this.parentElement.style.fontWeight = '600';
-        this.parentElement.style.fontSize = '14px';
-    };
-    
-    if (user.photoURL) {
+        avatarImg.onerror = function() {
+            console.log("Avatar image failed to load, using initials");
+            createInitialsAvatar(avatarBtn, user);
+        };
         avatarBtn.appendChild(avatarImg);
+    } else {
+        createInitialsAvatar(avatarBtn, user);
     }
     
-    // Add click handler
+    // Add click handler - Use auth.js popup
     avatarBtn.addEventListener('click', (e) => {
         e.stopPropagation();
+        console.log("Profile button clicked");
+        
+        // Ensure auth.js is initialized and has user data
         if (window.ReverbitAuth && window.ReverbitAuth.toggleProfilePopup) {
-            window.ReverbitAuth.toggleProfilePopup(e);
+            // Update auth.js user data if needed
+            if (!window.ReverbitAuth.user && user) {
+                window.ReverbitAuth.user = user;
+            }
+            window.ReverbitAuth.toggleProfilePopup();
         } else {
-            // Fallback: Redirect to dashboard
-            window.location.href = 'https://aditya-cmd-max.github.io/dashboard';
+            // Fallback: create a simple popup
+            createFallbackProfilePopup(user, avatarBtn);
         }
     });
     
     avatarContainer.appendChild(avatarBtn);
+    
+    // Insert into navbar
+    insertAvatarIntoNavbar(avatarContainer, desktopNav);
+}
+
+// Helper function to insert avatar into navbar
+function insertAvatarIntoNavbar(avatarContainer, desktopNav) {
+    // Find where to insert the avatar
+    const signInButton = document.getElementById('signInButton');
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // Insert avatar in the right position
+    if (signInButton && signInButton.parentNode) {
+        // Insert avatar before the sign in button (which will be hidden)
+        desktopNav.insertBefore(avatarContainer, signInButton);
+        console.log("Avatar inserted before sign in button");
+    } else if (themeToggle && themeToggle.parentNode) {
+        // Fallback: insert before theme toggle
+        desktopNav.insertBefore(avatarContainer, themeToggle);
+        console.log("Avatar inserted before theme toggle");
+    } else {
+        // Last resort: append to desktop nav
+        desktopNav.appendChild(avatarContainer);
+        console.log("Avatar appended to desktop nav");
+    }
+}
+
+// Fallback profile popup if auth.js popup doesn't work
+function createFallbackProfilePopup(user, avatarBtn) {
+    console.log("Creating fallback profile popup");
+    
+    // Remove existing popup
+    const existingPopup = document.querySelector('.fallback-profile-popup');
+    if (existingPopup) {
+        existingPopup.remove();
+    }
+    
+    // Create popup
+    const popup = document.createElement('div');
+    popup.className = 'fallback-profile-popup';
+    popup.style.cssText = `
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+        min-width: 200px;
+        z-index: 9999;
+        overflow: hidden;
+        border: 1px solid #ddd;
+        font-family: var(--md-font-heading);
+    `;
+    
+    // Create popup content
+    const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+    popup.innerHTML = `
+        <div style="padding: 16px; border-bottom: 1px solid #eee;">
+            <div style="font-weight: 600; color: var(--md-on-surface); margin-bottom: 4px;">
+                ${displayName}
+            </div>
+            <div style="font-size: 12px; color: var(--md-on-surface-variant);">
+                ${user.email || ''}
+            </div>
+        </div>
+        <div style="padding: 8px;">
+            <a href="https://aditya-cmd-max.github.io/dashboard" 
+               style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; 
+                      text-decoration: none; color: var(--md-on-surface); border-radius: 8px;
+                      transition: background 0.2s;">
+                <i class="fas fa-tachometer-alt" style="width: 16px;"></i>
+                Dashboard
+            </a>
+            <button id="fallback-logout" 
+                    style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; 
+                           width: 100%; text-align: left; background: none; border: none;
+                           color: var(--md-error); border-radius: 8px; cursor: pointer;
+                           transition: background 0.2s;">
+                <i class="fas fa-sign-out-alt" style="width: 16px;"></i>
+                Sign Out
+            </button>
+        </div>
+    `;
+    
+    // Position popup relative to avatar
+    const avatarRect = avatarBtn.getBoundingClientRect();
+    popup.style.top = `${avatarRect.bottom + 8}px`;
+    popup.style.right = `${window.innerWidth - avatarRect.right}px`;
+    
+    // Add to document
+    document.body.appendChild(popup);
+    
+    // Add logout handler
+    const logoutBtn = popup.querySelector('#fallback-logout');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', async () => {
+            try {
+                if (window.ReverbitAuth && window.ReverbitAuth.logout) {
+                    await window.ReverbitAuth.logout();
+                } else if (firebase && firebase.auth) {
+                    await firebase.auth().signOut();
+                    window.location.reload();
+                }
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        });
+    }
+    
+    // Close popup when clicking outside
+    const closePopup = (e) => {
+        if (!popup.contains(e.target) && !avatarBtn.contains(e.target)) {
+            popup.remove();
+            document.removeEventListener('click', closePopup);
+        }
+    };
+    
+    setTimeout(() => {
+        document.addEventListener('click', closePopup);
+    }, 100);
+}arContainer.appendChild(avatarBtn);
     
     // Find sign in button
     const signInButton = document.getElementById('signInButton');
