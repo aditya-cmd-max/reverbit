@@ -1,3 +1,4 @@
+
  
 <!DOCTYPE html>
 <html lang="en">
@@ -1778,7 +1779,48 @@
         }
       
       
-      /* Hide sign in button when user is signed in */
+     /* Profile Avatar Container */
+.navbar-avatar-container {
+    display: none;
+    align-items: center;
+    gap: var(--md-spacing-sm);
+}
+
+/* Show when user is signed in */
+body.user-signed-in .navbar-avatar-container {
+    display: flex;
+}
+
+/* Profile Avatar Button */
+.reverbit-profile-avatar {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    border: 2px solid var(--md-primary, #1a73e8) !important;
+    cursor: pointer !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    transition: transform 0.2s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.reverbit-profile-avatar:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 2px 8px rgba(var(--md-primary-rgb, 26, 115, 232), 0.3) !important;
+}
+
+.reverbit-avatar-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* Hide sign in button when user is signed in */
 body.user-signed-in #signInButton {
     display: none !important;
 }
@@ -1787,30 +1829,14 @@ body.user-signed-in #mobileSignInLink {
     display: none !important;
 }
 
-/* Create a container for the avatar in the navbar */
-.navbar-avatar-container {
-    display: none;
-    align-items: center;
-    gap: var(--md-spacing-sm);
-}
-
-body.user-signed-in .navbar-avatar-container {
-    display: flex;
-}
-
-/* Make sure the avatar button is properly sized */
-.reverbit-profile-avatar {
-    width: 36px !important;
-    height: 36px !important;
-    margin: 0 !important;
-}
-
 /* Mobile avatar styling */
 .mobile-avatar-container {
     display: none;
     flex-direction: column;
     gap: var(--md-spacing-sm);
     padding: var(--md-spacing-md) var(--md-spacing-lg);
+    border-bottom: 1px solid var(--md-outline);
+    margin-bottom: var(--md-spacing-md);
 }
 
 body.user-signed-in .mobile-avatar-container {
@@ -1821,7 +1847,7 @@ body.user-signed-in .mobile-avatar-container {
     display: flex;
     align-items: center;
     gap: var(--md-spacing-md);
-    padding: var(--md-spacing-md);
+    padding: var(--md-spacing-sm);
     background: var(--md-surface-variant);
     border-radius: var(--md-radius-medium);
     margin-bottom: var(--md-spacing-md);
@@ -1833,6 +1859,13 @@ body.user-signed-in .mobile-avatar-container {
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid var(--md-primary);
+    background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--md-on-primary);
+    font-weight: 600;
+    flex-shrink: 0;
 }
 
 .mobile-user-avatar img {
@@ -1843,26 +1876,47 @@ body.user-signed-in .mobile-avatar-container {
 
 .mobile-user-details {
     flex: 1;
+    min-width: 0;
 }
 
 .mobile-user-name {
     font-weight: 600;
     color: var(--md-on-surface);
     margin-bottom: 2px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .mobile-user-email {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     color: var(--md-on-surface-variant);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* Ensure header actions exists in navbar */
-.header-actions {
+.mobile-logout-btn {
     display: flex;
     align-items: center;
-    gap: var(--md-spacing-sm);
+    gap: var(--md-spacing-md);
+    background: none;
+    border: none;
+    color: var(--md-error);
+    padding: var(--md-spacing-md) var(--md-spacing-lg);
+    border-radius: var(--md-radius-medium);
+    cursor: pointer;
+    font-family: var(--md-font-heading);
+    font-size: 1rem;
+    width: 100%;
+    transition: background-color 0.2s ease;
+    margin-top: var(--md-spacing-sm);
 }
-      
+
+.mobile-logout-btn:hover {
+    background: var(--md-surface-variant);
+}
       
 
         /* NEW: Utility classes */
@@ -1949,7 +2003,7 @@ body.user-signed-in .mobile-avatar-container {
             <span class="nav-name">Reverbit</span>
         </a>
 
-       <!-- Desktop Navigation Links (Right side) -->
+      <!-- Desktop Navigation Links (Right side) -->
 <div class="desktop-nav">
     <a href="#home" class="nav-link active">
         <i class="fas fa-home" style="font-size: 0.9rem; margin-right: 4px;"></i>
@@ -1965,12 +2019,13 @@ body.user-signed-in .mobile-avatar-container {
     </a>
     <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="nav-link">
         <i class="fas fa-tools" style="font-size: 0.9rem; margin-right: 4px;"></i>
-       Tools
+        Tools
     </a>
     
-    <!-- This will be auto-populated by auth.js when user is signed in -->
+    <!-- Profile Avatar Container (Will be auto-populated by auth.js) -->
+    <div class="navbar-avatar-container" id="navbarAvatarContainer"></div>
     
-    <!-- Sign In Button (Always visible, will be hidden by auth.js when user is signed in) -->
+    <!-- Sign In Button (Will be hidden when user is signed in) -->
     <a href="https://aditya-cmd-max.github.io/signin" class="btn btn-filled" id="signInButton">
         <i class="fas fa-sign-in-alt" style="font-size: 0.9rem; margin-right: 4px;"></i>
         Sign In
@@ -1989,7 +2044,7 @@ body.user-signed-in .mobile-avatar-container {
         </button>
     </nav>
 
-    <!-- Mobile Navigation Menu -->
+  <!-- Mobile Navigation Menu -->
 <div class="mobile-nav" id="mobileNav">
     <div class="mobile-nav-header">
         <div class="nav-brand">
@@ -2002,6 +2057,9 @@ body.user-signed-in .mobile-avatar-container {
             <span class="material-icons-round">close</span>
         </button>
     </div>
+    
+    <!-- Mobile Avatar Container (Will be auto-populated by auth.js) -->
+    <div id="mobileAvatarContainer"></div>
     
     <a href="#home" class="mobile-nav-link active">
         <i class="fas fa-home"></i>
@@ -2019,8 +2077,6 @@ body.user-signed-in .mobile-avatar-container {
         <i class="fas fa-tools"></i>
         Tools
     </a>
-    
-    <!-- This will be auto-populated by auth.js when user is signed in -->
     
     <!-- Sign In Link for mobile (will be hidden by auth.js when user is signed in) -->
     <a href="https://aditya-cmd-max.github.io/signin" class="mobile-nav-link" id="mobileSignInLink">
@@ -3507,288 +3563,252 @@ body.user-signed-in .mobile-avatar-container {
   
   
   
-  // Override the avatar placement function from auth.js
-function overrideAuthJSAvatarPlacement() {
-    // Check if auth.js is loaded and has the method we need to override
+// Initialize the avatar system
+function initAvatarSystem() {
+    // Check if auth.js is loaded
     if (typeof window.ReverbitAuth !== 'undefined') {
-        // Store the original method
-        const originalAddOrUpdateProfileAvatar = window.ReverbitAuth.addOrUpdateProfileAvatar;
-        
-        // Override the method to place avatar in our navbar
-        window.ReverbitAuth.addOrUpdateProfileAvatar = function() {
-            // Remove any existing avatar first
-            this.removeProfileAvatar();
-            
-            // Find our desktop nav container
-            const desktopNav = document.querySelector('.desktop-nav');
-            if (!desktopNav) {
-                // Fallback to original method
-                return originalAddOrUpdateProfileAvatar.call(this);
-            }
-            
-            // Find the sign in button
-            const signInButton = document.getElementById('signInButton');
-            
-            // Create header actions container if it doesn't exist
-            let headerActions = desktopNav.querySelector('.header-actions');
-            if (!headerActions) {
-                headerActions = document.createElement('div');
-                headerActions.className = 'header-actions';
-                desktopNav.insertBefore(headerActions, signInButton || desktopNav.querySelector('.theme-toggle'));
-            }
-            
-            // Create avatar container
-            const avatarContainer = document.createElement('div');
-            avatarContainer.className = 'navbar-avatar-container';
-            
-            // Create the avatar button (using auth.js's existing structure)
-            this.profileAvatar = document.createElement('button');
-            this.profileAvatar.className = 'reverbit-profile-avatar';
-            this.profileAvatar.setAttribute('aria-label', 'User profile menu');
-            this.profileAvatar.setAttribute('title', 'Profile menu');
-            
-            // Create avatar image
-            const avatarImg = document.createElement('img');
-            avatarImg.className = 'reverbit-avatar-img';
-            this.profileAvatar.appendChild(avatarImg);
-            
-            // Add click handler
-            this.profileAvatar.addEventListener('click', (e) => {
-                e.stopPropagation();
-                this.toggleProfilePopup();
-            });
-            
-            // Add to container
-            avatarContainer.appendChild(this.profileAvatar);
-            
-            // Insert before the sign in button or theme toggle
-            if (signInButton) {
-                desktopNav.insertBefore(avatarContainer, signInButton);
+        // Listen for auth state changes
+        window.ReverbitAuth.auth.onAuthStateChanged(async (user) => {
+            if (user) {
+                // User is signed in
+                document.body.classList.add('user-signed-in');
+                
+                // Add desktop avatar
+                addDesktopAvatar(user);
+                
+                // Add mobile avatar
+                addMobileAvatar(user);
             } else {
-                const themeToggle = desktopNav.querySelector('.theme-toggle');
-                if (themeToggle) {
-                    desktopNav.insertBefore(avatarContainer, themeToggle);
-                } else {
-                    desktopNav.appendChild(avatarContainer);
-                }
+                // User is signed out
+                document.body.classList.remove('user-signed-in');
+                
+                // Remove avatars
+                removeDesktopAvatar();
+                removeMobileAvatar();
             }
-            
-            // Update the avatar image
-            this.updateProfileAvatar();
-            
-            // Add class to body to indicate user is signed in
+        });
+        
+        // Initialize immediately if user is already signed in
+        if (window.ReverbitAuth.getUser()) {
+            const user = window.ReverbitAuth.getUser();
             document.body.classList.add('user-signed-in');
-            
-            return this.profileAvatar;
-        };
-        
-        // Also override the remove method to update our UI
-        const originalRemoveProfileAvatar = window.ReverbitAuth.removeProfileAvatar;
-        window.ReverbitAuth.removeProfileAvatar = function() {
-            const result = originalRemoveProfileAvatar.call(this);
-            
-            // Remove the avatar container if it exists
-            const avatarContainer = document.querySelector('.navbar-avatar-container');
-            if (avatarContainer && avatarContainer.parentNode) {
-                avatarContainer.parentNode.removeChild(avatarContainer);
-            }
-            
-            // Remove mobile avatar if exists
-            const mobileAvatarContainer = document.querySelector('.mobile-avatar-container');
-            if (mobileAvatarContainer && mobileAvatarContainer.parentNode) {
-                mobileAvatarContainer.parentNode.removeChild(mobileAvatarContainer);
-            }
-            
-            // Remove signed in class
-            document.body.classList.remove('user-signed-in');
-            
-            return result;
-        };
-        
-        // Add mobile avatar functionality
-        window.ReverbitAuth.addMobileAvatar = function() {
-            const mobileNav = document.getElementById('mobileNav');
-            if (!mobileNav || !this.userProfile) return;
-            
-            // Remove existing mobile avatar
-            const existingMobileAvatar = mobileNav.querySelector('.mobile-avatar-container');
-            if (existingMobileAvatar) {
-                existingMobileAvatar.parentNode.removeChild(existingMobileAvatar);
-            }
-            
-            // Find the sign in link
-            const mobileSignInLink = document.getElementById('mobileSignInLink');
-            
-            // Create mobile avatar container
-            const mobileAvatarContainer = document.createElement('div');
-            mobileAvatarContainer.className = 'mobile-avatar-container';
-            
-            // Create user info section
-            const userInfo = document.createElement('div');
-            userInfo.className = 'mobile-user-info';
-            
-            const avatar = document.createElement('div');
-            avatar.className = 'mobile-user-avatar';
-            
-            const avatarImg = document.createElement('img');
-            avatarImg.src = this.userProfile.photoURL;
-            avatarImg.alt = this.userProfile.displayName || 'User';
-            avatarImg.onerror = function() {
-                const name = this.alt || 'User';
-                const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
-                this.style.display = 'none';
-                this.parentElement.textContent = initials;
-                this.parentElement.style.background = 'linear-gradient(135deg, #4285f4, #34a853)';
-                this.parentElement.style.display = 'flex';
-                this.parentElement.style.alignItems = 'center';
-                this.parentElement.style.justifyContent = 'center';
-                this.parentElement.style.color = '#fff';
-                this.parentElement.style.fontWeight = '600';
-            };
-            avatar.appendChild(avatarImg);
-            
-            const userDetails = document.createElement('div');
-            userDetails.className = 'mobile-user-details';
-            
-            const userName = document.createElement('div');
-            userName.className = 'mobile-user-name';
-            userName.textContent = this.userProfile.displayName || 'User';
-            
-            const userEmail = document.createElement('div');
-            userEmail.className = 'mobile-user-email';
-            userEmail.textContent = this.userProfile.email || '';
-            
-            userDetails.appendChild(userName);
-            userDetails.appendChild(userEmail);
-            
-            userInfo.appendChild(avatar);
-            userInfo.appendChild(userDetails);
-            
-            // Create mobile menu items
-            const menuItems = document.createElement('div');
-            menuItems.className = 'mobile-nav-links';
-            menuItems.innerHTML = `
-                <a href="https://aditya-cmd-max.github.io/dashboard" class="mobile-nav-link">
-                    <i class="fas fa-tachometer-alt"></i>
-                    Dashboard
-                </a>
-                <a href="https://aditya-cmd-max.github.io/profile" class="mobile-nav-link">
-                    <i class="fas fa-user"></i>
-                    My Profile
-                </a>
-                <div class="mobile-nav-link logout-btn" id="mobileLogoutBtn">
-                    <i class="fas fa-sign-out-alt"></i>
-                    Sign Out
-                </div>
-            `;
-            
-            mobileAvatarContainer.appendChild(userInfo);
-            mobileAvatarContainer.appendChild(menuItems);
-            
-            // Insert before the sign in link or at the end
-            if (mobileSignInLink) {
-                mobileNav.insertBefore(mobileAvatarContainer, mobileSignInLink);
-            } else {
-                const themeToggle = mobileNav.querySelector('.mobile-theme-toggle');
-                if (themeToggle) {
-                    mobileNav.insertBefore(mobileAvatarContainer, themeToggle);
-                } else {
-                    mobileNav.appendChild(mobileAvatarContainer);
-                }
-            }
-            
-            // Add logout handler for mobile
-            const mobileLogoutBtn = document.getElementById('mobileLogoutBtn');
-            if (mobileLogoutBtn) {
-                mobileLogoutBtn.addEventListener('click', async (e) => {
-                    e.preventDefault();
-                    try {
-                        await this.logout();
-                        window.location.reload();
-                    } catch (error) {
-                        console.error('Mobile logout error:', error);
-                    }
-                });
-            }
-        };
-        
-        // Update the auth state listener to include mobile avatar
-        const originalSetupAuthListener = window.ReverbitAuth.setupAuthListener;
-        window.ReverbitAuth.setupAuthListener = function() {
-            originalSetupAuthListener.call(this);
-            
-            // Override the onAuthStateChanged callback
-            const originalAuthCallback = this.auth.onAuthStateChanged;
-            this.auth.onAuthStateChanged = async (user) => {
-                if (user) {
-                    await this.loadUserProfile();
-                    
-                    // Add desktop avatar
-                    this.addOrUpdateProfileAvatar();
-                    
-                    // Add mobile avatar
-                    this.addMobileAvatar();
-                    
-                    localStorage.setItem('reverbit_user', JSON.stringify({
-                        uid: user.uid,
-                        email: user.email,
-                        displayName: user.displayName,
-                        photoURL: user.photoURL
-                    }));
-                } else {
-                    this.user = null;
-                    this.userProfile = null;
-                    
-                    // Remove both avatars
-                    this.removeProfileAvatar();
-                    
-                    // Remove mobile avatar manually
-                    const mobileAvatarContainer = document.querySelector('.mobile-avatar-container');
-                    if (mobileAvatarContainer && mobileAvatarContainer.parentNode) {
-                        mobileAvatarContainer.parentNode.removeChild(mobileAvatarContainer);
-                    }
-                    
-                    // Update body class
-                    document.body.classList.remove('user-signed-in');
-                    
-                    localStorage.removeItem('reverbit_user');
-                }
-            };
-        };
+            addDesktopAvatar(user);
+            addMobileAvatar(user);
+        }
     }
 }
 
-// Initialize the override when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    // Wait for auth.js to load
-    const checkAuthJS = setInterval(() => {
-        if (typeof window.ReverbitAuth !== 'undefined') {
-            clearInterval(checkAuthJS);
-            
-            // Override the avatar placement
-            overrideAuthJSAvatarPlacement();
-            
-            // Initialize auth
-            window.ReverbitAuth.init().then(() => {
-                // Check if user is already signed in
-                const user = window.ReverbitAuth.getUser();
-                if (user) {
-                    // Add class to body
-                    document.body.classList.add('user-signed-in');
-                    
-                    // Ensure avatars are added
-                    window.ReverbitAuth.addOrUpdateProfileAvatar();
-                    window.ReverbitAuth.addMobileAvatar();
-                }
-            }).catch(error => {
-                console.error('Auth init error:', error);
-            });
-        }
-    }, 100);
+// Add desktop avatar
+function addDesktopAvatar(user) {
+    const desktopNav = document.querySelector('.desktop-nav');
+    if (!desktopNav) return;
     
-    // ... existing DOMContentLoaded code ...
+    // Remove existing avatar
+    removeDesktopAvatar();
+    
+    // Create avatar container
+    const avatarContainer = document.createElement('div');
+    avatarContainer.className = 'navbar-avatar-container';
+    avatarContainer.id = 'desktopAvatar';
+    
+    // Create avatar button
+    const avatarBtn = document.createElement('button');
+    avatarBtn.className = 'reverbit-profile-avatar';
+    avatarBtn.setAttribute('aria-label', 'User profile menu');
+    avatarBtn.setAttribute('title', 'Profile menu');
+    
+    // Create avatar image
+    const avatarImg = document.createElement('img');
+    avatarImg.className = 'reverbit-avatar-img';
+    
+    // Set image source
+    if (user.photoURL) {
+        avatarImg.src = user.photoURL;
+        avatarImg.alt = user.displayName || 'User';
+    } else {
+        const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+        const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+        avatarBtn.textContent = initials;
+        avatarBtn.style.background = 'linear-gradient(135deg, #4285f4, #34a853)';
+        avatarBtn.style.color = '#fff';
+        avatarBtn.style.fontWeight = '600';
+        avatarBtn.style.fontSize = '14px';
+    }
+    
+    avatarImg.onerror = function() {
+        const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+        const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+        this.style.display = 'none';
+        this.parentElement.textContent = initials;
+        this.parentElement.style.background = 'linear-gradient(135deg, #4285f4, #34a853)';
+        this.parentElement.style.color = '#fff';
+        this.parentElement.style.fontWeight = '600';
+        this.parentElement.style.fontSize = '14px';
+    };
+    
+    if (user.photoURL) {
+        avatarBtn.appendChild(avatarImg);
+    }
+    
+    // Add click handler
+    avatarBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (window.ReverbitAuth && window.ReverbitAuth.toggleProfilePopup) {
+            window.ReverbitAuth.toggleProfilePopup(e);
+        } else {
+            // Fallback: Redirect to dashboard
+            window.location.href = 'https://aditya-cmd-max.github.io/dashboard';
+        }
+    });
+    
+    avatarContainer.appendChild(avatarBtn);
+    
+    // Find sign in button
+    const signInButton = document.getElementById('signInButton');
+    
+    // Insert avatar before sign in button
+    if (signInButton) {
+        desktopNav.insertBefore(avatarContainer, signInButton);
+    } else {
+        // Fallback: insert before theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            desktopNav.insertBefore(avatarContainer, themeToggle);
+        } else {
+            desktopNav.appendChild(avatarContainer);
+        }
+    }
+}
+
+// Remove desktop avatar
+function removeDesktopAvatar() {
+    const existingAvatar = document.getElementById('desktopAvatar');
+    if (existingAvatar && existingAvatar.parentNode) {
+        existingAvatar.parentNode.removeChild(existingAvatar);
+    }
+}
+
+// Add mobile avatar
+function addMobileAvatar(user) {
+    const mobileNav = document.getElementById('mobileNav');
+    if (!mobileNav) return;
+    
+    // Remove existing mobile avatar
+    removeMobileAvatar();
+    
+    // Create mobile avatar container
+    const mobileAvatarContainer = document.createElement('div');
+    mobileAvatarContainer.className = 'mobile-avatar-container';
+    mobileAvatarContainer.id = 'mobileAvatar';
+    
+    // Create user info
+    const userInfo = document.createElement('div');
+    userInfo.className = 'mobile-user-info';
+    
+    // Avatar
+    const avatarDiv = document.createElement('div');
+    avatarDiv.className = 'mobile-user-avatar';
+    
+    if (user.photoURL) {
+        const avatarImg = document.createElement('img');
+        avatarImg.src = user.photoURL;
+        avatarImg.alt = user.displayName || 'User';
+        avatarImg.onerror = function() {
+            const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+            const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+            this.style.display = 'none';
+            this.parentElement.textContent = initials;
+        };
+        avatarDiv.appendChild(avatarImg);
+    } else {
+        const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+        const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+        avatarDiv.textContent = initials;
+    }
+    
+    // User details
+    const userDetails = document.createElement('div');
+    userDetails.className = 'mobile-user-details';
+    
+    const userName = document.createElement('div');
+    userName.className = 'mobile-user-name';
+    userName.textContent = user.displayName || user.email?.split('@')[0] || 'User';
+    
+    const userEmail = document.createElement('div');
+    userEmail.className = 'mobile-user-email';
+    userEmail.textContent = user.email || '';
+    
+    userDetails.appendChild(userName);
+    userDetails.appendChild(userEmail);
+    
+    userInfo.appendChild(avatarDiv);
+    userInfo.appendChild(userDetails);
+    
+    // Add mobile menu items
+    const menuItems = document.createElement('div');
+    menuItems.className = 'mobile-nav-links';
+    menuItems.innerHTML = `
+        <a href="https://aditya-cmd-max.github.io/dashboard" class="mobile-nav-link">
+            <i class="fas fa-tachometer-alt"></i>
+            Dashboard
+        </a>
+        <button class="mobile-logout-btn" id="mobileLogoutBtn">
+            <i class="fas fa-sign-out-alt"></i>
+            Sign Out
+        </button>
+    `;
+    
+    mobileAvatarContainer.appendChild(userInfo);
+    mobileAvatarContainer.appendChild(menuItems);
+    
+    // Find mobile sign in link
+    const mobileSignInLink = document.getElementById('mobileSignInLink');
+    
+    // Insert avatar container
+    if (mobileSignInLink) {
+        mobileNav.insertBefore(mobileAvatarContainer, mobileSignInLink);
+    } else {
+        const themeToggle = mobileNav.querySelector('.mobile-theme-toggle');
+        if (themeToggle) {
+            mobileNav.insertBefore(mobileAvatarContainer, themeToggle);
+        } else {
+            mobileNav.insertBefore(mobileAvatarContainer, mobileNav.querySelector('.btn-filled'));
+        }
+    }
+    
+    // Add logout handler
+    const mobileLogoutBtn = document.getElementById('mobileLogoutBtn');
+    if (mobileLogoutBtn) {
+        mobileLogoutBtn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            try {
+                if (window.ReverbitAuth && window.ReverbitAuth.logout) {
+                    await window.ReverbitAuth.logout();
+                }
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        });
+    }
+}
+
+// Remove mobile avatar
+function removeMobileAvatar() {
+    const existingMobileAvatar = document.getElementById('mobileAvatar');
+    if (existingMobileAvatar && existingMobileAvatar.parentNode) {
+        existingMobileAvatar.parentNode.removeChild(existingMobileAvatar);
+    }
+}
+
+// Initialize avatar system when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Wait a bit for auth.js to load
+    setTimeout(() => {
+        initAvatarSystem();
+    }, 500);
 });
-  
+      
+      
   </script>
   
   
