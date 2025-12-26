@@ -20,6 +20,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+  
+    <script src="https://aditya-cmd-max.github.io/js/auth.js"></script>
+    
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -447,6 +456,36 @@
             border-radius: var(--md-radius-pill);
         }
 
+        /* Profile Avatar Button - ADDED FROM HOMEPAGE */
+        .profile-avatar-button {
+            width: 36px !important;
+            height: 36px !important;
+            border-radius: 50% !important;
+            border: 2px solid var(--md-primary, #1a73e8) !important;
+            cursor: pointer !important;
+            background: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            overflow: hidden !important;
+            transition: transform 0.2s ease !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0;
+        }
+
+        .profile-avatar-button:hover {
+            transform: scale(1.1) !important;
+            box-shadow: 0 2px 8px rgba(var(--md-primary-rgb, 26, 115, 232), 0.3) !important;
+        }
+
+        .profile-avatar-img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+        }
+
         /* Theme Toggle Button */
         .theme-toggle {
             background: transparent;
@@ -464,7 +503,7 @@
             background: var(--md-surface-variant);
         }
 
-        /* Mobile Menu Button */
+        /* Mobile Menu Button - UPDATED FOR HAMBURGER/CROSS */
         .mobile-menu-btn {
             display: none;
             background: transparent;
@@ -478,11 +517,41 @@
             justify-content: center;
             transition: var(--md-transition);
             flex-shrink: 0;
+            position: relative;
         }
 
         .mobile-menu-btn:hover {
             background: var(--md-surface-variant);
+        }
+
+        /* Hamburger and Cross Icons - ADDED FROM HOMEPAGE */
+        .hamburger-icon, .cross-icon {
+            position: absolute;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .hamburger-icon {
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+
+        .cross-icon {
+            opacity: 0;
+            transform: rotate(-90deg);
+        }
+
+        .mobile-menu-btn.active {
+            background: var(--md-primary-container);
+        }
+
+        .mobile-menu-btn.active .hamburger-icon {
+            opacity: 0;
             transform: rotate(90deg);
+        }
+
+        .mobile-menu-btn.active .cross-icon {
+            opacity: 1;
+            transform: rotate(0deg);
         }
 
         /* Mobile Navigation */
@@ -561,6 +630,95 @@
             text-align: center;
         }
 
+        /* Mobile Profile Avatar - ADDED FROM HOMEPAGE */
+        .mobile-avatar-container {
+            display: none;
+            flex-direction: column;
+            gap: var(--md-spacing-sm);
+            padding: var(--md-spacing-md) var(--md-spacing-lg);
+            border-bottom: 1px solid var(--md-outline);
+            margin-bottom: var(--md-spacing-md);
+        }
+
+        body.user-signed-in .mobile-avatar-container {
+            display: flex;
+        }
+
+        .mobile-user-info {
+            display: flex;
+            align-items: center;
+            gap: var(--md-spacing-md);
+            padding: var(--md-spacing-sm);
+            background: var(--md-surface-variant);
+            border-radius: var(--md-radius-medium);
+            margin-bottom: var(--md-spacing-md);
+        }
+
+        .mobile-user-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--md-primary);
+            background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--md-on-primary);
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .mobile-user-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mobile-user-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .mobile-user-name {
+            font-weight: 600;
+            color: var(--md-on-surface);
+            margin-bottom: 2px;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .mobile-user-email {
+            font-size: 0.8rem;
+            color: var(--md-on-surface-variant);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .mobile-logout-btn {
+            display: flex;
+            align-items: center;
+            gap: var(--md-spacing-md);
+            background: none;
+            border: none;
+            color: var(--md-error);
+            padding: var(--md-spacing-md) var(--md-spacing-lg);
+            border-radius: var(--md-radius-medium);
+            cursor: pointer;
+            font-family: var(--md-font-heading);
+            font-size: 1rem;
+            width: 100%;
+            transition: background-color 0.2s ease;
+            margin-top: var(--md-spacing-sm);
+        }
+
+        .mobile-logout-btn:hover {
+            background: var(--md-surface-variant);
+        }
+
         /* Mobile Theme Toggle */
         .mobile-theme-toggle {
             display: flex;
@@ -588,6 +746,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        /* Show sign in button when user is signed out */
+        body:not(.user-signed-in) #signInButton {
+            display: inline-flex !important;
+        }
+
+        body:not(.user-signed-in) #mobileSignInLink {
+            display: flex !important;
+        }
+
+        /* Hide sign in button when user is signed in */
+        body.user-signed-in #signInButton {
+            display: none !important;
+        }
+
+        body.user-signed-in #mobileSignInLink {
+            display: none !important;
         }
 
         /* Hero Section */
@@ -1381,7 +1557,7 @@
             <span class="nav-name">Reverbit</span>
         </a>
 
-        <!-- Desktop Navigation Links (Right side) -->
+        <!-- Desktop Navigation Links (Right side) - UPDATED WITH PROFILE SYSTEM -->
         <div class="desktop-nav">
             <a href="https://aditya-cmd-max.github.io/reverbit/" class="nav-link">
                 <i class="fas fa-home" style="font-size: 0.9rem; margin-right: 4px;"></i>
@@ -1399,23 +1575,30 @@
                 <i class="fas fa-network-wired" style="font-size: 0.9rem; margin-right: 4px;"></i>
                 Ecosystem
             </a>
-            <a href="https://aditya-cmd-max.github.io/reverbit/authentication/signin.html" class="btn btn-filled">
+            
+            <!-- Profile Avatar Container (Will be auto-populated by auth.js) -->
+            <div id="desktopAvatar"></div>
+            
+            <!-- Sign In Button (Will be hidden when user is signed in) -->
+            <a href="https://aditya-cmd-max.github.io/signin" class="btn btn-filled" id="signInButton">
                 <i class="fas fa-sign-in-alt" style="font-size: 0.9rem; margin-right: 4px;"></i>
                 Sign In
             </a>
+            
             <!-- Theme Toggle Button -->
             <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
                 <span class="material-icons-round">dark_mode</span>
             </button>
         </div>
 
-        <!-- Mobile Menu Button -->
+        <!-- Mobile Menu Button with Hamburger/Cross - UPDATED -->
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
-            <span class="material-icons-round">menu</span>
+            <span class="material-icons-round hamburger-icon">menu</span>
+            <span class="material-icons-round cross-icon">close</span>
         </button>
     </nav>
 
-    <!-- Mobile Navigation Menu -->
+    <!-- Mobile Navigation Menu - UPDATED WITH PROFILE SYSTEM -->
     <div class="mobile-nav" id="mobileNav">
         <div class="mobile-nav-header">
             <div class="nav-brand">
@@ -1428,6 +1611,9 @@
                 <span class="material-icons-round">close</span>
             </button>
         </div>
+        
+        <!-- Mobile Avatar Container (Will be auto-populated by auth.js) -->
+        <div id="mobileAvatar"></div>
         
         <a href="https://aditya-cmd-max.github.io/reverbit/" class="mobile-nav-link">
             <i class="fas fa-home"></i>
@@ -1445,7 +1631,9 @@
             <i class="fas fa-network-wired"></i>
             Ecosystem
         </a>
-        <a href="https://aditya-cmd-max.github.io/reverbit/authentication/signin.html/" class="mobile-nav-link">
+        
+        <!-- Sign In Link for mobile (will be hidden by auth.js when user is signed in) -->
+        <a href="https://aditya-cmd-max.github.io/signin" class="mobile-nav-link" id="mobileSignInLink">
             <i class="fas fa-sign-in-alt"></i>
             Sign In
         </a>
@@ -1758,7 +1946,7 @@
                 Join thousands of users who have already discovered the power of Reverbit products. 
                 Start your journey today with our complete ecosystem of AI-powered tools.
             </p>
-            <a href="https://aditya-cmd-max.github.io/reverbit/authentication/signin.html" class="btn btn-filled hover-glow" style="background: var(--md-on-primary-container); color: var(--md-primary-container);">
+            <a href="https://aditya-cmd-max.github.io/signin" class="btn btn-filled hover-glow" style="background: var(--md-on-primary-container); color: var(--md-primary-container);">
                 <i class="fas fa-rocket" style="margin-right: 8px;"></i>
                 Get Started Free
             </a>
@@ -1842,6 +2030,221 @@
     const scrollProgress = document.getElementById('scrollProgress');
     const categoryBtns = document.querySelectorAll('.category-btn');
     const productCards = document.querySelectorAll('.product-card');
+
+    // Initialize the avatar system - ADDED FROM HOMEPAGE
+    function initAvatarSystem() {
+        // Wait for auth.js to load
+        if (typeof window.ReverbitAuth !== 'undefined') {
+            // Listen for auth state changes
+            window.ReverbitAuth.auth.onAuthStateChanged(async (user) => {
+                if (user) {
+                    // User is signed in
+                    document.body.classList.add('user-signed-in');
+                    
+                    // Add desktop avatar
+                    addDesktopAvatar(user);
+                    
+                    // Add mobile avatar
+                    addMobileAvatar(user);
+                } else {
+                    // User is signed out
+                    document.body.classList.remove('user-signed-in');
+                    
+                    // Remove avatars
+                    removeDesktopAvatar();
+                    removeMobileAvatar();
+                }
+            });
+            
+            // Initialize immediately if user is already signed in
+            if (window.ReverbitAuth.getUser()) {
+                const user = window.ReverbitAuth.getUser();
+                document.body.classList.add('user-signed-in');
+                addDesktopAvatar(user);
+                addMobileAvatar(user);
+            }
+        } else {
+            // If auth.js hasn't loaded yet, check again after a delay
+            setTimeout(initAvatarSystem, 100);
+        }
+    }
+
+    // Add desktop avatar - ADDED FROM HOMEPAGE
+    function addDesktopAvatar(user) {
+        const desktopNav = document.querySelector('.desktop-nav');
+        if (!desktopNav) return;
+        
+        removeDesktopAvatar();
+        
+        const avatarContainer = document.createElement('div');
+        avatarContainer.id = 'desktopAvatar';
+        
+        const avatarBtn = document.createElement('button');
+        avatarBtn.className = 'profile-avatar-button reverbit-profile-avatar';
+        avatarBtn.setAttribute('aria-label', 'User profile menu');
+        
+        if (user.photoURL) {
+            const avatarImg = document.createElement('img');
+            avatarImg.className = 'profile-avatar-img reverbit-avatar-img';
+            avatarImg.src = user.photoURL;
+            avatarImg.alt = user.displayName || 'User';
+            avatarImg.onerror = function() {
+                const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+                const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+                avatarBtn.textContent = initials;
+                avatarBtn.style.background = 'linear-gradient(135deg, var(--md-primary), var(--md-secondary))';
+                avatarBtn.style.color = 'var(--md-on-primary)';
+            };
+            avatarBtn.appendChild(avatarImg);
+        } else {
+            const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+            const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+            avatarBtn.textContent = initials;
+            avatarBtn.style.background = 'linear-gradient(135deg, var(--md-primary), var(--md-secondary))';
+            avatarBtn.style.color = 'var(--md-on-primary)';
+        }
+        
+        // Use auth.js popup
+        avatarBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (window.ReverbitAuth && window.ReverbitAuth.toggleProfilePopup) {
+                window.ReverbitAuth.toggleProfilePopup();
+            }
+        });
+        
+        avatarContainer.appendChild(avatarBtn);
+        
+        // Insert into navbar
+        const signInButton = document.getElementById('signInButton');
+        if (signInButton) {
+            desktopNav.insertBefore(avatarContainer, signInButton);
+        } else {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            if (themeToggleBtn) {
+                desktopNav.insertBefore(avatarContainer, themeToggleBtn);
+            }
+        }
+    }
+
+    // Remove desktop avatar - ADDED FROM HOMEPAGE
+    function removeDesktopAvatar() {
+        const existingAvatar = document.getElementById('desktopAvatar');
+        if (existingAvatar && existingAvatar.parentNode) {
+            existingAvatar.parentNode.removeChild(existingAvatar);
+        }
+    }
+
+    // Add mobile avatar - ADDED FROM HOMEPAGE
+    function addMobileAvatar(user) {
+        const mobileNav = document.getElementById('mobileNav');
+        if (!mobileNav) return;
+        
+        // Remove existing mobile avatar
+        removeMobileAvatar();
+        
+        // Create mobile avatar container
+        const mobileAvatarContainer = document.createElement('div');
+        mobileAvatarContainer.className = 'mobile-avatar-container';
+        mobileAvatarContainer.id = 'mobileAvatar';
+        
+        // Create user info
+        const userInfo = document.createElement('div');
+        userInfo.className = 'mobile-user-info';
+        
+        // Avatar
+        const avatarDiv = document.createElement('div');
+        avatarDiv.className = 'mobile-user-avatar';
+        
+        if (user.photoURL) {
+            const avatarImg = document.createElement('img');
+            avatarImg.src = user.photoURL;
+            avatarImg.alt = user.displayName || 'User';
+            avatarImg.onerror = function() {
+                const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+                const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+                this.style.display = 'none';
+                this.parentElement.textContent = initials;
+            };
+            avatarDiv.appendChild(avatarImg);
+        } else {
+            const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+            const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+            avatarDiv.textContent = initials;
+        }
+        
+        // User details
+        const userDetails = document.createElement('div');
+        userDetails.className = 'mobile-user-details';
+        
+        const userName = document.createElement('div');
+        userName.className = 'mobile-user-name';
+        userName.textContent = user.displayName || user.email?.split('@')[0] || 'User';
+        
+        const userEmail = document.createElement('div');
+        userEmail.className = 'mobile-user-email';
+        userEmail.textContent = user.email || '';
+        
+        userDetails.appendChild(userName);
+        userDetails.appendChild(userEmail);
+        
+        userInfo.appendChild(avatarDiv);
+        userInfo.appendChild(userDetails);
+        
+        // Add mobile menu items
+        const menuItems = document.createElement('div');
+        menuItems.className = 'mobile-nav-links';
+        menuItems.innerHTML = `
+            <a href="https://aditya-cmd-max.github.io/dashboard" class="mobile-nav-link">
+                <i class="fas fa-tachometer-alt"></i>
+                Dashboard
+            </a>
+            <button class="mobile-logout-btn" id="mobileLogoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                Sign Out
+            </button>
+        `;
+        
+        mobileAvatarContainer.appendChild(userInfo);
+        mobileAvatarContainer.appendChild(menuItems);
+        
+        // Find mobile sign in link
+        const mobileSignInLink = document.getElementById('mobileSignInLink');
+        
+        // Insert avatar container
+        if (mobileSignInLink) {
+            mobileNav.insertBefore(mobileAvatarContainer, mobileSignInLink);
+        } else {
+            const themeToggle = mobileNav.querySelector('.mobile-theme-toggle');
+            if (themeToggle) {
+                mobileNav.insertBefore(mobileAvatarContainer, themeToggle);
+            } else {
+                mobileNav.insertBefore(mobileAvatarContainer, mobileNav.querySelector('.btn-filled'));
+            }
+        }
+        
+        // Add logout handler
+        const mobileLogoutBtn = document.getElementById('mobileLogoutBtn');
+        if (mobileLogoutBtn) {
+            mobileLogoutBtn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                try {
+                    if (window.ReverbitAuth && window.ReverbitAuth.logout) {
+                        await window.ReverbitAuth.logout();
+                    }
+                } catch (error) {
+                    console.error('Logout error:', error);
+                }
+            });
+        }
+    }
+
+    // Remove mobile avatar - ADDED FROM HOMEPAGE
+    function removeMobileAvatar() {
+        const existingMobileAvatar = document.getElementById('mobileAvatar');
+        if (existingMobileAvatar && existingMobileAvatar.parentNode) {
+            existingMobileAvatar.parentNode.removeChild(existingMobileAvatar);
+        }
+    }
 
     // Interactive cursor - FIXED: Immediate initialization
     function initInteractiveCursor() {
@@ -1948,23 +2351,59 @@
         }
     }
 
-    // Mobile Navigation
+    // Mobile Navigation with Hamburger/Cross Toggle - UPDATED
     mobileMenuBtn.addEventListener('click', () => {
         mobileNav.classList.add('active');
+        mobileMenuBtn.classList.add('active'); // Add active class to button
         document.body.style.overflow = 'hidden';
+        
+        // Update aria-label for accessibility
+        mobileMenuBtn.setAttribute('aria-label', 'Close menu');
     });
 
     mobileNavClose.addEventListener('click', () => {
         mobileNav.classList.remove('active');
+        mobileMenuBtn.classList.remove('active'); // Remove active class from button
         document.body.style.overflow = 'auto';
+        
+        // Update aria-label for accessibility
+        mobileMenuBtn.setAttribute('aria-label', 'Open menu');
     });
 
     // Close mobile nav when clicking on links
     mobileNav.querySelectorAll('.mobile-nav-link').forEach(link => {
         link.addEventListener('click', () => {
             mobileNav.classList.remove('active');
+            mobileMenuBtn.classList.remove('active'); // Remove active class from button
             document.body.style.overflow = 'auto';
+            
+            // Update aria-label for accessibility
+            mobileMenuBtn.setAttribute('aria-label', 'Open menu');
         });
+    });
+
+    // Close mobile nav when clicking outside (optional enhancement)
+    document.addEventListener('click', (e) => {
+        if (mobileNav.classList.contains('active') && 
+            !mobileNav.contains(e.target) && 
+            !mobileMenuBtn.contains(e.target)) {
+            mobileNav.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            mobileMenuBtn.setAttribute('aria-label', 'Open menu');
+        }
+    });
+
+    // Handle window resize - reset menu state when switching to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) {
+            if (mobileNav.classList.contains('active')) {
+                mobileNav.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                mobileMenuBtn.setAttribute('aria-label', 'Open menu');
+            }
+        }
     });
 
     // Category Filter
@@ -2017,7 +2456,9 @@
                 // Close mobile nav if open
                 if (mobileNav.classList.contains('active')) {
                     mobileNav.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
                     document.body.style.overflow = 'auto';
+                    mobileMenuBtn.setAttribute('aria-label', 'Open menu');
                 }
             });
         });
@@ -2134,6 +2575,7 @@
     function initializeApp() {
         // First: Load theme and essential UI
         loadThemePreference();
+        initAvatarSystem(); // Initialize avatar system
         initInteractiveCursor();
         initScrollProgress();
         initImageFallbacks();
@@ -2187,7 +2629,9 @@
     window.addEventListener('resize', () => {
         if (window.innerWidth > 1024 && mobileNav.classList.contains('active')) {
             mobileNav.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
             document.body.style.overflow = 'auto';
+            mobileMenuBtn.setAttribute('aria-label', 'Open menu');
         }
         
         if (window.innerWidth <= 768) {
@@ -2201,7 +2645,9 @@
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
             mobileNav.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
             document.body.style.overflow = 'auto';
+            mobileMenuBtn.setAttribute('aria-label', 'Open menu');
         }
         
         if (e.shiftKey && e.key === 'T') {
