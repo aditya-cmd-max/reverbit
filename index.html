@@ -16,19 +16,29 @@
   
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Circuit • Reverbit Blogs</title>
-    <meta name="description" content="Reverbit is an innovative Indian educational platform offering engaging science facts, interactive quizzes, and inspiring blogs to make learning fun and accessible for everyone.">
+    <title>Reverbit - For Every Bit.</title>
+       <meta name="description" content="Reverbit is India's next-gen AI tools platform offering amazing AI projects crafted for curious minds.It is operated by Aditya Jha.">
   
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+
+
+  
+  <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+  
+  <script src="https://aditya-cmd-max.github.io/js/auth.js"></script>
+     
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
   
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
@@ -40,71 +50,60 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
-
-    <!-- Auth System -->
-    <script src="https://aditya-cmd-max.github.io/js/auth.js"></script>
   
-    <meta name="keywords" content="Reverbit, The Circuit, Blogs, Educational Articles, Science Facts, Learning Platform, Aditya Jha, Indian Education, STEM Learning">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Aditya Jha">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="2 days">
-    <meta name="distribution" content="global">     
+    <meta name="keywords" content="Clover AI, Rverbit, Reverbit, India, AI, Innovation, Artificial Intelligence, Future AI, AI tools, AI innovations, AI future, next-gen AI, machine learning, future technology, exonova, aditya jha">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="reverbit">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="2 days">
+  <meta name="distribution" content="global">     
          
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aditya-cmd-max.github.io/reverbit/circuit">
-    <meta property="og:title" content="The Circuit • Reverbit Blogs">
-    <meta property="og:description" content="Dive into educational articles, science facts, and AI-powered insights with Reverbit Blogs. A place for curious minds to explore knowledge.">
-    <meta property="og:image" content="https://aditya-cmd-max.github.io/reverbit/blogyy.png">
-    
-    <!-- Twitter Card -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://aditya-cmd-max.github.io/reverbit/circuit">
-    <meta property="twitter:title" content="The Circuit • Reverbit Premium Educational Blogs">
-    <meta property="twitter:description" content="Dive into educational articles, science facts, and AI-powered insights with Reverbit Blogs. A place for curious minds to explore knowledge.">
-    <meta property="twitter:image" content="https://aditya-cmd-max.github.io/reverbit/blogyy.png">
+         <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aditya-cmd-max.github.io/reverbit/">
+  <meta property="og:title" content="Reverbit - AI-Powered Education Revolution by Aditya Jha">
+  <meta property="og:description" content="Reverbit is India's next-gen educational platform offering amazing science facts, engaging quizzes, and motivational content crafted for curious minds.">
+  <meta property="og:image" content="https://aditya-cmd-max.github.io/reverbit/logo-insvg.svg">
+  
          
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://aditya-cmd-max.github.io/reverbit/circuit">
          
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">     
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "The Circuit - Reverbit Blogs",
-      "url": "https://aditya-cmd-max.github.io/reverbit/circuit",
-      "description": "A collection of educational articles, science facts, and insights on technology and personal development",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Reverbit",
-        "url": "https://aditya-cmd-max.github.io/reverbit/"
-      },
-      "mainEntity": {
-        "@type": "ItemList",
-        "numberOfItems": 17,
-        "itemListOrder": "Descending",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "Article",
-              "name": "Being Me — The Quiet Strength",
-              "url": "https://aditya-cmd-max.github.io/reverbit/circuit/blog17"
-            }
-          }
-        ]
-      }
-    }
-    </script>
+         
+         <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://aditya-cmd-max.github.io/reverbit/">
+  <meta property="twitter:title" content="Reverbit - AI-Powered Education Revolution by Aditya Jha">
+  <meta property="twitter:description" content="Reverbit is India's next-gen educational platform offering amazing science facts, engaging quizzes, and motivational content crafted for curious minds..">
+  <meta property="twitter:image" content="https://aditya-cmd-max.github.io/reverbit/logo-insvg.svg">
+         
+         
+         
+         <!-- Canonical URL -->
+    <link rel="canonical" href="https://aditya-cmd-max.github.io/reverbit">
+         
+         
+         
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">     
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Reverbit",
+  "url": "https://aditya-cmd-max.github.io/reverbit/",
+  "logo": "https://aditya-cmd-max.github.io/reverbit/logo-nobg.png",
+  "sameAs": [
+    "https://twitter.com/yourprofile",
+    "https://www.linkedin.com/company/yourprofile",
+    "https://www.instagram.com/yourprofile"
+  ],
+  "description": "Reverbit is a forward-thinking platform dedicated to spreading knowledge, ideas, and innovation in a simple and engaging way. Built with the vision of making education practical and accessible, Exonova focuses on delivering high-quality content across science, technology, and everyday learning. Our mission is to inspire curiosity, simplify complex concepts, and empower learners of all ages with knowledge that truly matters.",
+  "founder": {
+    "@type": "Person",
+    "name": "Aditya Jha",
+    "url": "https://aditya-cmd-max.github.io/reverbit/"
+  },
+  "foundingDate": "2025",
+  "foundingLocation": "India"
+}
+</script>
 
   
     <style>
@@ -169,16 +168,6 @@
             --md-font-logo: 'Playfair Display', serif;
             --md-font-heading: 'Inter', sans-serif;
             --md-font-body: 'Lora', serif;
-            
-            /* Blog Specific */
-            --blog-badge-new: #ff4444;
-            --blog-badge-featured: #ff9800;
-            --blog-category-science: #4285f4;
-            --blog-category-education: #34a853;
-            --blog-category-technology: #9c27b0;
-            --blog-category-history: #ff5722;
-            --blog-category-personal: #00bcd4;
-            --blog-number: #673ab7;
         }
 
         /* Dark Theme */
@@ -202,8 +191,6 @@
             --md-elevation-1: 0 1px 2px rgba(0,0,0,0.3), 0 1px 3px 1px rgba(0,0,0,0.15);
             --md-elevation-2: 0 1px 2px rgba(0,0,0,0.3), 0 2px 6px 2px rgba(0,0,0,0.15);
             --md-elevation-3: 0 1px 3px 1px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.3);
-            --blog-badge-new: #ff6666;
-            --blog-badge-featured: #ffb74d;
         }
 
         /* Base Styles */
@@ -215,7 +202,6 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 100px;
         }
 
         body {
@@ -472,7 +458,7 @@
             transform: translateX(-50%);
             width: 24px;
             height: 3px;
-            background: linear-gradient(90deg, var(--md-primary), var(--md-secondary));
+            background: var(--md-gradient-1);
             border-radius: var(--md-radius-pill);
         }
 
@@ -506,24 +492,151 @@
             display: block !important;
         }
 
-        /* Show/Hide Sign In Button Logic */
-        body:not(.user-signed-in) #signInButton {
-            display: inline-flex !important;
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            color: var(--md-on-surface);
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--md-transition);
+            flex-shrink: 0;
+            background: var(--md-surface-variant);
         }
 
-        body:not(.user-signed-in) #mobileSignInLink {
-            display: flex !important;
+        /* Mobile Menu Button - UPDATED FOR HAMBURGER/CROSS */
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--md-on-surface);
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            transition: var(--md-transition);
+            flex-shrink: 0;
+            position: relative;
         }
 
-        body.user-signed-in #signInButton {
-            display: none !important;
+        .mobile-menu-btn:hover {
+            background: var(--md-surface-variant);
         }
 
-        body.user-signed-in #mobileSignInLink {
-            display: none !important;
+        /* Hamburger and Cross Icons */
+        .hamburger-icon, .cross-icon {
+            position: absolute;
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
-        /* Mobile User Info */
+        .hamburger-icon {
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+
+        .cross-icon {
+            opacity: 0;
+            transform: rotate(-90deg);
+        }
+
+        .mobile-menu-btn.active {
+            background: var(--md-primary-container);
+        }
+
+        .mobile-menu-btn.active .hamburger-icon {
+            opacity: 0;
+            transform: rotate(90deg);
+        }
+
+        .mobile-menu-btn.active .cross-icon {
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+
+        /* Mobile Navigation - IMPROVED */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--md-surface);
+            z-index: 999;
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: var(--md-spacing-xxl) var(--md-spacing-xl);
+            display: flex;
+            flex-direction: column;
+            gap: var(--md-spacing-md);
+            overflow-y: auto;
+        }
+
+        .mobile-nav.active {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--md-spacing-xl);
+            padding-bottom: var(--md-spacing-lg);
+            border-bottom: 1px solid var(--md-outline);
+        }
+
+        .mobile-nav-close {
+            background: transparent;
+            border: none;
+            color: var(--md-on-surface);
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--md-transition);
+        }
+
+        .mobile-nav-close:hover {
+            background: var(--md-surface-variant);
+            transform: rotate(90deg);
+        }
+
+        .mobile-nav-link {
+            color: var(--md-on-surface);
+            text-decoration: none;
+            font-family: var(--md-font-heading);
+            font-size: 1.25rem;
+            font-weight: 500;
+            padding: var(--md-spacing-md) var(--md-spacing-lg);
+            border-radius: var(--md-radius-medium);
+            transition: var(--md-transition);
+            display: flex;
+            align-items: center;
+            gap: var(--md-spacing-md);
+        }
+
+        .mobile-nav-link:hover,
+        .mobile-nav-link.active {
+            background: var(--md-surface-variant);
+            color: var(--md-primary);
+            transform: translateX(8px);
+        }
+
+        .mobile-nav-link i {
+            width: 24px;
+            text-align: center;
+        }
+
+        /* Mobile Profile Avatar */
         .mobile-avatar-container {
             display: none;
             flex-direction: column;
@@ -612,120 +725,6 @@
             background: var(--md-surface-variant);
         }
 
-        /* Theme Toggle Button */
-        .theme-toggle {
-            background: transparent;
-            border: none;
-            color: var(--md-on-surface);
-            cursor: pointer;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--md-transition);
-            flex-shrink: 0;
-            background: var(--md-surface-variant);
-        }
-
-        /* Mobile Menu Button - IMPROVED */
-        .mobile-menu-btn {
-            display: none;
-            background: transparent;
-            border: none;
-            color: var(--md-on-surface);
-            cursor: pointer;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            align-items: center;
-            justify-content: center;
-            transition: var(--md-transition);
-            flex-shrink: 0;
-        }
-
-        .mobile-menu-btn:hover {
-            background: var(--md-surface-variant);
-            transform: rotate(90deg);
-        }
-
-        /* Mobile Navigation - IMPROVED */
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--md-surface);
-            z-index: 999;
-            transform: translateX(-100%);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            padding: var(--md-spacing-xxl) var(--md-spacing-xl);
-            display: flex;
-            flex-direction: column;
-            gap: var(--md-spacing-md);
-            overflow-y: auto;
-        }
-
-        .mobile-nav.active {
-            transform: translateX(0);
-        }
-
-        .mobile-nav-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: var(--md-spacing-xl);
-            padding-bottom: var(--md-spacing-lg);
-            border-bottom: 1px solid var(--md-outline);
-        }
-
-        .mobile-nav-close {
-            background: transparent;
-            border: none;
-            color: var(--md-on-surface);
-            cursor: pointer;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--md-transition);
-        }
-
-        .mobile-nav-close:hover {
-            background: var(--md-surface-variant);
-            transform: rotate(90deg);
-        }
-
-        .mobile-nav-link {
-            color: var(--md-on-surface);
-            text-decoration: none;
-            font-family: var(--md-font-heading);
-            font-size: 1.25rem;
-            font-weight: 500;
-            padding: var(--md-spacing-md) var(--md-spacing-lg);
-            border-radius: var(--md-radius-medium);
-            transition: var(--md-transition);
-            display: flex;
-            align-items: center;
-            gap: var(--md-spacing-md);
-        }
-
-        .mobile-nav-link:hover,
-        .mobile-nav-link.active {
-            background: var(--md-surface-variant);
-            color: var(--md-primary);
-            transform: translateX(8px);
-        }
-
-        .mobile-nav-link i {
-            width: 24px;
-            text-align: center;
-        }
-
         /* Mobile Theme Toggle */
         .mobile-theme-toggle {
             display: flex;
@@ -757,7 +756,7 @@
 
         /* Hero Section */
         .hero-section {
-            padding: 180px var(--md-spacing-xl) var(--md-spacing-xxl);
+            padding: 160px var(--md-spacing-xl) var(--md-spacing-xl);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -803,6 +802,24 @@
             gap: var(--md-spacing-md);
             justify-content: center;
             flex-wrap: wrap;
+        }
+
+        /* NEW: Interactive typing effect */
+        .typing-text {
+            display: inline-block;
+            position: relative;
+        }
+
+        .typing-text::after {
+            content: '|';
+            position: absolute;
+            right: -8px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
         }
 
         /* Buttons */
@@ -853,7 +870,7 @@
             padding: 0 var(--md-spacing-xl) var(--md-spacing-xxl);
         }
 
-        /* Section Common Styles */
+        /* Section Common Styles - IMPROVED HEADERS */
         .section {
             margin-bottom: var(--md-spacing-xxl);
             position: relative;
@@ -896,59 +913,54 @@
             line-height: 1.6;
         }
 
-        /* Search Section */
-        .search-section {
-            max-width: 800px;
-            margin: var(--md-spacing-xxl) auto;
-            position: relative;
-        }
-
-        .search-container {
-            position: relative;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: var(--md-spacing-lg) var(--md-spacing-xl) var(--md-spacing-lg) 64px;
-            border: 1px solid var(--md-outline);
+        /* NEW: All Tools Button */
+        .all-tools-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--md-spacing-sm);
+            margin: var(--md-spacing-xl) auto 0;
+            padding: var(--md-spacing-md) var(--md-spacing-xl);
+            background: transparent;
+            color: var(--md-primary);
+            border: 2px solid var(--md-primary);
             border-radius: var(--md-radius-pill);
-            background: var(--md-surface);
-            color: var(--md-on-surface);
             font-family: var(--md-font-heading);
             font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
             transition: var(--md-transition);
-            box-shadow: var(--md-elevation-1);
+            cursor: pointer;
         }
 
-        .search-input:focus {
-            outline: none;
-            border-color: var(--md-primary);
-            box-shadow: 0 0 0 3px var(--md-primary-container), var(--md-elevation-2);
+        .all-tools-btn:hover {
+            background: var(--md-primary);
+            color: var(--md-on-primary);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--md-elevation-3);
         }
 
-        .search-icon {
-            position: absolute;
-            left: var(--md-spacing-xl);
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--md-primary);
-            font-size: 1.25rem;
+        .all-tools-btn i {
+            transition: transform 0.3s ease;
         }
 
-        /* Blog Stats */
-        .blog-stats {
+        .all-tools-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: var(--md-spacing-lg);
-            margin: var(--md-spacing-xxl) 0;
+            margin-top: var(--md-spacing-xl);
         }
 
         .stat-card {
-            background: var(--md-surface);
-            border: 1px solid var(--md-outline);
-            border-radius: var(--md-radius-large);
-            padding: var(--md-spacing-xl);
             text-align: center;
+            padding: var(--md-spacing-xl);
+            background: var(--md-surface);
+            border-radius: var(--md-radius-large);
+            border: 1px solid var(--md-outline-variant);
             transition: var(--md-transition);
             position: relative;
             overflow: hidden;
@@ -965,7 +977,7 @@
         }
 
         .stat-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-8px) scale(1.02);
             box-shadow: var(--md-elevation-3);
         }
 
@@ -982,22 +994,30 @@
 
         .stat-label {
             color: var(--md-on-surface);
-            font-size: 1.125rem;
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
             font-weight: 500;
         }
 
-        /* Featured Blog */
-        .featured-blog {
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--md-spacing-lg);
+            margin-top: var(--md-spacing-xl);
+        }
+
+        .tool-card {
             background: var(--md-surface);
-            border: 1px solid var(--md-outline);
             border-radius: var(--md-radius-large);
             overflow: hidden;
-            margin-bottom: var(--md-spacing-xxl);
+            border: 1px solid var(--md-outline);
             transition: var(--md-transition);
+            display: flex;
+            flex-direction: column;
             position: relative;
         }
 
-        .featured-blog::before {
+        .tool-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -1007,20 +1027,21 @@
             background: linear-gradient(90deg, var(--md-primary), var(--md-secondary));
         }
 
-        .featured-blog:hover {
-            transform: translateY(-8px);
+        .tool-card:hover {
+            transform: translateY(-12px) scale(1.02);
             box-shadow: var(--md-elevation-3);
         }
 
-        .featured-image {
+        .tool-image {
             width: 100%;
-            height: 400px;
+            height: 200px;
             object-fit: cover;
+            background: var(--md-surface-variant);
             position: relative;
             overflow: hidden;
         }
 
-        .featured-image::after {
+        .tool-image::after {
             content: '';
             position: absolute;
             top: 0;
@@ -1030,112 +1051,389 @@
             background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.1));
         }
 
-        .featured-image img {
+        .tool-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .featured-blog:hover .featured-image img {
-            transform: scale(1.05);
+        .tool-card:hover .tool-image img {
+            transform: scale(1.1);
         }
 
-        .featured-badge {
-            position: absolute;
-            top: var(--md-spacing-lg);
-            right: var(--md-spacing-lg);
-            background: var(--blog-badge-new);
-            color: white;
-            padding: var(--md-spacing-xs) var(--md-spacing-md);
-            border-radius: var(--md-radius-pill);
-            font-weight: 600;
-            font-size: 0.875rem;
-            z-index: 2;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(255, 68, 68, 0);
-            }
-        }
-
-        .featured-content {
+        .tool-content {
             padding: var(--md-spacing-xl);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
-        .featured-title {
+        .tool-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
+            border-radius: var(--md-radius-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--md-spacing-lg);
+            color: var(--md-on-primary);
+            font-size: 1.5rem;
+            box-shadow: var(--md-elevation-1);
+            transition: var(--md-transition);
+        }
+
+        .tool-card:hover .tool-icon {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        .tool-title {
+            font-family: var(--md-font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--md-spacing-sm);
+            color: var(--md-on-surface);
+        }
+
+        .tool-description {
+            color: var(--md-on-surface-variant);
+            margin-bottom: var(--md-spacing-lg);
+            flex: 1;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .tool-actions {
+            display: flex;
+            gap: var(--md-spacing-sm);
+            margin-top: auto;
+        }
+
+        /* Mission Grid */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: var(--md-spacing-lg);
+            margin-top: var(--md-spacing-xl);
+        }
+
+        .mission-item {
+            text-align: center;
+            padding: var(--md-spacing-xl);
+            background: var(--md-surface);
+            border-radius: var(--md-radius-large);
+            border: 1px solid var(--md-outline);
+            transition: var(--md-transition);
+            position: relative;
+        }
+
+        .mission-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--md-primary), var(--md-secondary));
+            border-radius: var(--md-radius-large) var(--md-radius-large) 0 0;
+        }
+
+        .mission-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--md-elevation-3);
+        }
+
+        .mission-icon {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto var(--md-spacing-lg);
+            background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
+            border-radius: var(--md-radius-large);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--md-on-primary);
+            font-size: 1.75rem;
+            box-shadow: var(--md-elevation-2);
+            transition: var(--md-transition);
+        }
+
+        .mission-item:hover .mission-icon {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--md-spacing-lg);
+            margin-top: var(--md-spacing-xl);
+        }
+
+        .testimonial-card {
+            background: var(--md-surface);
+            padding: var(--md-spacing-xl);
+            border-radius: var(--md-radius-large);
+            border: 1px solid var(--md-outline);
+            transition: var(--md-transition);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--md-primary);
+            opacity: 0.2;
+            font-family: var(--md-font-logo);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--md-elevation-3);
+        }
+
+        .testimonial-text {
+            color: var(--md-on-surface);
+            font-style: italic;
+            margin-bottom: var(--md-spacing-lg);
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--md-spacing-md);
+        }
+
+        .author-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--md-on-primary);
+            font-weight: 600;
+            font-size: 1.25rem;
+            transition: var(--md-transition);
+        }
+
+        .testimonial-card:hover .author-avatar {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        .author-info h4 {
+            font-family: var(--md-font-heading);
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--md-on-surface);
+            margin-bottom: 2px;
+        }
+
+        .author-info p {
+            color: var(--md-on-surface-variant);
+            font-size: 0.875rem;
+        }
+
+        /* Founder Section */
+        .founder-content {
+            max-width: 800px;
+            margin: var(--md-spacing-xl) auto 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .founder-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto var(--md-spacing-lg);
+            background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--md-on-primary);
+            font-size: 3.5rem;
+            font-weight: 700;
+            overflow: hidden;
+            border: 4px solid var(--md-surface);
+            box-shadow: var(--md-elevation-3);
+            transition: var(--md-transition);
+        }
+
+        .founder-content:hover .founder-avatar {
+            transform: scale(1.05);
+            border-color: var(--md-primary);
+        }
+
+        .founder-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .founder-name {
             font-family: var(--md-font-heading);
             font-size: clamp(2rem, 3vw, 2.5rem);
             font-weight: 700;
             color: var(--md-on-surface);
             margin-bottom: var(--md-spacing-md);
-            line-height: 1.2;
         }
 
-        .featured-description {
+        .founder-description {
             color: var(--md-on-surface-variant);
-            margin-bottom: var(--md-spacing-xl);
-            font-size: 1.125rem;
+            margin-bottom: var(--md-spacing-lg);
+            font-size: 1.25rem;
             line-height: 1.6;
         }
 
-        /* Category Filter */
-        .category-filter {
+        .founder-tags {
             display: flex;
+            justify-content: center;
             flex-wrap: wrap;
             gap: var(--md-spacing-sm);
-            justify-content: center;
-            margin: var(--md-spacing-xl) 0;
+            margin-bottom: var(--md-spacing-xl);
         }
 
-        .category-btn {
-            padding: var(--md-spacing-sm) var(--md-spacing-lg);
-            border: 1px solid var(--md-outline);
-            border-radius: var(--md-radius-pill);
-            background: var(--md-surface);
+        .tag {
+            padding: var(--md-spacing-xs) var(--md-spacing-md);
+            background: var(--md-surface-variant);
             color: var(--md-on-surface);
-            font-family: var(--md-font-heading);
-            font-size: 0.95rem;
+            border-radius: var(--md-radius-pill);
+            font-size: 0.875rem;
             font-weight: 500;
+            transition: var(--md-transition);
             cursor: pointer;
+        }
+
+        .tag:hover {
+            background: var(--md-primary);
+            color: var(--md-on-primary);
+            transform: translateY(-2px) scale(1.1);
+        }
+
+        /* YouTube Section */
+        .youtube-container {
+            max-width: 800px;
+            margin: var(--md-spacing-xl) auto 0;
+            text-align: center;
+            padding: var(--md-spacing-xl);
+            background: var(--md-surface);
+            border-radius: var(--md-radius-extra-large);
+            border: 1px solid var(--md-outline);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .youtube-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--md-primary), var(--md-secondary));
+        }
+
+        .youtube-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--md-spacing-md);
+            margin-bottom: var(--md-spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .youtube-logo {
+            color: #ff0000;
+            font-size: 3rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .youtube-name {
+            font-family: var(--md-font-logo);
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .profile-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: var(--md-spacing-lg) auto;
+            background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--md-on-primary);
+            font-size: 2.5rem;
+            font-weight: 700;
+            overflow: hidden;
+            border: 4px solid var(--md-surface);
+            box-shadow: var(--md-elevation-3);
             transition: var(--md-transition);
         }
 
-        .category-btn:hover {
-            background: var(--md-surface-variant);
-            transform: translateY(-2px);
+        .youtube-container:hover .profile-image {
+            transform: scale(1.05);
+            border-color: var(--md-primary);
         }
 
-        .category-btn.active {
+        .youtube-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--md-spacing-xl);
+            margin: var(--md-spacing-lg) 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 700;
             background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
-            color: var(--md-on-primary);
-            border-color: transparent;
-            box-shadow: var(--md-elevation-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        /* Blog Grid */
-        .blogs-grid {
+        /* Axis Section */
+        .axis-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: var(--md-spacing-lg);
             margin-top: var(--md-spacing-xl);
         }
 
-        .blog-card {
+        .axis-item {
+            text-align: center;
+            padding: var(--md-spacing-xl);
             background: var(--md-surface);
-            border: 1px solid var(--md-outline);
             border-radius: var(--md-radius-large);
-            overflow: hidden;
+            border: 1px solid var(--md-outline);
             transition: var(--md-transition);
             position: relative;
         }
 
-        .blog-card::before {
+        .axis-item::before {
             content: '';
             position: absolute;
             top: 0;
@@ -1145,186 +1443,57 @@
             background: linear-gradient(90deg, var(--md-primary), var(--md-secondary));
         }
 
-        .blog-card:hover {
-            transform: translateY(-10px);
+        .axis-item:hover {
+            transform: translateY(-8px) scale(1.02);
             box-shadow: var(--md-elevation-3);
         }
 
-        .blog-image-container {
-            width: 100%;
-            height: 200px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .blog-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .blog-card:hover .blog-image {
-            transform: scale(1.05);
-        }
-
-        .blog-number {
-            position: absolute;
-            top: var(--md-spacing-md);
-            left: var(--md-spacing-md);
-            width: 40px;
-            height: 40px;
-            background: var(--blog-number);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.125rem;
-            z-index: 2;
-            box-shadow: var(--md-elevation-2);
-        }
-
-        .blog-category-tag {
-            position: absolute;
-            top: var(--md-spacing-md);
-            right: var(--md-spacing-md);
-            padding: var(--md-spacing-xs) var(--md-spacing-md);
-            border-radius: var(--md-radius-pill);
-            font-size: 0.75rem;
-            font-weight: 600;
-            z-index: 2;
-            color: white;
-        }
-
-        .category-science {
-            background: var(--blog-category-science);
-        }
-
-        .category-education {
-            background: var(--blog-category-education);
-        }
-
-        .category-technology {
-            background: var(--blog-category-technology);
-        }
-
-        .category-history {
-            background: var(--blog-category-history);
-        }
-
-        .category-personal {
-            background: var(--blog-category-personal);
-        }
-
-        .blog-badge {
-            position: absolute;
-            top: var(--md-spacing-md);
-            right: var(--md-spacing-md);
-            background: var(--blog-badge-featured);
-            color: #333;
-            padding: var(--md-spacing-xs) var(--md-spacing-md);
-            border-radius: var(--md-radius-pill);
-            font-size: 0.75rem;
-            font-weight: 600;
-            z-index: 2;
-            box-shadow: var(--md-elevation-2);
-        }
-
-        .blog-content {
-            padding: var(--md-spacing-xl);
-        }
-
-        .blog-title {
-            font-family: var(--md-font-heading);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--md-on-surface);
-            margin-bottom: var(--md-spacing-sm);
-            line-height: 1.3;
-        }
-
-        .blog-description {
-            color: var(--md-on-surface-variant);
-            margin-bottom: var(--md-spacing-lg);
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        .blog-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--md-on-surface-variant);
-            font-size: 0.875rem;
+        .axis-icon {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: var(--md-spacing-md);
-        }
-
-        .blog-date {
-            display: flex;
-            align-items: center;
-            gap: var(--md-spacing-xs);
-        }
-
-        .reading-time {
-            display: flex;
-            align-items: center;
-            gap: var(--md-spacing-xs);
-        }
-
-        .blog-actions {
-            display: flex;
-            gap: var(--md-spacing-sm);
-        }
-
-        .read-more {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--md-spacing-xs);
-            color: var(--md-primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
             transition: var(--md-transition);
         }
 
-        .read-more:hover {
-            color: var(--md-secondary);
-            gap: var(--md-spacing-md);
+        .axis-item:hover .axis-icon {
+            transform: scale(1.2);
         }
 
-        .preview-btn {
-            padding: var(--md-spacing-xs) var(--md-spacing-md);
-            background: var(--md-surface-variant);
-            color: var(--md-on-surface);
-            border: none;
-            border-radius: var(--md-radius-pill);
-            font-family: var(--md-font-heading);
-            font-size: 0.875rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--md-transition);
-        }
-
-        .preview-btn:hover {
-            background: var(--md-primary);
-            color: var(--md-on-primary);
-            transform: translateY(-2px);
-        }
-
-        /* Newsletter Section */
-        .newsletter-section {
-            background: var(--md-surface);
-            border: 1px solid var(--md-outline);
-            border-radius: var(--md-radius-extra-large);
-            padding: var(--md-spacing-xl);
-            margin: var(--md-spacing-xxl) 0;
+        /* Screenshot Section */
+        .screenshot-container {
+            max-width: 700px;
+            margin: var(--md-spacing-xl) auto;
             text-align: center;
             position: relative;
         }
 
-        .newsletter-section::before {
+        .screenshot-image {
+            width: 100%;
+            border-radius: var(--md-radius-large);
+            box-shadow: var(--md-elevation-3);
+            border: 1px solid var(--md-outline);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* Download Section */
+        .download-section {
+            text-align: center;
+            padding: var(--md-spacing-xl);
+            background: var(--md-surface);
+            border-radius: var(--md-radius-large);
+            border: 1px solid var(--md-outline);
+            margin-top: var(--md-spacing-xl);
+            position: relative;
+        }
+
+        .download-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -1334,64 +1503,25 @@
             background: linear-gradient(90deg, var(--md-primary), var(--md-secondary));
         }
 
-        .newsletter-title {
-            font-family: var(--md-font-heading);
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--md-on-surface);
-            margin-bottom: var(--md-spacing-md);
+        /* NEW: Particle background for sections */
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
         }
 
-        .newsletter-description {
-            color: var(--md-on-surface-variant);
-            margin-bottom: var(--md-spacing-xl);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-
-        .newsletter-form {
-            display: flex;
-            max-width: 500px;
-            margin: 0 auto;
-            gap: var(--md-spacing-sm);
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: var(--md-spacing-md) var(--md-spacing-lg);
-            border: 1px solid var(--md-outline);
-            border-radius: var(--md-radius-pill);
-            background: var(--md-surface);
-            color: var(--md-on-surface);
-            font-family: var(--md-font-heading);
-            font-size: 1rem;
-            transition: var(--md-transition);
-        }
-
-        .newsletter-input:focus {
-            outline: none;
-            border-color: var(--md-primary);
-            box-shadow: 0 0 0 3px var(--md-primary-container);
-        }
-
-        .newsletter-btn {
-            padding: var(--md-spacing-md) var(--md-spacing-xl);
-            background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
-            color: var(--md-on-primary);
-            border: none;
-            border-radius: var(--md-radius-pill);
-            font-family: var(--md-font-heading);
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--md-transition);
-        }
-
-        .newsletter-btn:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: var(--md-elevation-3);
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--md-primary);
+            border-radius: 50%;
+            opacity: 0.1;
         }
 
         /* Footer */
@@ -1441,16 +1571,95 @@
             margin: 0 auto;
         }
 
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: var(--md-spacing-xl);
+            margin-bottom: var(--md-spacing-xxl);
+        }
+
+        .footer-column h3 {
+            font-family: var(--md-font-heading);
+            font-size: 1.25rem;
+            color: var(--md-on-surface);
+            margin-bottom: var(--md-spacing-lg);
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--md-primary), var(--md-secondary));
+        }
+
+        .footer-column a {
+            display: block;
+            color: var(--md-on-surface-variant);
+            text-decoration: none;
+            margin-bottom: var(--md-spacing-md);
+            transition: var(--md-transition);
+            font-size: 1rem;
+        }
+
+        .footer-column a:hover {
+            color: var(--md-primary);
+            transform: translateX(8px);
+        }
+
+        .footer-newsletter {
+            background: var(--md-surface-variant);
+            padding: var(--md-spacing-xl);
+            border-radius: var(--md-radius-large);
+            margin-top: var(--md-spacing-xl);
+        }
+
+        .footer-newsletter input {
+            width: 100%;
+            padding: var(--md-spacing-md);
+            border: 1px solid var(--md-outline);
+            border-radius: var(--md-radius-pill);
+            background: var(--md-surface);
+            color: var(--md-on-surface);
+            font-family: var(--md-font-heading);
+            font-size: 1rem;
+            margin-bottom: var(--md-spacing-md);
+            transition: var(--md-transition);
+        }
+
+        .footer-newsletter input:focus {
+            outline: none;
+            border-color: var(--md-primary);
+            box-shadow: 0 0 0 2px var(--md-primary-container);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--md-outline);
+            padding-top: var(--md-spacing-xl);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--md-spacing-md);
+        }
+
+        .footer-copyright {
+            color: var(--md-on-surface-variant);
+            font-size: 0.875rem;
+        }
+
         .social-links {
             display: flex;
-            justify-content: center;
-            gap: var(--md-spacing-md);
-            margin: var(--md-spacing-xl) 0;
+            gap: var(--md-spacing-sm);
         }
 
         .social-link {
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             background: var(--md-surface-variant);
             color: var(--md-on-surface);
@@ -1464,33 +1673,7 @@
         .social-link:hover {
             background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
             color: var(--md-on-primary);
-            transform: translateY(-5px) rotate(10deg);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: var(--md-spacing-xl);
-            margin-bottom: var(--md-spacing-xl);
-        }
-
-        .footer-link {
-            color: var(--md-on-surface-variant);
-            text-decoration: none;
-            transition: var(--md-transition);
-        }
-
-        .footer-link:hover {
-            color: var(--md-primary);
-        }
-
-        .copyright {
-            text-align: center;
-            color: var(--md-on-surface-variant);
-            font-size: 0.875rem;
-            padding-top: var(--md-spacing-xl);
-            border-top: 1px solid var(--md-outline);
+            transform: translateY(-4px) rotate(10deg);
         }
 
         /* Loading Animation */
@@ -1539,7 +1722,16 @@
             transform: translateY(0);
         }
 
-        /* Scroll progress indicator */
+        /* NEW: Hover glow effect */
+        .hover-glow {
+            transition: var(--md-transition);
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(26, 115, 232, 0.3);
+        }
+
+        /* NEW: Scroll progress indicator */
         .scroll-progress {
             position: fixed;
             top: 0;
@@ -1551,35 +1743,22 @@
             transition: width 0.1s ease;
         }
 
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: var(--md-transition);
-            opacity: 0;
-            visibility: hidden;
-            z-index: 999;
-            box-shadow: var(--md-elevation-3);
-            border: none;
+        /* Show sign in button when user is signed out */
+        body:not(.user-signed-in) #signInButton {
+            display: inline-flex !important;
         }
 
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
+        body:not(.user-signed-in) #mobileSignInLink {
+            display: flex !important;
         }
 
-        .back-to-top:hover {
-            transform: translateY(-5px) scale(1.1);
+        /* Hide sign in button when user is signed in */
+        body.user-signed-in #signInButton {
+            display: none !important;
+        }
+
+        body.user-signed-in #mobileSignInLink {
+            display: none !important;
         }
 
         /* Responsive Design */
@@ -1593,24 +1772,21 @@
             }
             
             .hero-section {
-                padding: 160px var(--md-spacing-lg) var(--md-spacing-xl);
+                padding: 140px var(--md-spacing-lg) var(--md-spacing-xl);
             }
             
             .main-content {
                 padding: 0 var(--md-spacing-lg) var(--md-spacing-xxl);
             }
             
-            .blogs-grid {
+            .tools-grid {
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
             
+            /* Improved mobile navbar spacing */
             .floating-navbar {
                 gap: var(--md-spacing-sm);
                 padding: var(--md-spacing-xs) var(--md-spacing-md);
-            }
-            
-            .newsletter-form {
-                flex-direction: column;
             }
         }
 
@@ -1627,7 +1803,7 @@
             }
             
             .hero-section {
-                padding: 140px var(--md-spacing-md) var(--md-spacing-lg);
+                padding: 120px var(--md-spacing-md) var(--md-spacing-lg);
                 min-height: 90vh;
             }
             
@@ -1658,28 +1834,42 @@
                 font-size: 1.125rem;
             }
             
-            .blog-stats {
+            .stats-grid,
+            .tools-grid,
+            .mission-grid,
+            .testimonials-grid,
+            .axis-grid {
                 grid-template-columns: 1fr;
             }
             
-            .blogs-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .featured-image {
-                height: 300px;
-            }
-            
-            .footer-links {
+            .tool-actions {
                 flex-direction: column;
-                gap: var(--md-spacing-md);
+            }
+            
+            .tool-actions .btn {
+                width: 100%;
+            }
+            
+            .youtube-stats {
+                gap: var(--md-spacing-lg);
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: var(--md-spacing-lg);
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
                 text-align: center;
+                gap: var(--md-spacing-lg);
             }
             
             .floating-element {
                 display: none;
             }
             
+            /* Improved mobile nav */
             .mobile-nav {
                 padding: var(--md-spacing-xl) var(--md-spacing-lg);
             }
@@ -1707,20 +1897,20 @@
                 font-size: 1rem;
             }
             
-            .featured-image {
-                height: 250px;
+            .tool-card,
+            .mission-item,
+            .testimonial-card,
+            .axis-item {
+                padding: var(--md-spacing-lg);
             }
             
-            .featured-title {
-                font-size: 1.75rem;
+            .founder-avatar {
+                width: 140px;
+                height: 140px;
             }
             
-            .blog-image-container {
-                height: 180px;
-            }
-            
-            .blog-title {
-                font-size: 1.25rem;
+            .youtube-container {
+                padding: var(--md-spacing-lg);
             }
             
             .nav-name {
@@ -1730,25 +1920,25 @@
             .nav-brand {
                 gap: 0;
             }
-            
-            .category-filter {
-                justify-content: flex-start;
-                overflow-x: auto;
-                padding-bottom: var(--md-spacing-sm);
-            }
-            
-            .category-btn {
-                flex-shrink: 0;
-            }
         }
+      
+        /* NEW: Utility classes */
+        .mt-4 { margin-top: var(--md-spacing-md); }
+        .mt-6 { margin-top: var(--md-spacing-xl); }
+        .mb-4 { margin-bottom: var(--md-spacing-md); }
+        .mb-6 { margin-bottom: var(--md-spacing-xl); }
+        .text-center { text-align: center; }
+        .flex { display: flex; }
+        .justify-center { justify-content: center; }
+        .gap-6 { gap: var(--md-spacing-xl); }
     </style>
 </head>
 <body class="light-theme">
-    <!-- Interactive cursor elements -->
+    <!-- NEW: Interactive cursor elements -->
     <div class="interactive-cursor" id="cursor"></div>
     <div class="cursor-dot" id="cursorDot"></div>
     
-    <!-- Scroll progress indicator -->
+    <!-- NEW: Scroll progress indicator -->
     <div class="scroll-progress" id="scrollProgress"></div>
     
     <!-- Loading Screen -->
@@ -1809,116 +1999,128 @@
     <!-- Modern Floating Pill Navbar -->
     <nav class="floating-navbar">
         <!-- Left side: Logo and Brand -->
-        <a href="https://aditya-cmd-max.github.io/reverbit/" class="nav-brand">
+        <a href="#home" class="nav-brand">
             <div class="nav-logo">
                 <img src="https://aditya-cmd-max.github.io/reverbit/logo-insvg.svg" alt="Reverbit Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='R';">
             </div>
             <span class="nav-name">Reverbit</span>
         </a>
 
-        <!-- Desktop Navigation Links (Right side) -->
-        <div class="desktop-nav">
-            <a href="https://aditya-cmd-max.github.io/reverbit/" class="nav-link">
-                <i class="fas fa-home" style="font-size: 0.9rem; margin-right: 4px;"></i>
-                Home
-            </a>
-            <a href="#" class="nav-link active">
-                <i class="fas fa-blog" style="font-size: 0.9rem; margin-right: 4px;"></i>
-                Blogs
-            </a>
-            <a href="https://aditya-cmd-max.github.io/reverbit/about/" class="nav-link">
-                <i class="fas fa-user" style="font-size: 0.9rem; margin-right: 4px;"></i>
-                The Creator
-            </a>
-            <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="nav-link">
-                <i class="fas fa-tools" style="font-size: 0.9rem; margin-right: 4px;"></i>
-               Tools
-            </a>
-            
-            <!-- Profile Avatar Container (Will be auto-populated by auth.js) -->
-            <div id="desktopAvatar"></div>
-            
-            <!-- Sign In Button (Will be hidden when user is signed in) -->
-            <a href="https://aditya-cmd-max.github.io/signin" class="btn btn-filled" id="signInButton">
-                <i class="fas fa-sign-in-alt" style="font-size: 0.9rem; margin-right: 4px;"></i>
-                Sign In
-            </a>
-            
-            <!-- Theme Toggle Button -->
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                <span class="material-icons-round">dark_mode</span>
-            </button>
-        </div>
+      <!-- Desktop Navigation Links (Right side) -->
+<div class="desktop-nav">
+    <a href="#home" class="nav-link active">
+        <i class="fas fa-home" style="font-size: 0.9rem; margin-right: 4px;"></i>
+        Home
+    </a>
+    <a href="https://aditya-cmd-max.github.io/reverbit/circuit" class="nav-link">
+        <i class="fas fa-blog" style="font-size: 0.9rem; margin-right: 4px;"></i>
+        Blogs
+    </a>
+    <a href="https://aditya-cmd-max.github.io/reverbit/about/" class="nav-link">
+        <i class="fas fa-bullseye" style="font-size: 0.9rem; margin-right: 4px;"></i>
+        The Creator
+    </a>
+    <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="nav-link">
+        <i class="fas fa-tools" style="font-size: 0.9rem; margin-right: 4px;"></i>
+        Tools
+    </a>
+    
+    <!-- Profile Avatar Container (Will be auto-populated by auth.js) -->
+    <div id="desktopAvatar"></div>
+    
+    <!-- Sign In Button (Will be hidden when user is signed in) -->
+    <a href="https://aditya-cmd-max.github.io/signin" class="btn btn-filled" id="signInButton">
+        <i class="fas fa-sign-in-alt" style="font-size: 0.9rem; margin-right: 4px;"></i>
+        Sign In
+    </a>
+    
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="material-icons-round">dark_mode</span>
+    </button>
+</div>
 
-        <!-- Mobile Menu Button -->
+        <!-- Mobile Menu Button with Hamburger/Cross -->
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
-            <span class="material-icons-round">menu</span>
+            <span class="material-icons-round hamburger-icon">menu</span>
+            <span class="material-icons-round cross-icon">close</span>
         </button>
     </nav>
 
-    <!-- Mobile Navigation Menu -->
-    <div class="mobile-nav" id="mobileNav">
-        <div class="mobile-nav-header">
-            <div class="nav-brand">
-                <div class="nav-logo">
-                    <img src="https://aditya-cmd-max.github.io/reverbit/logo-insvg.svg" alt="Reverbit Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='R';">
-                </div>
-                <span class="nav-name">Reverbit</span>
+  <!-- Mobile Navigation Menu -->
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+        <div class="nav-brand">
+            <div class="nav-logo">
+                <img src="https://aditya-cmd-max.github.io/reverbit/logo-insvg.svg" alt="Reverbit Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='R';">
             </div>
-            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
-                <span class="material-icons-round">close</span>
-            </button>
+            <span class="nav-name">Reverbit</span>
         </div>
-        
-        <!-- Mobile Avatar Container (Will be auto-populated by auth.js) -->
-        <div id="mobileAvatar"></div>
-        
-        <a href="https://aditya-cmd-max.github.io/reverbit/" class="mobile-nav-link">
-            <i class="fas fa-home"></i>
-            Home
-        </a>
-        <a href="#" class="mobile-nav-link active">
-            <i class="fas fa-blog"></i>
-            Blogs
-        </a>
-        <a href="https://aditya-cmd-max.github.io/reverbit/about/" class="mobile-nav-link">
-            <i class="fas fa-user"></i>
-            The Creator
-        </a>
-        <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="mobile-nav-link">
-            <i class="fas fa-tools"></i>
-            Tools
-        </a>
-        
-        <!-- Sign In Link for mobile (will be hidden by auth.js when user is signed in) -->
-        <a href="https://aditya-cmd-max.github.io/signin" class="mobile-nav-link" id="mobileSignInLink">
-            <i class="fas fa-sign-in-alt"></i>
-            Sign In
-        </a>
-        
-        <!-- Mobile Theme Toggle -->
-        <div class="mobile-theme-toggle">
-            <span>Theme</span>
-            <button class="mobile-theme-btn" id="mobileThemeToggle" aria-label="Toggle theme">
-                <span class="material-icons-round">dark_mode</span>
-            </button>
-        </div>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+            <span class="material-icons-round">close</span>
+        </button>
     </div>
-
+    
+    <!-- Mobile Avatar Container (Will be auto-populated by auth.js) -->
+    <div id="mobileAvatar"></div>
+    
+    <a href="#home" class="mobile-nav-link active">
+        <i class="fas fa-home"></i>
+        Home
+    </a>
+    <a href="https://aditya-cmd-max.github.io/reverbit/circuit" class="mobile-nav-link">
+        <i class="fas fa-blog"></i>
+        Blogs
+    </a>
+    <a href="https://aditya-cmd-max.github.io/reverbit/about" class="mobile-nav-link">
+        <i class="fas fa-bullseye"></i>
+        The creator
+    </a>
+    <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="mobile-nav-link">
+        <i class="fas fa-tools"></i>
+        Tools
+    </a>
+    
+    <!-- Sign In Link for mobile (will be hidden by auth.js when user is signed in) -->
+    <a href="https://aditya-cmd-max.github.io/signin" class="mobile-nav-link" id="mobileSignInLink">
+        <i class="fas fa-sign-in-alt"></i>
+        Sign In
+    </a>
+    
+    <!-- Mobile Theme Toggle -->
+    <div class="mobile-theme-toggle">
+        <span>Theme</span>
+        <button class="mobile-theme-btn" id="mobileThemeToggle" aria-label="Toggle theme">
+            <span class="material-icons-round">dark_mode</span>
+        </button>
+    </div>
+    
+    <div style="margin-top: auto; padding-top: var(--md-spacing-xl);">
+        <button class="btn btn-filled" style="width: 100%;" onclick="document.getElementById('mobileNavClose').click()">
+            <i class="fas fa-rocket" style="margin-right: 8px;"></i>
+            Get Started
+        </button>
+    </div>
+</div>
+  
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section" id="home">
+        <!-- NEW: Particle background -->
+        <div class="particles-container" id="heroParticles"></div>
         <div class="hero-content">
-            <h1 class="hero-title">The Circuit</h1>
+            <h1 class="hero-title">Reverbit</h1>
             <p class="hero-subtitle">
-                Explore the universe of knowledge with our collection of engaging and informative articles. 
-                Dive into science, technology, education, history, and personal development.
+                Pioneering the future of tech through innovative AI-powered web applications 
+                <span class="typing-text">that transform how knowledge is created, shared, and consumed.</span>
             </p>
             <div class="hero-cta">
-                <a href="#featured" class="btn btn-filled">
-                    <i class="fas fa-book-open"></i> Read Featured
+                <a href="#tools" class="btn btn-filled hover-glow">
+                    <i class="fas fa-search" style="margin-right: 8px;"></i>
+                    Explore Our Tools
                 </a>
-                <a href="#blogs" class="btn btn-outlined">
-                    <i class="fas fa-newspaper"></i> Browse All
+                <a href="#mission" class="btn btn-outlined hover-glow">
+                    <i class="fas fa-eye" style="margin-right: 8px;"></i>
+                    Our Vision
                 </a>
             </div>
         </div>
@@ -1926,598 +2128,976 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <!-- Search Section -->
-        <section class="search-section animate-on-scroll">
-            <div class="search-container">
-                <i class="fas fa-search search-icon"></i>
-                <input type="text" class="search-input" placeholder="Search blogs by title, topic, or keyword...">
-            </div>
-        </section>
-
-        <!-- Blog Stats -->
-        <section class="section animate-on-scroll">
-            <div class="blog-stats">
-                <div class="stat-card">
-                    <div class="stat-number">17+</div>
-                    <div class="stat-label">Articles Published</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">Categories</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">2025</div>
-                    <div class="stat-label">Since</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Knowledge Shared</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Blog -->
-        <section class="section" id="featured">
+        <!-- Stats Section -->
+        <section class="section">
             <div class="section-header">
-                <h2 class="section-title">Featured Article</h2>
-                <p class="section-subtitle">Our latest and most popular blog posts</p>
+                <h2 class="section-title">Impact in Numbers</h2>
+                <p class="section-subtitle">Transforming education one learner at a time</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card animate-on-scroll hover-glow">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Educators & Learners</div>
+                </div>
+                <div class="stat-card animate-on-scroll hover-glow">
+                    <div class="stat-number">4.9/5</div>
+                    <div class="stat-label">From 500+ Educators</div>
+                </div>
+                <div class="stat-card animate-on-scroll hover-glow">
+                    <div class="stat-number">AI</div>
+                    <div class="stat-label">Education Powered</div>
+                </div>
+                <div class="stat-card animate-on-scroll hover-glow">
+                    <div class="stat-number">Future</div>
+                    <div class="stat-label">Of Tech</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section class="section" id="tools">
+            <div class="section-header">
+                <h2 class="section-title">Our AI Tools</h2>
+                <p class="section-subtitle">A growing suite of AI-powered applications transforming how we learn and teach</p>
             </div>
             
-            <div class="featured-blog animate-on-scroll">
-                <div class="featured-badge">Latest</div>
-                <div class="featured-image">
-                    <img src="https://i.postimg.cc/1XQZyfRm/blog17.png" alt="Featured Blog">
+            <div class="tools-grid">
+                <!-- Clover AI -->
+                <div class="tool-card animate-on-scroll hover-glow">
+                    <div class="tool-image">
+                        <img src="https://aditya-cmd-max.github.io/clover.png" alt="Clover AI">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="tool-title">Clover AI</h3>
+                        <p class="tool-description">
+                            Intelligent tutoring system that adapts to each learner's needs and pace with personalized learning paths.
+                        </p>
+                        <div class="tool-actions">
+                            <a href="https://aditya-cmd-max.github.io/cloverai/" class="btn btn-outlined">Learn more</a>
+                            <a href="https://aditya-cmd-max.github.io/cloverai/chat" class="btn btn-filled">Try Now</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="featured-content">
-                    <h2 class="featured-title">Being Me — The Quiet Strength</h2>
-                    <p class="featured-description">
-                        A personal reflection on introversion, kindness, and the power of self-belief. 
-                        Discover how embracing your authentic self can lead to inner strength and meaningful connections.
+
+                <!-- SkyCast -->
+                <div class="tool-card animate-on-scroll hover-glow">
+                    <div class="tool-image">
+                        <img src="https://aditya-cmd-max.github.io/skycast.png" alt="SkyCast">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-icon">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <h3 class="tool-title">SkyCast</h3>
+                        <p class="tool-description">
+                            Interactive environmental science platform with real-world data visualization and predictive models.
+                        </p>
+                        <div class="tool-actions">
+                            <a href="https://aditya-cmd-max.github.io/exonovaweather/" class="btn btn-outlined">Learn more</a>
+                            <a href="https://aditya-cmd-max.github.io/exonovaweather/app" class="btn btn-filled">Try Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PopOut Pro -->
+                <div class="tool-card animate-on-scroll hover-glow">
+                    <div class="tool-image">
+                        <img src="https://aditya-cmd-max.github.io/popout.png" alt="PopOut Pro">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="tool-title">PopOut Pro</h3>
+                        <p class="tool-description">
+                            AI-powered visual learning tool for creating engaging educational content with automatic diagram generation.
+                        </p>
+                        <div class="tool-actions">
+                            <a href="https://aditya-cmd-max.github.io/popout/" class="btn btn-outlined">Learn more</a>
+                            <a href="https://aditya-cmd-max.github.io/popout/app.html" class="btn btn-filled">Try Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peo-TTS -->
+                <div class="tool-card animate-on-scroll hover-glow">
+                    <div class="tool-image">
+                        <img src="https://aditya-cmd-max.github.io/peo.png" alt="Peo-TTS">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-icon">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <h3 class="tool-title">Peo-TTS</h3>
+                        <p class="tool-description">
+                            Natural sounding text-to-speech for accessible learning materials with emotion and emphasis.
+                        </p>
+                        <div class="tool-actions">
+                            <a href="https://aditya-cmd-max.github.io/Peo/" class="btn btn-outlined">Learn more</a>
+                            <a href="https://aditya-cmd-max.github.io/Peo/app" class="btn btn-filled">Try Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mindscribe -->
+                <div class="tool-card animate-on-scroll hover-glow">
+                    <div class="tool-image">
+                        <img src="https://aditya-cmd-max.github.io/mindscribe.png" alt="Mindscribe">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="tool-title">Mindscribe</h3>
+                        <p class="tool-description">
+                            Your digital notebook to make everyday learning easier with AI-powered note-taking features.
+                        </p>
+                        <div class="tool-actions">
+                            <a href="https://aditya-cmd-max.github.io/mindscribe/" class="btn btn-outlined">Learn more</a>
+                            <a href="https://aditya-cmd-max.github.io/mindscribe/app" class="btn btn-filled">Try Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clover Studio -->
+                <div class="tool-card animate-on-scroll hover-glow">
+                    <div class="tool-image">
+                        <img src="https://aditya-cmd-max.github.io/cloverstudio.png" alt="Clover Studio">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="tool-title">Clover Studio</h3>
+                        <p class="tool-description">
+                            Transform your creative concepts into structured learning experiences with intelligent guidance.
+                        </p>
+                        <div class="tool-actions">
+                            <a href="https://aditya-cmd-max.github.io/clover" class="btn btn-outlined">Learn more</a>
+                            <a href="https://aditya-cmd-max.github.io/clover/app" class="btn btn-filled">Try Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- NEW: All Tools Button -->
+            <div class="text-center">
+                <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="all-tools-btn animate-on-scroll">
+                    All Tools <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="section" id="mission">
+            <div class="section-header">
+                <h2 class="section-title">Education Revolution</h2>
+                <p class="section-subtitle">Transforming traditional learning paradigms with innovative AI solutions</p>
+            </div>
+            
+            <div class="mission-grid">
+                <div class="mission-item animate-on-scroll hover-glow">
+                    <div class="mission-icon">
+                        <i class="fas fa-user-cog"></i>
+                    </div>
+                    <h3 class="tool-title">Our Mission</h3>
+                    <p class="tool-description">
+                        Leveraging artificial intelligence to democratize knowledge and transform traditional learning paradigms.
                     </p>
-                    <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog17" class="btn btn-filled">
-                        <i class="fas fa-arrow-right"></i> Read Now
-                    </a>
+                </div>
+                
+                <div class="mission-item animate-on-scroll hover-glow">
+                    <div class="mission-icon">
+                        <i class="fas fa-universal-access"></i>
+                    </div>
+                    <h3 class="tool-title">Our Vision</h3>
+                    <p class="tool-description">
+                        Making education personalized, accessible, and engaging for everyone, everywhere.
+                    </p>
+                </div>
+                
+                <div class="mission-item animate-on-scroll hover-glow">
+                    <div class="mission-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="tool-title">Personalization</h3>
+                    <p class="tool-description">
+                        AI that adapts to each learner's unique needs, creating personalized learning paths.
+                    </p>
+                </div>
+                
+                <div class="mission-item animate-on-scroll hover-glow">
+                    <div class="mission-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="tool-title">Innovation</h3>
+                    <p class="tool-description">
+                        Pushing educational boundaries with cutting-edge technology and research-driven approaches.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Category Filter -->
+        <!-- Testimonials Section -->
         <section class="section">
-            <div class="category-filter animate-on-scroll">
-                <button class="category-btn active" data-category="all">
-                    <i class="fas fa-th-large"></i> All
-                </button>
-                <button class="category-btn" data-category="science">
-                    <i class="fas fa-flask"></i> Science
-                </button>
-                <button class="category-btn" data-category="education">
-                    <i class="fas fa-graduation-cap"></i> Education
-                </button>
-                <button class="category-btn" data-category="history">
-                    <i class="fas fa-landmark"></i> History
-                </button>
-                <button class="category-btn" data-category="technology">
-                    <i class="fas fa-laptop-code"></i> Technology
-                </button>
-                <button class="category-btn" data-category="personal">
-                    <i class="fas fa-user"></i> Personal
-                </button>
-            </div>
-        </section>
-
-        <!-- All Blogs -->
-        <section class="section" id="blogs">
             <div class="section-header">
-                <h2 class="section-title">All Articles</h2>
-                <p class="section-subtitle">Explore our complete collection of blog posts</p>
+                <h2 class="section-title">What People Say</h2>
+                <p class="section-subtitle">Hear from educators and learners transforming their classrooms with Reverbit</p>
             </div>
             
-            <div class="blogs-grid">
-                <!-- Blog 1 -->
-                <div class="blog-card animate-on-scroll" data-categories="science education">
-                    <div class="blog-number">01</div>
-                    <div class="blog-badge" style="background: var(--blog-badge-new); color: white;">First</div>
-                    <div class="blog-image-container">
-                        <img src="https://sleepcenterinfo.com/wp-content/uploads/2022/01/Young-man-sleeping-soundly-in-bed-scaled.jpg" alt="Sleep Science" class="blog-image">
-                        <div class="blog-category-tag category-science">Science</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">The Science of Sleep</h3>
-                        <p class="blog-description">Explore how sleep is very much important for the youth all over the world.</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> April 09, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 5 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog1/" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card animate-on-scroll hover-glow">
+                    <p class="testimonial-text">
+                        Reverbit's AI tools have completely transformed how I teach. My students are more engaged and their test scores have improved by 30% in just one semester.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SJ</div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>High School Teacher</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Blog 2 -->
-                <div class="blog-card animate-on-scroll" data-categories="education">
-                    <div class="blog-number">02</div>
-                    <div class="blog-image-container">
-                        <img src="https://www.careerguide.com/career/wp-content/uploads/2020/04/giphy-4-1.gif" alt="Study Hacks" class="blog-image">
-                        <div class="blog-category-tag category-education">Education</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">Top 5 Scientific Study Hacks</h3>
-                        <p class="blog-description">Learn 5 brain-based study techniques that turn your study time into a productivity powerhouse.</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> April 13, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 7 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog2/" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card animate-on-scroll hover-glow">
+                    <p class="testimonial-text">
+                        As a university student, Reverbit's tools have been a game-changer. The personalized learning paths helped me grasp complex concepts faster than ever before.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MC</div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Computer Science Student</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Blog 3 -->
-                <div class="blog-card animate-on-scroll" data-categories="education history">
-                    <div class="blog-number">03</div>
-                    <div class="blog-image-container">
-                        <img src="https://kamarajcollege.ac.in/wp-content/uploads/2021/08/economics.jpg" alt="Economics" class="blog-image">
-                        <div class="blog-category-tag category-education">Education</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">Introduction to Economics</h3>
-                        <p class="blog-description">Get an overview of the world of economics, exploring how individuals and societies make choices with limited resources.</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> April 18, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 10 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog3/" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog 4 -->
-                <div class="blog-card animate-on-scroll" data-categories="history">
-                    <div class="blog-number">04</div>
-                    <div class="blog-image-container">
-                        <img src="https://images.cnbctv18.com/uploads/2025/05/india-pakistan-flags-ai-generated-image-6-2025-05-de59ecaa739f2999147cb4746fc65614.jpg?impolicy=website&width=1200&height=900" alt="India-Pakistan" class="blog-image">
-                        <div class="blog-category-tag category-history">History</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">Part 1: India-Pakistan war: Is it WW3?</h3>
-                        <p class="blog-description">In this part 1 of India-Pakistan Blog see how the conflict started among these countries and keeping till now.</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> May 11, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 12 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog4/" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog 5 -->
-                <div class="blog-card animate-on-scroll" data-categories="education personal">
-                    <div class="blog-number">05</div>
-                    <div class="blog-image-container">
-                        <img src="https://mcm.edu.ph/wp-content/uploads/2024/10/Academic-Pressure-Key-Causes-Effects-and-Coping-Tips-for-Students.png" alt="Academic Pressure" class="blog-image">
-                        <div class="blog-category-tag category-education">Education</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">Dark Reality of Academic Pressure</h3>
-                        <p class="blog-description">Understanding the impact of academic stress on students and strategies to cope with it effectively.</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> May 23, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 8 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog5/" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog 6 -->
-                <div class="blog-card animate-on-scroll" data-categories="personal">
-                    <div class="blog-number">06</div>
-                    <div class="blog-image-container">
-                        <img src="https://static.vecteezy.com/system/resources/previews/034/274/583/non_2x/a-young-boy-stands-in-the-middle-of-a-road-ai-generated-free-photo.jpg" alt="Middle Class Life" class="blog-image">
-                        <div class="blog-category-tag category-personal">Personal</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">The Story of a Middle Class Boy</h3>
-                        <p class="blog-description">Get a glimpse of life of an individual boy called teenager at every home.</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> May 31, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 6 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog6/" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog 7 -->
-                <div class="blog-card animate-on-scroll" data-categories="technology history">
-                    <div class="blog-number">07</div>
-                    <div class="blog-badge" style="background: var(--blog-badge-featured); color: #333;">Featured</div>
-                    <div class="blog-image-container">
-                        <img src="https://aditya-cmd-max.github.io/reverbit/Untitled design (2).png" alt="Google" class="blog-image">
-                        <div class="blog-category-tag category-technology">Technology</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">The Evolution of Google</h3>
-                        <p class="blog-description">Must Read.. get the inspiration story of the biggest Tech-Giant Google.</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> June 9, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 15 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog7.html" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog 8 -->
-                <div class="blog-card animate-on-scroll" data-categories="science">
-                    <div class="blog-number">08</div>
-                    <div class="blog-image-container">
-                        <img src="https://i.postimg.cc/yd3sDB4j/Exonova.png" alt="Bananas" class="blog-image">
-                        <div class="blog-category-tag category-science">Science</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">Bananas are Radioactive</h3>
-                        <p class="blog-description">Get the Fact about Bananas are Radioactive but are Safe to consume.</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> June 19, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 4 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog8/" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog 9 -->
-                <div class="blog-card animate-on-scroll" data-categories="technology science">
-                    <div class="blog-number">09</div>
-                    <div class="blog-image-container">
-                        <img src="https://www.flightradar24.com/blog/wp-content/uploads/2025/06/VT-ANB.jpg" alt="AI Flight 171" class="blog-image">
-                        <div class="blog-category-tag category-technology">Technology</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">AI Flight 171 Crash Explained</h3>
-                        <p class="blog-description">Get the probably scientific reasons for the crash of AI 171 Boeing 787- Dreamliner.</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> June 21, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 9 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog9/" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog 10 -->
-                <div class="blog-card animate-on-scroll" data-categories="science">
-                    <div class="blog-number">10</div>
-                    <div class="blog-image-container">
-                        <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Phone slipping" class="blog-image">
-                        <div class="blog-category-tag category-science">Science</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">Why Your Phone Slips When Tired</h3>
-                        <p class="blog-description">The Bizarre Physics Behind Why Your Phone Slips from Your Hand More When You're Tired.</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> July 07, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 6 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog10/" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog 11 -->
-                <div class="blog-card animate-on-scroll" data-categories="history">
-                    <div class="blog-number">11</div>
-                    <div class="blog-image-container">
-                        <img src="https://aditya-cmd-max.github.io/reverbit/Exonova's.png" alt="Indian History" class="blog-image">
-                        <div class="blog-category-tag category-history">History</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">What if India Never Got Independence?</h3>
-                        <p class="blog-description">Exploring the alternate history of a India still under British colonial rule</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> August 15, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 11 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog11/" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog 12 -->
-                <div class="blog-card animate-on-scroll" data-categories="technology">
-                    <div class="blog-number">12</div>
-                    <div class="blog-badge" style="background: var(--blog-badge-featured); color: #333;">Featured</div>
-                    <div class="blog-image-container">
-                        <img src="https://techcrunch.com/wp-content/uploads/2024/06/ai-logos-v2.jpg" alt="AI logos" class="blog-image">
-                        <div class="blog-category-tag category-technology">Technology</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">How AI Can Help You Learn Faster</h3>
-                        <p class="blog-description">How AI can help students and general learners more by using Prompt engeeneering techniques</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> September 19, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 8 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog12/" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog 13 -->
-                <div class="blog-card animate-on-scroll" data-categories="technology">
-                    <div class="blog-number">13</div>
-                    <div class="blog-image-container">
-                        <img src="https://aditya-cmd-max.github.io/reverbit/Blogs.png" alt="Hacker" class="blog-image">
-                        <div class="blog-category-tag category-technology">Technology</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">You Are Being Hacked! Save Your Privacy Now!</h3>
-                        <p class="blog-description">The people with lack of knowledge of technology loose their important credentials or even Money due to the harmful hackers!</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> September 23, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 10 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog13/" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog 14 -->
-                <div class="blog-card animate-on-scroll" data-categories="education personal">
-                    <div class="blog-number">14</div>
-                    <div class="blog-image-container">
-                        <img src="https://aditya-cmd-max.github.io/reverbit/Blogs.gif" alt="Festive Season" class="blog-image">
-                        <div class="blog-category-tag category-education">Education</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">The Great Indian Festive Season</h3>
-                        <p class="blog-description">From Ganesh Chaturthi to Diwali - Celebrating Unity, Culture & Joy! • The Pride of India</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> September 30, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 7 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog14/" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog 15 -->
-                <div class="blog-card animate-on-scroll" data-categories="education personal">
-                    <div class="blog-number">15</div>
-                    <div class="blog-image-container">
-                        <img src="https://aditya-cmd-max.github.io/reverbit/blog15.png" alt="Mandela Effect" class="blog-image">
-                        <div class="blog-category-tag category-education">Education</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">The Mandela Effect</h3>
-                        <p class="blog-description">When Collective Memory Fails - Exploring the Psychology Behind Shared False Memories</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> October 6, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 9 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog15/" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog 16 -->
-                <div class="blog-card animate-on-scroll" data-categories="personal">
-                    <div class="blog-number">16</div>
-                    <div class="blog-badge" style="background: var(--blog-badge-featured); color: #333;">Featured</div>
-                    <div class="blog-image-container">
-                        <img src="https://aditya-cmd-max.github.io/reverbit/circuit/blog16.png" alt="Being Alone" class="blog-image">
-                        <div class="blog-category-tag category-personal">Personal</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">The Power of Being Alone</h3>
-                        <p class="blog-description">Solitude is the power. Read to attain!</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> October 18, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 5 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog16/" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog 17 -->
-                <div class="blog-card animate-on-scroll" data-categories="personal">
-                    <div class="blog-number">17</div>
-                    <div class="blog-badge" style="background: var(--blog-badge-new); color: white;">New</div>
-                    <div class="blog-image-container">
-                        <img src="https://i.postimg.cc/1XQZyfRm/blog17.png" alt="Being Me" class="blog-image">
-                        <div class="blog-category-tag category-personal">Personal</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">Being Me — The Quiet Strength</h3>
-                        <p class="blog-description">A personal reflection on introversion, kindness, and the power of self-belief</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <i class="far fa-calendar-alt"></i> November 26, 2025
-                            </div>
-                            <div class="reading-time">
-                                <i class="far fa-clock"></i> 6 min
-                            </div>
-                        </div>
-                        <div class="blog-actions">
-                            <a href="https://aditya-cmd-max.github.io/reverbit/circuit/blog17/" class="read-more">
-                                Read <i class="fas fa-arrow-right"></i>
-                            </a>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card animate-on-scroll hover-glow">
+                    <p class="testimonial-text">
+                        The text-to-speech feature has been invaluable for my visually impaired students. It's made educational content accessible in ways we never thought possible.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ER</div>
+                        <div class="author-info">
+                            <h4>Dr. Emily Rodriguez</h4>
+                            <p>Special Education Director</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Newsletter Section -->
+        <!-- Founder Section -->
         <section class="section">
-            <div class="newsletter-section animate-on-scroll">
-                <h2 class="newsletter-title">Stay Updated</h2>
-                <p class="newsletter-description">
-                    Subscribe to our newsletter to get the latest articles and updates directly in your inbox. 
-                    Join our community of curious minds!
+            <div class="section-header">
+                <h2 class="section-title">The Visionary</h2>
+                <p class="section-subtitle">Meet the founder behind Reverbit</p>
+            </div>
+            
+            <div class="founder-content animate-on-scroll">
+                <div class="founder-avatar">
+                    <img src="https://aditya-cmd-max.github.io/reverbit/adityajha.jpg" alt="Aditya Jha" onerror="this.style.display='none'; this.parentElement.innerHTML='AJ';">
+                </div>
+                <h3 class="founder-name">Aditya Jha</h3>
+                <p class="founder-description">
+                    Aditya Jha founded Reverbit as a young student with a deep passion for technology and education. From an early age, Aditya has loved coding and creating, always dreaming of building something meaningful. He believes learning should be practical, exciting, and accessible to everyone.
                 </p>
-                <form class="newsletter-form">
-                    <input type="email" class="newsletter-input" placeholder="Your email address" required>
-                    <button type="submit" class="newsletter-btn">Subscribe</button>
-                </form>
+                
+                <div class="founder-tags">
+                    <span class="tag">AI/ML</span>
+                    <span class="tag">Education</span>
+                    <span class="tag">Web Dev</span>
+                    <span class="tag">UX Design</span>
+                    <span class="tag">EdTech</span>
+                </div>
+                
+                <a href="https://aditya-cmd-max.github.io/reverbit/about/" class="btn btn-outlined hover-glow">Read more about Aditya</a>
+            </div>
+        </section>
+
+        <!-- YouTube Channel Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Our YouTube Channel</h2>
+                <p class="section-subtitle">Subscribe to our YouTube tech channel.</p>
+            </div>
+            
+            <div class="youtube-container animate-on-scroll hover-glow">
+                <div class="youtube-header">
+                    <i class="fab fa-youtube youtube-logo"></i>
+                    <span class="youtube-name">Reverbit</span>
+                </div>
+                
+                <p class="section-subtitle">
+                    Tutorials, demos, and insights into AI-powered education on YouTube.(coming soon)
+                </p>
+                
+                <div class="profile-image">
+                    <img src="https://yt3.ggpht.com/InzJkNpw4bFJ9xPr_9ujYObf6wxw62IbBpAqSveShhuyG8r9zIuiXSz6tr4RDvXXaYA60irDgRg=s88-c-k-c0x00ffffff-no-rj" alt="Aditya Jha" onerror="this.style.display='none'; this.parentElement.innerHTML='AJ';">
+                </div>
+                
+                <div class="youtube-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">25+</div>
+                        <div class="stat-label">Subscribers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">@Reverbit</div>
+                        <div class="stat-label">Handle</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">Videos</div>
+                    </div>
+                </div>
+                
+                <a href="https://youtube.com/@Reverbit" target="_blank" class="btn btn-filled mt-6 hover-glow">
+                    <i class="fab fa-youtube"></i> Visit Channel
+                </a>
+            </div>
+        </section>
+
+        <!-- Reverbit Axis Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Reverbit Axis</h2>
+                <p class="section-subtitle">Experience the next generation of productivity</p>
+            </div>
+            
+            <div class="axis-grid">
+                <div class="axis-item animate-on-scroll hover-glow">
+                    <div class="axis-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="tool-title">Lightning fast</h3>
+                    <p class="tool-description">Optimized for speed and performance</p>
+                </div>
+                
+                <div class="axis-item animate-on-scroll hover-glow">
+                    <div class="axis-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="tool-title">Advanced security</h3>
+                    <p class="tool-description">Enterprise-grade protection</p>
+                </div>
+                
+                <div class="axis-item animate-on-scroll hover-glow">
+                    <div class="axis-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h3 class="tool-title">All in one</h3>
+                    <p class="tool-description">Complete productivity suite</p>
+                </div>
+                
+                <div class="axis-item animate-on-scroll hover-glow">
+                    <div class="axis-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3 class="tool-title">Customizable</h3>
+                    <p class="tool-description">Tailor to your workflow</p>
+                </div>
+            </div>
+            
+            <!-- App Screenshot Section -->
+            <div class="screenshot-container animate-on-scroll hover-glow">
+                <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                     alt="Reverbit Axis App Screenshot" class="screenshot-image">
+            </div>
+            
+            <!-- Download Section -->
+            <div class="download-section animate-on-scroll hover-glow">
+                <h3 class="tool-title">Download Now</h3>
+                <p class="tool-description">Version 1.3.5 • 31.8 MB</p>
+                <a href="https://aditya-cmd-max.github.io/reverbit/base.apk" class="btn btn-filled mt-4 hover-glow">
+                    <i class="fab fa-android"></i> Download for Android
+                </a>
+                <div class="flex justify-center gap-6 mt-6 text-sm">
+                    <div>10K+ Downloads</div>
+                    <div>4.8★ Rating</div>
+                    <div>100% Secure</div>
+                </div>
             </div>
         </section>
     </main>
+    <style>
+        /* Isolated styles for the component */
+        .exonova-component {
+            all: initial;
+            font-family: "Product Sans", Arial, sans-serif;
+            display: block;
+            width: 100%;
+        }
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h2 class="footer-logo">The Circuit</h2>
-                <p class="footer-tagline">Reverbit Blogs - Where curiosity meets knowledge</p>
-            </div>
-            
-            <div class="social-links">
+        .exonova-component * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-                <a href="https://www.linkedin.com/in/aditya-jha-2b0860399/" class="social-link">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://youtube.com/@Reverbit" class="social-link">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="https://github.com/aditya-cmd-max" class="social-link">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
+        .exonova-component .tagline-container {
+            position: relative;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 40vh; /* Reduced from 100vh */
+            padding: 40px 20px; /* Reduced padding */
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .exonova-component .tagline-container .mesh {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px; /* Smaller mesh */
+            opacity: 0.05;
+            z-index: 0;
+            animation: meshMove 20s linear infinite;
+        }
+
+        @keyframes meshMove {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(30px, 30px);
+            }
+        }
+
+        .exonova-component .tagline-container .hero {
+            color: #fff;
+            font-family: "Product Sans", Arial, sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.5rem, 8vw, 8rem); /* Adjusted font scaling */
+            text-align: center;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            z-index: 1;
+            position: relative;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: 8px;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .exonova-component .tagline-container .hero img {
+            height: 1em;
+            vertical-align: middle;
+            filter: brightness(0) invert(1);
+            margin: 0;
+            padding: 0;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .exonova-component .tagline-container .hero img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .exonova-component .tagline-container .hero span {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .exonova-component .tagline-container .hero span::after {
+            content: attr(data-text);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            color: #fff;
+            filter: blur(10px); /* Reduced blur */
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        
+
+       
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .exonova-component .tagline-container {
+                min-height: 50vh; /* Even smaller on mobile */
+                padding: 30px 15px;
+            }
             
-            <div class="footer-links">
-                <a href="https://aditya-cmd-max.github.io/reverbit/privacy" class="footer-link">Privacy Policy</a>
-                <a href="https://aditya-cmd-max.github.io/reverbit/terms" class="footer-link">Terms of Service</a>
-                <a href="#" class="footer-link">Contact Us</a>
-                <a href="#" class="footer-link">FAQ</a>
-            </div>
+            .exonova-component .tagline-container .hero {
+                font-size: clamp(1.2rem, 5vw, 3rem);
+                gap: 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .exonova-component .tagline-container {
+                min-height: 25vh;
+                padding: 20px 10px;
+            }
             
-            <div class="copyright">
-                Made with <i class="fas fa-heart" style="color: #ff4444;"></i> and <i class="fas fa-code"></i> by Aditya Jha
-                <br>
-                &copy; 2025 Reverbit. All rights reserved.
+            .exonova-component .tagline-container .hero {
+                font-size: clamp(1rem, 5.5vw, 5rem);
+                gap: 4px;
+                letter-spacing: -0.3px;
+            }
+            
+            .exonova-component .tagline-container .mesh {
+                background-size: 20px 20px; /* Even smaller mesh on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Isolated component wrapper -->
+    <div class="exonova-component">
+        <div class="tagline-container">
+            <div class="mesh"></div>
+            <div class="particles" id="particles"></div>
+            
+            <div class="hero-content">
+                <section class="hero">
+                    <span data-text="E">
+                        <img src="https://aditya-cmd-max.github.io/reverbit/logo-insvg.svg" alt="Exonova Logo">
+                    </span> for every Bit.
+                </section>
             </div>
         </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2 class="footer-logo">Reverbit</h2>
+                <p class="footer-tagline">Reverbit - For every Bit.</p>
+            </div>
+            
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Navigation</h3>
+                    <a href="https://aditya-cmd-max.github.io/reverbit/about/">About</a>
+                    <a href="https://aditya-cmd-max.github.io/reverbit/circuit/">Blogs</a>
+                    <a href="https://aditya-cmd-max.github.io/reverbit/downloadaxis/">Download App</a>
+                    <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem">Reverbit Ecosystem</a>
+                    
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Our Tools</h3>
+                    <a href="https://aditya-cmd-max.github.io/cloverai/">Clover AI</a>
+                    <a href="https://aditya-cmd-max.github.io/exonovaweather/">SkyCast pro</a>
+                    <a href="https://aditya-cmd-max.github.io/popout">PopOut Pro</a>
+                    <a href="https://aditya-cmd-max.github.io/Peo">Peo-TTS</a>
+                    <a href="https://aditya-cmd-max.github.io/mindscribe/">Mindscribe</a>
+                    <a href="https://aditya-cmd-max.github.io/clover/">Clover Studio</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem">Reverbit Ecosystem</a>
+                    <a href="https://aditya-cmd-max.github.io/reverbit/privacy">Privacy</a>
+                    <a href="https://aditya-cmd-max.github.io/reverbit/terms">Terms</a>
+                    <a href="#">Help</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            
+           
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    Made with <i class="fas fa-heart" style="color: #ff4444;"></i> and <i class="fas fa-code"></i> by Aditya Jha.
+                </div>
+                
+                <div class="social-links">
+
+                    <a href="https://www.linkedin.com/in/aditya-jha-2b0860399/" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/aditya-cmd-max/" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://youtube.com/@Reverbit/" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+             </div>
+        <div class="footer-copyright">
+                 &copy; 2025 Reverbit Innovations. All Rights Reserved
+                </div>
+      
+      
+      </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    
+<!-- Cookie Banner -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Cookie banner styles - Improved UI */
+    #ex-cookie-consent {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      max-width: 920px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      padding: 24px;
+      z-index: 99999;
+      display: none;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      border: 1px solid rgba(0,0,0,0.05);
+      backdrop-filter: blur(10px);
+    }
+    
+    #ex-cookie-consent.ex-active { 
+      display: block; 
+      animation: ex-slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+    }
+    
+    @keyframes ex-slideUp {
+      from { 
+        transform: translate(-50%, 40px); 
+        opacity: 0; 
+      } 
+      to { 
+        transform: translate(-50%, 0); 
+        opacity: 1; 
+      }
+    }
+    
+    #ex-cookie-consent .ex-row { 
+      display: flex; 
+      gap: 24px; 
+      align-items: flex-start; 
+    }
+    
+    #ex-cookie-consent .ex-left { 
+      flex: 1; 
+    }
+    
+    #ex-cookie-consent h3 { 
+      margin: 0 0 8px; 
+      font-size: 20px; 
+      display: flex; 
+      align-items: center; 
+      gap: 10px; 
+      color: #1e293b;
+    }
+    
+    #ex-cookie-consent p { 
+      margin: 0; 
+      color: #64748b; 
+      font-size: 15px; 
+      line-height: 1.5; 
+    }
+    
+    .ex-cookie-settings { 
+      margin-top: 20px; 
+      display: none;
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    
+    .ex-cookie-settings.ex-open { 
+      display: block; 
+      animation: ex-fadeIn 0.3s ease; 
+    }
+    
+    @keyframes ex-fadeIn { 
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      } 
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      } 
+    }
+    
+    .ex-cookie-item { 
+      display: flex; 
+      justify-content: space-between; 
+      gap: 16px; 
+      padding: 14px 0; 
+      border-bottom: 1px solid #f1f5f9; 
+    }
+    
+    .ex-cookie-item:last-child { 
+      border-bottom: none; 
+    }
+    
+    .ex-toggle { 
+      position: relative; 
+      width: 50px; 
+      height: 28px; 
+      display: inline-block; 
+    }
+    
+    .ex-toggle input { 
+      opacity: 0; 
+      width: 0; 
+      height: 0; 
+    }
+    
+    .ex-slider { 
+      position: absolute; 
+      cursor: pointer; 
+      inset: 0; 
+      background: #e2e8f0; 
+      border-radius: 999px; 
+      transition: .2s; 
+    }
+    
+    .ex-slider:before { 
+      content: ""; 
+      position: absolute; 
+      left: 4px; 
+      top: 4px; 
+      height: 20px; 
+      width: 20px; 
+      background: #fff; 
+      border-radius: 50%; 
+      transition: .2s; 
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .ex-toggle input:checked + .ex-slider { 
+      background: #4f46e5; 
+    }
+    
+    .ex-toggle input:checked + .ex-slider:before { 
+      transform: translateX(22px); 
+    }
+    
+    .ex-btn { 
+      display: inline-block; 
+      padding: 12px 18px; 
+      border-radius: 10px; 
+      font-weight: 600; 
+      cursor: pointer; 
+      text-align: center; 
+      transition: all 0.2s ease;
+      font-size: 14px;
+    }
+    
+    .ex-accept { 
+      background: linear-gradient(90deg, #4f46e5, #7c3aed); 
+      color: #fff; 
+      border: none; 
+    }
+    
+    .ex-accept:hover {
+      background: linear-gradient(90deg, #4338ca, #6d28d9);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(79, 70, 229, 0.3);
+    }
+    
+    .ex-save { 
+      background: transparent; 
+      color: #4f46e5; 
+      border: 1px solid #4f46e5; 
+    }
+    
+    .ex-save:hover {
+      background: #f5f3ff;
+      transform: translateY(-1px);
+    }
+    
+    .ex-customize { 
+      background: transparent; 
+      color: #64748b; 
+      font-size: 14px; 
+      border: none; 
+      padding: 10px 8px; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .ex-customize:hover {
+      color: #4f46e5;
+    }
+    
+    @media (max-width: 768px){
+      #ex-cookie-consent { 
+        padding: 20px; 
+        bottom: 16px; 
+        width: calc(100% - 32px);
+      }
+      
+      .ex-row { 
+        flex-direction: column; 
+        gap: 16px;
+      }
+      
+      .ex-left { 
+        order: 0; 
+      }
+      
+      .ex-btn {
+        width: 100%;
+      }
+    }
+  </style>
+
+<div id="ex-cookie-consent" aria-hidden="true" role="dialog" aria-label="Cookie preferences">
+  <div class="ex-row">
+    <div class="ex-left">
+      <h3>
+        <i class="fas fa-cookie-bite" aria-hidden="true" style="color:#4f46e5"></i>
+        Your Privacy Matters
+      </h3>
+      <p>We use cookies to enhance your browsing experience, analyze site traffic, and support marketing efforts. Choose your preferences below or accept all cookies.</p>
+
+      <div class="ex-cookie-settings" id="ex-cookie-settings">
+        <div class="ex-cookie-item">
+          <div><strong>Necessary Cookies</strong><div>Essential for the website to function. Cannot be disabled.</div></div>
+          <label class="ex-toggle"><input type="checkbox" checked disabled><span class="ex-slider"></span></label>
+        </div>
+
+        <div class="ex-cookie-item">
+          <div><strong>Analytics Cookies</strong><div>Help us understand visitor interactions.</div></div>
+          <label class="ex-toggle"><input type="checkbox" id="ex-analytics-checkbox" checked><span class="ex-slider"></span></label>
+        </div>
+
+        <div class="ex-cookie-item">
+          <div><strong>Marketing Cookies</strong><div>Used for advertising purposes.</div></div>
+          <label class="ex-toggle"><input type="checkbox" id="ex-marketing-checkbox"><span class="ex-slider"></span></label>
+        </div>
+
+        <div class="ex-cookie-item">
+          <div><strong>Preference Cookies</strong><div>Remember your choices.</div></div>
+          <label class="ex-toggle"><input type="checkbox" id="ex-preference-checkbox" checked><span class="ex-slider"></span></label>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px;min-width:150px;align-items:stretch">
+      <button id="ex-accept-all" class="ex-btn ex-accept">Accept All</button>
+      <button id="ex-save-prefs" class="ex-btn ex-save">Save Preferences</button>
+      <button id="ex-toggle-customize" class="ex-customize ex-btn">
+        <i class="fas fa-sliders-h" style="margin-right:8px"></i>Customize
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const banner = document.getElementById('ex-cookie-consent');
+  const settings = document.getElementById('ex-cookie-settings');
+  const btnCustomize = document.getElementById('ex-toggle-customize');
+  const btnAcceptAll = document.getElementById('ex-accept-all');
+  const btnSave = document.getElementById('ex-save-prefs');
+
+  function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+      const d = new Date();
+      d.setTime(d.getTime() + (days*24*60*60*1000));
+      expires = "; expires=" + d.toUTCString();
+    }
+    document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/; SameSite=Lax";
+  }
+
+  function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i=0;i<ca.length;i++) {
+      let c = ca[i].trim();
+      if (c.indexOf(nameEQ) === 0) return decodeURIComponent(c.substring(nameEQ.length));
+    }
+    return null;
+  }
+
+  function initFromCookies() {
+    if (getCookie('ex_cookie_consent')) {
+      initCookies();
+      return;
+    }
+    // Show banner after 7–8 seconds
+    const delay = Math.floor(Math.random() * 1000) + 7000;
+    setTimeout(() => banner.classList.add('ex-active'), delay);
+  }
+
+  function initCookies() {
+    if (getCookie('ex_analytics') === 'true') {
+      console.log('Analytics enabled');
+      loadGoogleAnalytics('G-GS6V9ZCN0K'); // replace with your ID
+    }
+    if (getCookie('ex_marketing') === 'true') {
+      console.log('Marketing enabled');
+    }
+    if (getCookie('ex_preferences') === 'true') {
+      console.log('Preferences enabled');
+    }
+  }
+
+  function loadGoogleAnalytics(id) {
+    let gtagScript = document.createElement('script');
+    gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
+    gtagScript.async = true;
+    document.head.appendChild(gtagScript);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+
+    gtag('js', new Date());
+    gtag('config', id);
+  }
+
+  btnCustomize.addEventListener('click', function(){
+    const open = settings.classList.toggle('ex-open');
+    btnCustomize.innerHTML = open ? 
+      '<i class="fas fa-times" style="margin-right:8px"></i>Close' : 
+      '<i class="fas fa-sliders-h" style="margin-right:8px"></i>Customize';
+  });
+
+  btnAcceptAll.addEventListener('click', function(){
+    setCookie('ex_cookie_consent', 'all', 365);
+    setCookie('ex_analytics', 'true', 365);
+    setCookie('ex_marketing', 'true', 365);
+    setCookie('ex_preferences', 'true', 365);
+    banner.classList.remove('ex-active');
+    initCookies();
+  });
+
+  btnSave.addEventListener('click', function(){
+    const a = document.getElementById('ex-analytics-checkbox').checked ? 'true' : 'false';
+    const m = document.getElementById('ex-marketing-checkbox').checked ? 'true' : 'false';
+    const p = document.getElementById('ex-preference-checkbox').checked ? 'true' : 'false';
+    setCookie('ex_cookie_consent', 'custom', 365);
+    setCookie('ex_analytics', a, 365);
+    setCookie('ex_marketing', m, 365);
+    setCookie('ex_preferences', p, 365);
+    banner.classList.remove('ex-active');
+    initCookies();
+  });
+
+  document.addEventListener('DOMContentLoaded', initFromCookies);
+})();
+</script>
+
+
 
     <script>
         // DOM Elements
@@ -2534,13 +3114,9 @@
         const cursor = document.getElementById('cursor');
         const cursorDot = document.getElementById('cursorDot');
         const scrollProgress = document.getElementById('scrollProgress');
-        const backToTop = document.getElementById('backToTop');
-        const searchInput = document.querySelector('.search-input');
-        const categoryBtns = document.querySelectorAll('.category-btn');
-        const blogCards = document.querySelectorAll('.blog-card');
-        const newsletterForm = document.querySelector('.newsletter-form');
+        const heroParticlesContainer = document.getElementById('heroParticles');
 
-        // Interactive cursor
+        // NEW: Interactive cursor
         function initInteractiveCursor() {
             let mouseX = 0;
             let mouseY = 0;
@@ -2555,11 +3131,13 @@
             });
             
             function animateCursor() {
+                // Smooth main cursor
                 cursorX += (mouseX - cursorX) * 0.1;
                 cursorY += (mouseY - cursorY) * 0.1;
                 cursor.style.left = cursorX + 'px';
                 cursor.style.top = cursorY + 'px';
                 
+                // Smooth dot cursor (faster)
                 cursorDotX += (mouseX - cursorDotX) * 0.3;
                 cursorDotY += (mouseY - cursorDotY) * 0.3;
                 cursorDot.style.left = cursorDotX + 'px';
@@ -2570,7 +3148,8 @@
             
             animateCursor();
             
-            const interactiveElements = document.querySelectorAll('a, button, .blog-card, .stat-card, .category-btn');
+            // Cursor effects on interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .tool-card, .stat-card, .mission-item, .testimonial-card');
             
             interactiveElements.forEach(el => {
                 el.addEventListener('mouseenter', () => {
@@ -2587,20 +3166,38 @@
             });
         }
 
-        // Scroll progress indicator
+        // NEW: Scroll progress indicator
         function initScrollProgress() {
             window.addEventListener('scroll', () => {
                 const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                 const scrolled = (window.scrollY / windowHeight) * 100;
                 scrollProgress.style.width = scrolled + '%';
-                
-                // Show/hide back to top button
-                if (window.scrollY > 300) {
-                    backToTop.classList.add('visible');
-                } else {
-                    backToTop.classList.remove('visible');
-                }
             });
+        }
+
+        // NEW: Create particle effect
+        function createParticles(container, count = 50) {
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.width = Math.random() * 3 + 1 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particle.style.animationDuration = Math.random() * 10 + 10 + 's';
+                container.appendChild(particle);
+                
+                // Animate particle
+                gsap.to(particle, {
+                    x: Math.random() * 100 - 50 + 'vw',
+                    y: Math.random() * 100 - 50 + 'vh',
+                    duration: Math.random() * 10 + 10,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: 'sine.inOut'
+                });
+            }
         }
 
         // Initialize animations on scroll
@@ -2652,108 +3249,85 @@
             }
         }
 
-        // Mobile Navigation
+        // Mobile Navigation with Hamburger/Cross Toggle
         mobileMenuBtn.addEventListener('click', () => {
             mobileNav.classList.add('active');
+            mobileMenuBtn.classList.add('active'); // Add active class to button
             document.body.style.overflow = 'hidden';
+            
+            // Update aria-label for accessibility
+            mobileMenuBtn.setAttribute('aria-label', 'Close menu');
         });
 
         mobileNavClose.addEventListener('click', () => {
             mobileNav.classList.remove('active');
+            mobileMenuBtn.classList.remove('active'); // Remove active class from button
             document.body.style.overflow = 'auto';
+            
+            // Update aria-label for accessibility
+            mobileMenuBtn.setAttribute('aria-label', 'Open menu');
         });
 
         // Close mobile nav when clicking on links
         mobileNav.querySelectorAll('.mobile-nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 mobileNav.classList.remove('active');
+                mobileMenuBtn.classList.remove('active'); // Remove active class from button
                 document.body.style.overflow = 'auto';
+                
+                // Update aria-label for accessibility
+                mobileMenuBtn.setAttribute('aria-label', 'Open menu');
             });
         });
 
-        // Back to top functionality
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Search functionality
-        searchInput.addEventListener('input', () => {
-            const searchTerm = searchInput.value.toLowerCase().trim();
-            
-            blogCards.forEach(card => {
-                const title = card.querySelector('.blog-title').textContent.toLowerCase();
-                const description = card.querySelector('.blog-description').textContent.toLowerCase();
-                const categories = card.getAttribute('data-categories');
-                
-                if (searchTerm === '' || 
-                    title.includes(searchTerm) || 
-                    description.includes(searchTerm) ||
-                    categories.includes(searchTerm)) {
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 50);
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
-                }
-            });
-        });
-
-        // Category filter functionality
-        categoryBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                categoryBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const category = btn.getAttribute('data-category');
-                
-                // Filter blog cards
-                blogCards.forEach(card => {
-                    if (category === 'all' || card.getAttribute('data-categories').includes(category)) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 50);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-                
-                // Also filter by search if there's a search term
-                if (searchInput.value) {
-                    searchInput.dispatchEvent(new Event('input'));
-                }
-            });
-        });
-
-        // Newsletter form submission
-        newsletterForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = newsletterForm.querySelector('.newsletter-input').value;
-            
-            // Simple validation
-            if (email && email.includes('@')) {
-                alert(`Thank you for subscribing with ${email}! You'll receive updates soon.`);
-                newsletterForm.reset();
-            } else {
-                alert('Please enter a valid email address.');
+        // Close mobile nav when clicking outside (optional enhancement)
+        document.addEventListener('click', (e) => {
+            if (mobileNav.classList.contains('active') && 
+                !mobileNav.contains(e.target) && 
+                !mobileMenuBtn.contains(e.target)) {
+                mobileNav.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                mobileMenuBtn.setAttribute('aria-label', 'Open menu');
             }
         });
+
+        // Handle window resize - reset menu state when switching to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1024) {
+                if (mobileNav.classList.contains('active')) {
+                    mobileNav.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    mobileMenuBtn.setAttribute('aria-label', 'Open menu');
+                }
+            }
+        });
+
+        // Set active nav link based on scroll position
+        function setActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPos = window.scrollY + 100;
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    current = sectionId;
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href === `#${current}` || (current === 'home' && href === '#')) {
+                    link.classList.add('active');
+                }
+            });
+        }
 
         // Smooth scroll for anchor links
         function initSmoothScroll() {
@@ -2774,7 +3348,28 @@
                     // Close mobile nav if open
                     if (mobileNav.classList.contains('active')) {
                         mobileNav.classList.remove('active');
+                        mobileMenuBtn.classList.remove('active');
                         document.body.style.overflow = 'auto';
+                        mobileMenuBtn.setAttribute('aria-label', 'Open menu');
+                    }
+                });
+            });
+        }
+
+        // Add image fallback handling
+        function initImageFallbacks() {
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('error', function() {
+                    this.style.display = 'none';
+                    const parent = this.parentElement;
+                    if (parent.classList.contains('nav-logo')) {
+                        parent.innerHTML = 'R';
+                        parent.style.display = 'flex';
+                        parent.style.alignItems = 'center';
+                        parent.style.justifyContent = 'center';
+                        parent.style.fontFamily = 'var(--md-font-logo)';
+                        parent.style.fontWeight = '700';
+                        parent.style.color = 'var(--md-on-primary)';
                     }
                 });
             });
@@ -2785,7 +3380,7 @@
             if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
                 gsap.registerPlugin(ScrollTrigger);
                 
-                // Animate hero section
+                // Animate hero title
                 gsap.from('.hero-title', {
                     duration: 1.2,
                     y: 50,
@@ -2802,11 +3397,33 @@
                 });
                 
                 gsap.from('.hero-cta', {
-                    duration: 0.8,
-                    y: 20,
+                    duration: 1,
+                    y: 30,
                     opacity: 0,
                     delay: 0.6,
                     ease: 'power3.out'
+                });
+                
+                // Animate floating elements
+                gsap.to('.floating-element-1', {
+                    duration: 20,
+                    x: 'random(-50, 50)',
+                    y: 'random(-50, 50)',
+                    rotation: 'random(-15, 15)',
+                    ease: 'power1.inOut',
+                    repeat: -1,
+                    yoyo: true
+                });
+                
+                gsap.to('.floating-element-2', {
+                    duration: 25,
+                    x: 'random(-40, 40)',
+                    y: 'random(-40, 40)',
+                    rotation: 'random(-10, 10)',
+                    ease: 'power1.inOut',
+                    repeat: -1,
+                    yoyo: true,
+                    delay: 2
                 });
                 
                 // Floating navbar scroll effect
@@ -2834,255 +3451,42 @@
                     lastScrollY = currentScrollY;
                 });
                 
-                // Animate blog cards on scroll
-                gsap.utils.toArray('.blog-card').forEach((card, i) => {
-                    gsap.from(card, {
+                // Parallax effect for sections
+                gsap.utils.toArray('.section').forEach(section => {
+                    gsap.from(section, {
                         scrollTrigger: {
-                            trigger: card,
-                            start: 'top 85%',
+                            trigger: section,
+                            start: 'top 80%',
                             end: 'bottom 20%',
-                            toggleActions: 'play none none reverse'
+                            scrub: 1
                         },
-                        y: 30,
-                        opacity: 0,
-                        duration: 0.6,
-                        delay: i * 0.05,
-                        ease: 'power2.out'
+                        y: 50,
+                        opacity: 0.5,
+                        duration: 1
                     });
                 });
             }
         }
 
-        // Initialize the avatar system
-        function initAvatarSystem() {
-            // Wait for auth.js to load
-            if (typeof window.ReverbitAuth !== 'undefined') {
-                // Listen for auth state changes
-                window.ReverbitAuth.auth.onAuthStateChanged(async (user) => {
-                    if (user) {
-                        // User is signed in
-                        document.body.classList.add('user-signed-in');
-                        
-                        // Add desktop avatar
-                        addDesktopAvatar(user);
-                        
-                        // Add mobile avatar
-                        addMobileAvatar(user);
-                    } else {
-                        // User is signed out
-                        document.body.classList.remove('user-signed-in');
-                        
-                        // Remove avatars
-                        removeDesktopAvatar();
-                        removeMobileAvatar();
-                    }
-                });
-                
-                // Initialize immediately if user is already signed in
-                if (window.ReverbitAuth.getUser()) {
-                    const user = window.ReverbitAuth.getUser();
-                    document.body.classList.add('user-signed-in');
-                    addDesktopAvatar(user);
-                    addMobileAvatar(user);
-                }
-            } else {
-                // If auth.js hasn't loaded yet, check again after a delay
-                setTimeout(initAvatarSystem, 100);
-            }
-        }
-
-        // Add desktop avatar
-        function addDesktopAvatar(user) {
-            const desktopNav = document.querySelector('.desktop-nav');
-            if (!desktopNav) return;
+        // NEW: Typing effect for hero subtitle
+        function initTypingEffect() {
+            const typingText = document.querySelector('.typing-text');
+            if (!typingText) return;
             
-            removeDesktopAvatar();
+            const text = typingText.textContent;
+            typingText.textContent = '';
+            let i = 0;
             
-            const avatarContainer = document.createElement('div');
-            avatarContainer.id = 'desktopAvatar';
-            
-            const avatarBtn = document.createElement('button');
-            avatarBtn.className = 'profile-avatar-button reverbit-profile-avatar';
-            avatarBtn.setAttribute('aria-label', 'User profile menu');
-            
-            if (user.photoURL) {
-                const avatarImg = document.createElement('img');
-                avatarImg.className = 'profile-avatar-img reverbit-avatar-img';
-                avatarImg.src = user.photoURL;
-                avatarImg.alt = user.displayName || 'User';
-                avatarImg.onerror = function() {
-                    const displayName = user.displayName || user.email?.split('@')[0] || 'User';
-                    const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
-                    avatarBtn.textContent = initials;
-                    avatarBtn.style.background = 'linear-gradient(135deg, var(--md-primary), var(--md-secondary))';
-                    avatarBtn.style.color = 'var(--md-on-primary)';
-                };
-                avatarBtn.appendChild(avatarImg);
-            } else {
-                const displayName = user.displayName || user.email?.split('@')[0] || 'User';
-                const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
-                avatarBtn.textContent = initials;
-                avatarBtn.style.background = 'linear-gradient(135deg, var(--md-primary), var(--md-secondary))';
-                avatarBtn.style.color = 'var(--md-on-primary)';
-            }
-            
-            // Use auth.js popup with custom change photo redirect
-            avatarBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (window.ReverbitAuth && window.ReverbitAuth.toggleProfilePopup) {
-                    // Call the original function
-                    window.ReverbitAuth.toggleProfilePopup();
-                    
-                    // Override the change photo button behavior after a short delay
-                    setTimeout(() => {
-                        const changePhotoBtn = document.querySelector('.reverbit-profile-menu .reverbit-menu-item[data-action="change-photo"]');
-                        if (changePhotoBtn) {
-                            changePhotoBtn.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                window.location.href = 'https://aditya-cmd-max.github.io/dashboard/#profile';
-                            });
-                        }
-                    }, 100);
-                }
-            });
-            
-            avatarContainer.appendChild(avatarBtn);
-            
-            // Insert into navbar
-            const signInButton = document.getElementById('signInButton');
-            if (signInButton) {
-                desktopNav.insertBefore(avatarContainer, signInButton);
-            } else {
-                const themeToggle = document.getElementById('theme-toggle');
-                if (themeToggle) {
-                    desktopNav.insertBefore(avatarContainer, themeToggle);
-                }
-            }
-        }
-
-        // Remove desktop avatar
-        function removeDesktopAvatar() {
-            const existingAvatar = document.getElementById('desktopAvatar');
-            if (existingAvatar && existingAvatar.parentNode) {
-                existingAvatar.parentNode.removeChild(existingAvatar);
-            }
-        }
-
-        // Add mobile avatar
-        function addMobileAvatar(user) {
-            const mobileNav = document.getElementById('mobileNav');
-            if (!mobileNav) return;
-            
-            // Remove existing mobile avatar
-            removeMobileAvatar();
-            
-            // Create mobile avatar container
-            const mobileAvatarContainer = document.createElement('div');
-            mobileAvatarContainer.className = 'mobile-avatar-container';
-            mobileAvatarContainer.id = 'mobileAvatar';
-            
-            // Create user info
-            const userInfo = document.createElement('div');
-            userInfo.className = 'mobile-user-info';
-            
-            // Avatar
-            const avatarDiv = document.createElement('div');
-            avatarDiv.className = 'mobile-user-avatar';
-            
-            if (user.photoURL) {
-                const avatarImg = document.createElement('img');
-                avatarImg.src = user.photoURL;
-                avatarImg.alt = user.displayName || 'User';
-                avatarImg.onerror = function() {
-                    const displayName = user.displayName || user.email?.split('@')[0] || 'User';
-                    const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
-                    this.style.display = 'none';
-                    this.parentElement.textContent = initials;
-                };
-                avatarDiv.appendChild(avatarImg);
-            } else {
-                const displayName = user.displayName || user.email?.split('@')[0] || 'User';
-                const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
-                avatarDiv.textContent = initials;
-            }
-            
-            // User details
-            const userDetails = document.createElement('div');
-            userDetails.className = 'mobile-user-details';
-            
-            const userName = document.createElement('div');
-            userName.className = 'mobile-user-name';
-            userName.textContent = user.displayName || user.email?.split('@')[0] || 'User';
-            
-            const userEmail = document.createElement('div');
-            userEmail.className = 'mobile-user-email';
-            userEmail.textContent = user.email || '';
-            
-            userDetails.appendChild(userName);
-            userDetails.appendChild(userEmail);
-            
-            userInfo.appendChild(avatarDiv);
-            userInfo.appendChild(userDetails);
-            
-            // Add mobile menu items
-            const menuItems = document.createElement('div');
-            menuItems.className = 'mobile-nav-links';
-            menuItems.innerHTML = `
-                <a href="https://aditya-cmd-max.github.io/dashboard" class="mobile-nav-link">
-                    <i class="fas fa-tachometer-alt"></i>
-                    Dashboard
-                </a>
-                <a href="https://aditya-cmd-max.github.io/dashboard/#profile" class="mobile-nav-link">
-                    <i class="fas fa-camera"></i>
-                    Change Profile Photo
-                </a>
-                <button class="mobile-logout-btn" id="mobileLogoutBtn">
-                    <i class="fas fa-sign-out-alt"></i>
-                    Sign Out
-                </button>
-            `;
-            
-            mobileAvatarContainer.appendChild(userInfo);
-            mobileAvatarContainer.appendChild(menuItems);
-            
-            // Find mobile sign in link
-            const mobileSignInLink = document.getElementById('mobileSignInLink');
-            
-            // Insert avatar container
-            if (mobileSignInLink) {
-                mobileNav.insertBefore(mobileAvatarContainer, mobileSignInLink);
-            } else {
-                const themeToggle = mobileNav.querySelector('.mobile-theme-toggle');
-                if (themeToggle) {
-                    mobileNav.insertBefore(mobileAvatarContainer, themeToggle);
-                } else {
-                    mobileNav.insertBefore(mobileAvatarContainer, mobileNav.querySelector('.btn-filled'));
+            function typeWriter() {
+                if (i < text.length) {
+                    typingText.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
                 }
             }
             
-            // Add logout handler
-            const mobileLogoutBtn = document.getElementById('mobileLogoutBtn');
-            if (mobileLogoutBtn) {
-                mobileLogoutBtn.addEventListener('click', async (e) => {
-                    e.preventDefault();
-                    try {
-                        if (window.ReverbitAuth && window.ReverbitAuth.logout) {
-                            await window.ReverbitAuth.logout();
-                        }
-                    } catch (error) {
-                        console.error('Logout error:', error);
-                    }
-                });
-            }
-        }
-
-        // Remove mobile avatar
-        function removeMobileAvatar() {
-            const existingMobileAvatar = document.getElementById('mobileAvatar');
-            if (existingMobileAvatar && existingMobileAvatar.parentNode) {
-                existingMobileAvatar.parentNode.removeChild(existingMobileAvatar);
-            }
+            // Start typing after a delay
+            setTimeout(typeWriter, 1000);
         }
 
         // Initialize everything when DOM is loaded
@@ -3100,71 +3504,290 @@
             initScrollAnimations();
             initGSAPAnimations();
             initSmoothScroll();
+            initImageFallbacks();
+            initTypingEffect();
             
-            // Start the avatar system initialization
-            initAvatarSystem();
-        });
-
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 1024 && mobileNav.classList.contains('active')) {
-                mobileNav.classList.remove('active');
-                document.body.style.overflow = 'auto';
+            // Create particle effects
+            if (heroParticlesContainer) {
+                createParticles(heroParticlesContainer, 30);
             }
             
-            if (window.innerWidth <= 768) {
-                floatingNavbar.style.padding = 'var(--md-spacing-xs) var(--md-spacing-md)';
-            } else {
-                floatingNavbar.style.padding = 'var(--md-spacing-sm) var(--md-spacing-lg)';
-            }
+            // Set active nav link on scroll
+            window.addEventListener('scroll', setActiveNavLink);
+            
+            // Initialize on load
+            setActiveNavLink();
+            
+            // NEW: Add hover sound effect for buttons (optional)
+            const buttons = document.querySelectorAll('.btn, .nav-link, .tool-card, .stat-card');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    // You could add a subtle sound effect here
+                    // For now, we'll just add a visual effect
+                    button.style.transition = 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)';
+                });
+            });
         });
 
-        // Keyboard navigation improvements
+        // NEW: Keyboard navigation improvements
         document.addEventListener('keydown', (e) => {
+            // Close mobile nav on Escape key
             if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
                 mobileNav.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
                 document.body.style.overflow = 'auto';
+                mobileMenuBtn.setAttribute('aria-label', 'Open menu');
             }
             
+            // Theme toggle with Shift+T
             if (e.shiftKey && e.key === 'T') {
                 toggleTheme();
             }
+        });
+
+        // NEW: Touch improvements for mobile
+        let touchStartY = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        // Prevent navbar from hiding during vertical swipe on mobile
+        document.addEventListener('touchmove', (e) => {
+            if (!e.target.closest('.floating-navbar')) return;
+            const touchY = e.touches[0].clientY;
+            const diff = touchStartY - touchY;
             
-            // Focus search on Ctrl+K or Cmd+K
-            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            // If vertical swipe is small, prevent default to keep navbar visible
+            if (Math.abs(diff) < 10) {
                 e.preventDefault();
-                searchInput.focus();
+            }
+        }, { passive: false });
+   
+  
+// Initialize the avatar system
+function initAvatarSystem() {
+    // Wait for auth.js to load
+    if (typeof window.ReverbitAuth !== 'undefined') {
+        // Listen for auth state changes
+        window.ReverbitAuth.auth.onAuthStateChanged(async (user) => {
+            if (user) {
+                // User is signed in
+                document.body.classList.add('user-signed-in');
+                
+                // Add desktop avatar
+                addDesktopAvatar(user);
+                
+                // Add mobile avatar
+                addMobileAvatar(user);
+            } else {
+                // User is signed out
+                document.body.classList.remove('user-signed-in');
+                
+                // Remove avatars
+                removeDesktopAvatar();
+                removeMobileAvatar();
             }
         });
-      
-        // Initialize animations on scroll - FIXED VERSION
-        function initScrollAnimations() {
-            // Make all blog cards visible immediately
-            document.querySelectorAll('.blog-card').forEach(card => {
-                card.style.display = 'block';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            });
-            
-            // Only animate other elements
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-
-            // Only observe non-blog-card elements
-            animateElements.forEach(element => {
-                if (!element.classList.contains('blog-card')) {
-                    observer.observe(element);
-                }
-            });
+        
+        // Initialize immediately if user is already signed in
+        if (window.ReverbitAuth.getUser()) {
+            const user = window.ReverbitAuth.getUser();
+            document.body.classList.add('user-signed-in');
+            addDesktopAvatar(user);
+            addMobileAvatar(user);
         }
-    </script>
+    } else {
+        // If auth.js hasn't loaded yet, check again after a delay
+        setTimeout(initAvatarSystem, 100);
+    }
+}
+
+// Add desktop avatar - Simplified version
+function addDesktopAvatar(user) {
+    const desktopNav = document.querySelector('.desktop-nav');
+    if (!desktopNav) return;
+    
+    removeDesktopAvatar();
+    
+    const avatarContainer = document.createElement('div');
+    avatarContainer.id = 'desktopAvatar';
+    
+    const avatarBtn = document.createElement('button');
+    avatarBtn.className = 'profile-avatar-button reverbit-profile-avatar';
+    avatarBtn.setAttribute('aria-label', 'User profile menu');
+    
+    if (user.photoURL) {
+        const avatarImg = document.createElement('img');
+        avatarImg.className = 'profile-avatar-img reverbit-avatar-img';
+        avatarImg.src = user.photoURL;
+        avatarImg.alt = user.displayName || 'User';
+        avatarImg.onerror = function() {
+            const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+            const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+            avatarBtn.textContent = initials;
+            avatarBtn.style.background = 'linear-gradient(135deg, var(--md-primary), var(--md-secondary))';
+            avatarBtn.style.color = 'var(--md-on-primary)';
+        };
+        avatarBtn.appendChild(avatarImg);
+    } else {
+        const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+        const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+        avatarBtn.textContent = initials;
+        avatarBtn.style.background = 'linear-gradient(135deg, var(--md-primary), var(--md-secondary))';
+        avatarBtn.style.color = 'var(--md-on-primary)';
+    }
+    
+    // Use auth.js popup
+    avatarBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (window.ReverbitAuth && window.ReverbitAuth.toggleProfilePopup) {
+            window.ReverbitAuth.toggleProfilePopup();
+        }
+    });
+    
+    avatarContainer.appendChild(avatarBtn);
+    
+    // Insert into navbar
+    const signInButton = document.getElementById('signInButton');
+    if (signInButton) {
+        desktopNav.insertBefore(avatarContainer, signInButton);
+    } else {
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            desktopNav.insertBefore(avatarContainer, themeToggle);
+        }
+    }
+}
+
+// Remove desktop avatar
+function removeDesktopAvatar() {
+    const existingAvatar = document.getElementById('desktopAvatar');
+    if (existingAvatar && existingAvatar.parentNode) {
+        existingAvatar.parentNode.removeChild(existingAvatar);
+    }
+}
+
+// Add mobile avatar
+function addMobileAvatar(user) {
+    const mobileNav = document.getElementById('mobileNav');
+    if (!mobileNav) return;
+    
+    // Remove existing mobile avatar
+    removeMobileAvatar();
+    
+    // Create mobile avatar container
+    const mobileAvatarContainer = document.createElement('div');
+    mobileAvatarContainer.className = 'mobile-avatar-container';
+    mobileAvatarContainer.id = 'mobileAvatar';
+    
+    // Create user info
+    const userInfo = document.createElement('div');
+    userInfo.className = 'mobile-user-info';
+    
+    // Avatar
+    const avatarDiv = document.createElement('div');
+    avatarDiv.className = 'mobile-user-avatar';
+    
+    if (user.photoURL) {
+        const avatarImg = document.createElement('img');
+        avatarImg.src = user.photoURL;
+        avatarImg.alt = user.displayName || 'User';
+        avatarImg.onerror = function() {
+            const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+            const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+            this.style.display = 'none';
+            this.parentElement.textContent = initials;
+        };
+        avatarDiv.appendChild(avatarImg);
+    } else {
+        const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+        const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+        avatarDiv.textContent = initials;
+    }
+    
+    // User details
+    const userDetails = document.createElement('div');
+    userDetails.className = 'mobile-user-details';
+    
+    const userName = document.createElement('div');
+    userName.className = 'mobile-user-name';
+    userName.textContent = user.displayName || user.email?.split('@')[0] || 'User';
+    
+    const userEmail = document.createElement('div');
+    userEmail.className = 'mobile-user-email';
+    userEmail.textContent = user.email || '';
+    
+    userDetails.appendChild(userName);
+    userDetails.appendChild(userEmail);
+    
+    userInfo.appendChild(avatarDiv);
+    userInfo.appendChild(userDetails);
+    
+    // Add mobile menu items
+    const menuItems = document.createElement('div');
+    menuItems.className = 'mobile-nav-links';
+    menuItems.innerHTML = `
+        <a href="https://aditya-cmd-max.github.io/dashboard" class="mobile-nav-link">
+            <i class="fas fa-tachometer-alt"></i>
+            Dashboard
+        </a>
+        <button class="mobile-logout-btn" id="mobileLogoutBtn">
+            <i class="fas fa-sign-out-alt"></i>
+            Sign Out
+        </button>
+    `;
+    
+    mobileAvatarContainer.appendChild(userInfo);
+    mobileAvatarContainer.appendChild(menuItems);
+    
+    // Find mobile sign in link
+    const mobileSignInLink = document.getElementById('mobileSignInLink');
+    
+    // Insert avatar container
+    if (mobileSignInLink) {
+        mobileNav.insertBefore(mobileAvatarContainer, mobileSignInLink);
+    } else {
+        const themeToggle = mobileNav.querySelector('.mobile-theme-toggle');
+        if (themeToggle) {
+            mobileNav.insertBefore(mobileAvatarContainer, themeToggle);
+        } else {
+            mobileNav.insertBefore(mobileAvatarContainer, mobileNav.querySelector('.btn-filled'));
+        }
+    }
+    
+    // Add logout handler
+    const mobileLogoutBtn = document.getElementById('mobileLogoutBtn');
+    if (mobileLogoutBtn) {
+        mobileLogoutBtn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            try {
+                if (window.ReverbitAuth && window.ReverbitAuth.logout) {
+                    await window.ReverbitAuth.logout();
+                }
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        });
+    }
+}
+
+// Remove mobile avatar
+function removeMobileAvatar() {
+    const existingMobileAvatar = document.getElementById('mobileAvatar');
+    if (existingMobileAvatar && existingMobileAvatar.parentNode) {
+        existingMobileAvatar.parentNode.removeChild(existingMobileAvatar);
+    }
+}
+
+// Initialize avatar system when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Start the avatar system initialization
+    initAvatarSystem();
+});
+      
+      
+  </script>
+  
+  
 </body>
 </html>
