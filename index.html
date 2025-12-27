@@ -2385,55 +2385,59 @@ body.user-signed-in .mobile-profile-section {
         </defs>
     </svg>
 
-    <!-- Modern Floating Pill Navbar -->
-    <nav class="floating-navbar">
-        <!-- Left side: Logo and Brand -->
-        <a href="#home" class="nav-brand">
-            <div class="nav-logo">
-                <img src="https://aditya-cmd-max.github.io/reverbit/logo-insvg.svg" alt="Reverbit Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='R';">
-            </div>
-            <span class="nav-name">Reverbit</span>
-        </a>
+    <!-- Modern Floating Pill Navbar - IMPROVED FOR MOBILE -->
+<nav class="floating-navbar">
+    <!-- Left side: Logo and Brand -->
+    <a href="#home" class="nav-brand">
+        <div class="nav-logo">
+            <img src="https://aditya-cmd-max.github.io/reverbit/logo-insvg.svg" alt="Reverbit Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='R';">
+        </div>
+        <span class="nav-name">Reverbit</span>
+    </a>
 
     <!-- Desktop Navigation Links (Right side) -->
-<div class="desktop-nav">
-    <a href="#home" class="nav-link active">
-        <i class="fas fa-home" style="font-size: 0.9rem; margin-right: 4px;"></i>
-        Home
-    </a>
-    <a href="https://aditya-cmd-max.github.io/reverbit/circuit" class="nav-link">
-        <i class="fas fa-blog" style="font-size: 0.9rem; margin-right: 4px;"></i>
-        Blogs
-    </a>
-    <a href="https://aditya-cmd-max.github.io/reverbit/about/" class="nav-link">
-        <i class="fas fa-bullseye" style="font-size: 0.9rem; margin-right: 4px;"></i>
-        The Creator
-    </a>
-    <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="nav-link">
-        <i class="fas fa-tools" style="font-size: 0.9rem; margin-right: 4px;"></i>
-        Tools
-    </a>
-    
-    <!-- Profile Avatar will be automatically inserted by auth.js -->
-    
-    <!-- Sign In Button (Will be hidden when user is signed in) -->
-    <a href="https://aditya-cmd-max.github.io/signin" class="btn btn-filled" id="signInButton">
-        <i class="fas fa-sign-in-alt" style="font-size: 0.9rem; margin-right: 4px;"></i>
-        Sign In
-    </a>
-    
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-        <span class="material-icons-round">dark_mode</span>
-    </button>
-</div>
-
-        <!-- Mobile Menu Button with Hamburger/Cross -->
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
-            <span class="material-icons-round hamburger-icon">menu</span>
-            <span class="material-icons-round cross-icon">close</span>
+    <div class="desktop-nav">
+        <a href="#home" class="nav-link active">
+            <i class="fas fa-home" style="font-size: 0.9rem; margin-right: 4px;"></i>
+            Home
+        </a>
+        <a href="https://aditya-cmd-max.github.io/reverbit/circuit" class="nav-link">
+            <i class="fas fa-blog" style="font-size: 0.9rem; margin-right: 4px;"></i>
+            Blogs
+        </a>
+        <a href="https://aditya-cmd-max.github.io/reverbit/about/" class="nav-link">
+            <i class="fas fa-bullseye" style="font-size: 0.9rem; margin-right: 4px;"></i>
+            The Creator
+        </a>
+        <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="nav-link">
+            <i class="fas fa-tools" style="font-size: 0.9rem; margin-right: 4px;"></i>
+            Tools
+        </a>
+        
+        <!-- Desktop Profile Avatar (Will be auto-populated by auth.js) -->
+        <div id="desktopProfileAvatar"></div>
+        
+        <!-- Sign In Button (Will be hidden when user is signed in) -->
+        <a href="https://aditya-cmd-max.github.io/signin" class="btn btn-filled" id="signInButton">
+            <i class="fas fa-sign-in-alt" style="font-size: 0.9rem; margin-right: 4px;"></i>
+            Sign In
+        </a>
+        
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <span class="material-icons-round">dark_mode</span>
         </button>
-    </nav>
+    </div>
+
+    <!-- Mobile Profile Avatar Container -->
+    <div id="mobileAvatarContainer" class="mobile-avatar-container"></div>
+
+    <!-- Mobile Menu Button with Hamburger/Cross -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <span class="material-icons-round hamburger-icon">menu</span>
+        <span class="material-icons-round cross-icon">close</span>
+    </button>
+</nav>
 
   <!-- Mobile Navigation Menu -->
 <div class="mobile-nav" id="mobileNav">
