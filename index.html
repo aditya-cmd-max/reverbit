@@ -2061,27 +2061,101 @@
         </button>
     </div>
     
-    <!-- Mobile Avatar Container (Will be auto-populated by auth.js) -->
-    <div id="mobileAvatar"></div>
+    <!-- Mobile User Profile Section (Will be auto-populated by auth.js) -->
+    <div id="mobileProfileSection" class="mobile-profile-section">
+        <!-- Profile info will be inserted here -->
+    </div>
     
-    <a href="#home" class="mobile-nav-link active">
-        <i class="fas fa-home"></i>
-        Home
-    </a>
-    <a href="https://aditya-cmd-max.github.io/reverbit/circuit" class="mobile-nav-link">
-        <i class="fas fa-blog"></i>
-        Blogs
-    </a>
-    <a href="https://aditya-cmd-max.github.io/reverbit/about" class="mobile-nav-link">
-        <i class="fas fa-bullseye"></i>
-        The creator
-    </a>
-    <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="mobile-nav-link">
-        <i class="fas fa-tools"></i>
-        Tools
-    </a>
+    <!-- Main Navigation Links -->
+    <div class="mobile-nav-links">
+        <a href="#home" class="mobile-nav-link active">
+            <i class="fas fa-home"></i>
+            Home
+        </a>
+        <a href="https://aditya-cmd-max.github.io/reverbit/circuit" class="mobile-nav-link">
+            <i class="fas fa-blog"></i>
+            Blogs
+        </a>
+        <a href="https://aditya-cmd-max.github.io/reverbit/about" class="mobile-nav-link">
+            <i class="fas fa-bullseye"></i>
+            The creator
+        </a>
+        <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="mobile-nav-link">
+            <i class="fas fa-tools"></i>
+            Tools
+        </a>
+    </div>
     
-    <!-- Sign In Link for mobile (will be hidden by auth.js when user is signed in) -->
+    <!-- Reverbit Apps Section -->
+    <div class="mobile-apps-section">
+        <div class="mobile-section-title">
+            <i class="fas fa-th" style="margin-right: 12px;"></i>
+            Reverbit Apps
+        </div>
+        <div class="mobile-apps-grid">
+            <a href="https://aditya-cmd-max.github.io/cloverai/chat" class="mobile-app-item">
+                <div class="mobile-app-icon" style="background: #4285F4;">
+                    <img src="https://aditya-cmd-max.github.io/clover.png" alt="Clover AI" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>C</span>';">
+                </div>
+                <span class="mobile-app-name">Clover AI</span>
+            </a>
+            <a href="https://aditya-cmd-max.github.io/exonovaweather/app" class="mobile-app-item">
+                <div class="mobile-app-icon" style="background: #34A853;">
+                    <img src="https://aditya-cmd-max.github.io/skycast.png" alt="SkyCast" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>S</span>';">
+                </div>
+                <span class="mobile-app-name">SkyCast</span>
+            </a>
+            <a href="https://aditya-cmd-max.github.io/popout/app.html" class="mobile-app-item">
+                <div class="mobile-app-icon" style="background: #FBBC05;">
+                    <img src="https://aditya-cmd-max.github.io/popout.png" alt="PopOut Pro" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>P</span>';">
+                </div>
+                <span class="mobile-app-name">PopOut Pro</span>
+            </a>
+            <a href="https://aditya-cmd-max.github.io/Peo/app" class="mobile-app-item">
+                <div class="mobile-app-icon" style="background: #EA4335;">
+                    <img src="https://aditya-cmd-max.github.io/peo.png" alt="Peo-TTS" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>P</span>';">
+                </div>
+                <span class="mobile-app-name">Peo-TTS</span>
+            </a>
+            <a href="https://aditya-cmd-max.github.io/mindscribe/app" class="mobile-app-item">
+                <div class="mobile-app-icon" style="background: #4285F4;">
+                    <img src="https://aditya-cmd-max.github.io/mindscribe.png" alt="Mindscribe" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>M</span>';">
+                </div>
+                <span class="mobile-app-name">Mindscribe</span>
+            </a>
+            <a href="https://aditya-cmd-max.github.io/clover/app" class="mobile-app-item">
+                <div class="mobile-app-icon" style="background: #34A853;">
+                    <img src="https://aditya-cmd-max.github.io/cloverstudio.png" alt="Clover Studio" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>C</span>';">
+                </div>
+                <span class="mobile-app-name">Clover Studio</span>
+            </a>
+        </div>
+        <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="mobile-all-apps-link">
+            View all tools <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+    
+    <!-- Account Section (Shown only when signed in) -->
+    <div class="mobile-account-section" id="mobileAccountSection" style="display: none;">
+        <div class="mobile-section-title">
+            <i class="fas fa-user-circle" style="margin-right: 12px;"></i>
+            Your Account
+        </div>
+        <a href="https://aditya-cmd-max.github.io/dashboard" class="mobile-nav-link">
+            <i class="fas fa-tachometer-alt"></i>
+            Manage Account
+        </a>
+        <a href="#" class="mobile-nav-link" id="mobileViewProfileLink">
+            <i class="fas fa-user"></i>
+            View Profile
+        </a>
+        <button class="mobile-nav-link mobile-logout-btn" id="mobileLogoutBtn">
+            <i class="fas fa-sign-out-alt"></i>
+            Sign Out
+        </button>
+    </div>
+    
+    <!-- Sign In Link (Shown only when signed out) -->
     <a href="https://aditya-cmd-max.github.io/signin" class="mobile-nav-link" id="mobileSignInLink">
         <i class="fas fa-sign-in-alt"></i>
         Sign In
@@ -2089,14 +2163,18 @@
     
     <!-- Mobile Theme Toggle -->
     <div class="mobile-theme-toggle">
-        <span>Theme</span>
+        <span>
+            <i class="fas fa-palette" style="margin-right: 12px;"></i>
+            Theme
+        </span>
         <button class="mobile-theme-btn" id="mobileThemeToggle" aria-label="Toggle theme">
             <span class="material-icons-round">dark_mode</span>
         </button>
     </div>
     
-    <div style="margin-top: auto; padding-top: var(--md-spacing-xl);">
-        <button class="btn btn-filled" style="width: 100%;" onclick="document.getElementById('mobileNavClose').click()">
+    <!-- Action Button -->
+    <div class="mobile-action-section">
+        <button class="btn btn-filled mobile-action-btn" onclick="document.getElementById('mobileNavClose').click()">
             <i class="fas fa-rocket" style="margin-right: 8px;"></i>
             Get Started
         </button>
