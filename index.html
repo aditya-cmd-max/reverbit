@@ -2109,6 +2109,41 @@
     }
 }     
       
+/* PROFILE AVATAR FIXES */
+#profileAvatarContainer {
+    display: flex;
+    align-items: center;
+    margin: 0 8px;
+}
+
+/* Clean up any duplicate avatars */
+.reverbit-profile-avatar.desktop {
+    margin: 0 !important;
+}
+
+/* Mobile fixes */
+@media (max-width: 1024px) {
+    .desktop-nav {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+        margin-left: auto;
+    }
+    
+    .floating-navbar {
+        justify-content: space-between;
+        padding: 8px 12px;
+    }
+}
+
+/* Remove any leftover mobile avatar styles */
+#mobileProfileAvatar,
+.mobile-profile-avatar {
+    display: none !important;
+}
+
       
       
     </style>
@@ -2176,7 +2211,7 @@
         </defs>
     </svg>
 
-  <!-- Modern Floating Pill Navbar - FIXED -->
+ <!-- Modern Floating Pill Navbar - SIMPLE -->
 <nav class="floating-navbar">
     <!-- Left side: Logo and Brand -->
     <a href="#home" class="nav-brand">
@@ -2205,10 +2240,10 @@
             Tools
         </a>
         
-        <!-- Profile Avatar Container (Will be populated by auth.js) -->
+        <!-- Profile Avatar Container (auth.js will put avatar here) -->
         <div id="profileAvatarContainer"></div>
         
-        <!-- Sign In Button (Will be hidden when user is signed in) -->
+        <!-- Sign In Button -->
         <a href="https://aditya-cmd-max.github.io/signin" class="btn btn-filled" id="signInButton">
             <i class="fas fa-sign-in-alt" style="font-size: 0.9rem; margin-right: 4px;"></i>
             Sign In
@@ -2220,7 +2255,7 @@
         </button>
     </div>
 
-    <!-- Mobile Menu Button -->
+    <!-- Mobile Menu Button (Only hamburger, no avatar) -->
     <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
         <span class="material-icons-round hamburger-icon">menu</span>
         <span class="material-icons-round cross-icon">close</span>
