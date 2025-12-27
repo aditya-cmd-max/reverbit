@@ -2143,6 +2143,35 @@
 .mobile-profile-avatar {
     display: none !important;
 }
+      
+      /* Ensure desktop avatar has proper spacing */
+.desktop-nav .reverbit-profile-avatar.desktop {
+    margin: 0 12px !important;
+    order: 5; /* Place it before sign in button */
+}
+
+/* Hide the old profile avatar container */
+#profileAvatarContainer {
+    display: none !important;
+}
+
+/* Fix mobile avatar positioning */
+@media (max-width: 1024px) {
+    .reverbit-profile-avatar.mobile {
+        order: 2;
+        margin: 0 12px !important;
+        display: flex !important;
+    }
+    
+    .mobile-menu-btn {
+        order: 3;
+    }
+    
+    .nav-brand {
+        order: 1;
+        flex-grow: 1;
+    }
+}
 
       
       
@@ -2240,9 +2269,7 @@
             Tools
         </a>
         
-        <!-- Profile Avatar Container (auth.js will put avatar here) -->
-        <div id="profileAvatarContainer"></div>
-        
+     
         <!-- Sign In Button -->
         <a href="https://aditya-cmd-max.github.io/signin" class="btn btn-filled" id="signInButton">
             <i class="fas fa-sign-in-alt" style="font-size: 0.9rem; margin-right: 4px;"></i>
@@ -3809,6 +3836,35 @@
                 cleanupExistingAvatars();
             }, 1000);
         });
+ 
+  // Clean up any duplicate avatars on page load
+function cleanupDuplicateAvatars() {
+    // Remove any avatars created by other scripts
+    const allAvatars = document.querySelectorAll('.reverbit-profile-avatar');
+    if (allAvatars.length > 1) {
+        // Keep only the first one (created by auth.js)
+        for (let i = 1; i < allAvatars.length; i++) {
+            if (allAvatars[i].parentNode) {
+                allAvatars[i].parentNode.removeChild(allAvatars[i]);
+            }
+        }
+    }
+    
+    // Remove the empty profile avatar container
+    const profileContainer = document.getElementById('profileAvatarContainer');
+    if (profileContainer) {
+        profileContainer.style.display = 'none';
+    }
+}
+
+// Call this after DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    cleanupDuplicateAvatars();
+    
+    // Re-run cleanup after a delay (when auth.js finishes)
+    setTimeout(cleanupDuplicateAvatars, 1000);
+});
+  
   </script>
 
 </body>
