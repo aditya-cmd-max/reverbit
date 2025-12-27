@@ -1931,6 +1931,334 @@
         .flex { display: flex; }
         .justify-center { justify-content: center; }
         .gap-6 { gap: var(--md-spacing-xl); }
+
+
+/* Desktop Navbar Spacing */
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--md-spacing-sm);
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+/* Ensure buttons have proper spacing */
+.reverbit-apps-button {
+    margin: 0 8px;
+}
+
+.reverbit-profile-avatar {
+    margin: 0 8px;
+}
+
+/* Adjust button sizes for better fit */
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    margin-left: 4px;
+}
+
+/* Sign in button adjustments */
+#signInButton {
+    margin-left: 8px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+/* Make sure nav links don't wrap */
+.nav-link {
+    white-space: nowrap;
+    padding: 8px 12px;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 1024px) {
+    .desktop-nav {
+        display: none;
+    }
+}
+
+
+      /* Mobile Profile Section */
+.mobile-profile-section {
+    padding: 20px;
+    border-bottom: 1px solid var(--md-outline);
+    margin-bottom: 16px;
+    display: none;
+}
+
+body.user-signed-in .mobile-profile-section {
+    display: block;
+}
+
+.mobile-user-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.mobile-user-avatar-large {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--md-primary);
+    background: linear-gradient(135deg, var(--md-primary), var(--md-secondary));
+    padding: 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+.mobile-user-avatar-large img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--md-surface);
+}
+
+.mobile-user-info {
+    flex: 1;
+}
+
+.mobile-user-greeting {
+    font-size: 14px;
+    color: var(--md-on-surface-variant);
+    margin-bottom: 4px;
+}
+
+.mobile-user-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--md-on-surface);
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mobile-user-email {
+    font-size: 13px;
+    color: var(--md-on-surface-variant);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mobile-upload-avatar-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--md-primary);
+    border: 2px solid var(--md-surface);
+    color: var(--md-on-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.mobile-user-avatar-large:hover .mobile-upload-avatar-btn {
+    opacity: 1;
+}
+
+.mobile-upload-avatar-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Mobile Apps Section */
+.mobile-apps-section {
+    padding: 20px;
+    border-bottom: 1px solid var(--md-outline);
+    margin-bottom: 16px;
+}
+
+.mobile-section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--md-on-surface);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-apps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.mobile-app-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding: 12px 8px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.mobile-app-item:hover {
+    background: var(--md-surface-variant);
+    transform: translateY(-2px);
+}
+
+.mobile-app-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-app-icon img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.mobile-app-icon span {
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.mobile-app-name {
+    font-size: 12px;
+    color: var(--md-on-surface);
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.mobile-all-apps-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--md-primary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    width: 100%;
+    background: var(--md-surface-variant);
+}
+
+.mobile-all-apps-link:hover {
+    background: var(--md-primary-container);
+}
+
+.mobile-all-apps-link i {
+    transition: transform 0.2s ease;
+}
+
+.mobile-all-apps-link:hover i {
+    transform: translateX(4px);
+}
+
+/* Mobile Account Section */
+.mobile-account-section {
+    padding: 20px;
+    border-bottom: 1px solid var(--md-outline);
+    margin-bottom: 16px;
+}
+
+/* Mobile Action Button */
+.mobile-action-section {
+    padding: 20px;
+    margin-top: auto;
+}
+
+.mobile-action-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Mobile Theme Toggle */
+.mobile-theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: var(--md-surface-variant);
+    margin: 16px 20px;
+    border-radius: var(--md-radius-medium);
+}
+
+.mobile-theme-toggle span {
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-theme-btn {
+    background: transparent;
+    border: none;
+    color: var(--md-on-surface);
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--md-surface);
+}
+
+/* Dark theme adjustments */
+.dark-theme .mobile-user-avatar-large {
+    border-color: var(--md-primary-light);
+}
+
+.dark-theme .mobile-apps-section,
+.dark-theme .mobile-account-section {
+    border-bottom-color: var(--md-outline);
+}
+
+.dark-theme .mobile-all-apps-link {
+    background: var(--md-surface-variant);
+}
+
+.dark-theme .mobile-all-apps-link:hover {
+    background: var(--md-primary-container);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .mobile-apps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .mobile-user-avatar-large {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .mobile-user-name {
+        font-size: 16px;
+    }
+    
+    .mobile-section-title {
+        font-size: 16px;
+    }
+}
+      
     </style>
 </head>
 <body class="light-theme">
@@ -2024,6 +2352,9 @@
         <i class="fas fa-tools" style="font-size: 0.9rem; margin-right: 4px;"></i>
         Tools
     </a>
+    
+    <!-- Apps Menu Button (Will be auto-populated by auth.js) -->
+    <div id="appsMenuButton"></div>
     
     <!-- Profile Avatar Container (Will be auto-populated by auth.js) -->
     <div id="desktopAvatar"></div>
