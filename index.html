@@ -2258,6 +2258,67 @@ body.user-signed-in .mobile-profile-section {
         font-size: 16px;
     }
 }
+
+/* Mobile Profile Avatar in Navbar */
+.mobile-profile-avatar {
+    display: none !important;
+}
+
+@media (max-width: 1024px) {
+    .mobile-profile-avatar {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        background: linear-gradient(135deg, #4285f4, #34a853, #fbbc05, #ea4335) border-box;
+        cursor: pointer;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: 12px;
+        transition: transform 0.3s ease;
+    }
+    
+    .mobile-profile-avatar:hover {
+        transform: scale(1.1);
+    }
+    
+    .mobile-profile-avatar img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    /* Adjust navbar layout for mobile */
+    .floating-navbar {
+        justify-content: space-between;
+    }
+    
+    .mobile-menu-btn {
+        order: 3;
+    }
+    
+    .mobile-profile-avatar {
+        order: 2;
+    }
+    
+    .nav-brand {
+        order: 1;
+    }
+    
+    .mobile-nav {
+        z-index: 10000;
+    }
+}
+
+/* Dark theme support for mobile avatar */
+.dark-theme .mobile-profile-avatar {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
       
     </style>
 </head>
@@ -2392,105 +2453,31 @@ body.user-signed-in .mobile-profile-section {
         </button>
     </div>
     
-    <!-- Mobile User Profile Section (Will be auto-populated by auth.js) -->
-    <div id="mobileProfileSection" class="mobile-profile-section">
-        <!-- Profile info will be inserted here -->
-    </div>
-    
     <!-- Main Navigation Links -->
-    <div class="mobile-nav-links">
-        <a href="#home" class="mobile-nav-link active">
-            <i class="fas fa-home"></i>
-            Home
-        </a>
-        <a href="https://aditya-cmd-max.github.io/reverbit/circuit" class="mobile-nav-link">
-            <i class="fas fa-blog"></i>
-            Blogs
-        </a>
-        <a href="https://aditya-cmd-max.github.io/reverbit/about" class="mobile-nav-link">
-            <i class="fas fa-bullseye"></i>
-            The creator
-        </a>
-        <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="mobile-nav-link">
-            <i class="fas fa-tools"></i>
-            Tools
-        </a>
-    </div>
-    
-    <!-- Reverbit Apps Section -->
-    <div class="mobile-apps-section">
-        <div class="mobile-section-title">
-            <i class="fas fa-th" style="margin-right: 12px;"></i>
-            Reverbit Apps
-        </div>
-        <div class="mobile-apps-grid">
-            <a href="https://aditya-cmd-max.github.io/cloverai/chat" class="mobile-app-item">
-                <div class="mobile-app-icon" style="background: #4285F4;">
-                    <img src="https://aditya-cmd-max.github.io/clover.png" alt="Clover AI" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>C</span>';">
-                </div>
-                <span class="mobile-app-name">Clover AI</span>
-            </a>
-            <a href="https://aditya-cmd-max.github.io/exonovaweather/app" class="mobile-app-item">
-                <div class="mobile-app-icon" style="background: #34A853;">
-                    <img src="https://aditya-cmd-max.github.io/skycast.png" alt="SkyCast" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>S</span>';">
-                </div>
-                <span class="mobile-app-name">SkyCast</span>
-            </a>
-            <a href="https://aditya-cmd-max.github.io/popout/app.html" class="mobile-app-item">
-                <div class="mobile-app-icon" style="background: #FBBC05;">
-                    <img src="https://aditya-cmd-max.github.io/popout.png" alt="PopOut Pro" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>P</span>';">
-                </div>
-                <span class="mobile-app-name">PopOut Pro</span>
-            </a>
-            <a href="https://aditya-cmd-max.github.io/Peo/app" class="mobile-app-item">
-                <div class="mobile-app-icon" style="background: #EA4335;">
-                    <img src="https://aditya-cmd-max.github.io/peo.png" alt="Peo-TTS" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>P</span>';">
-                </div>
-                <span class="mobile-app-name">Peo-TTS</span>
-            </a>
-            <a href="https://aditya-cmd-max.github.io/mindscribe/app" class="mobile-app-item">
-                <div class="mobile-app-icon" style="background: #4285F4;">
-                    <img src="https://aditya-cmd-max.github.io/mindscribe.png" alt="Mindscribe" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>M</span>';">
-                </div>
-                <span class="mobile-app-name">Mindscribe</span>
-            </a>
-            <a href="https://aditya-cmd-max.github.io/clover/app" class="mobile-app-item">
-                <div class="mobile-app-icon" style="background: #34A853;">
-                    <img src="https://aditya-cmd-max.github.io/cloverstudio.png" alt="Clover Studio" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>C</span>';">
-                </div>
-                <span class="mobile-app-name">Clover Studio</span>
-            </a>
-        </div>
-        <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="mobile-all-apps-link">
-            View all tools <i class="fas fa-arrow-right"></i>
-        </a>
-    </div>
-    
-    <!-- Account Section (Shown only when signed in) -->
-    <div class="mobile-account-section" id="mobileAccountSection" style="display: none;">
-        <div class="mobile-section-title">
-            <i class="fas fa-user-circle" style="margin-right: 12px;"></i>
-            Your Account
-        </div>
-        <a href="https://aditya-cmd-max.github.io/dashboard" class="mobile-nav-link">
-            <i class="fas fa-tachometer-alt"></i>
-            Manage Account
-        </a>
-        <a href="#" class="mobile-nav-link" id="mobileViewProfileLink">
-            <i class="fas fa-user"></i>
-            View Profile
-        </a>
-        <button class="mobile-nav-link mobile-logout-btn" id="mobileLogoutBtn">
-            <i class="fas fa-sign-out-alt"></i>
-            Sign Out
-        </button>
-    </div>
-    
-    <!-- Sign In Link (Shown only when signed out) -->
-    <a href="https://aditya-cmd-max.github.io/signin" class="mobile-nav-link" id="mobileSignInLink">
-        <i class="fas fa-sign-in-alt"></i>
-        Sign In
+<div class="mobile-nav-links">
+    <a href="#home" class="mobile-nav-link active">
+        <i class="fas fa-home"></i>
+        Home
     </a>
+    <a href="https://aditya-cmd-max.github.io/reverbit/circuit" class="mobile-nav-link">
+        <i class="fas fa-blog"></i>
+        Blogs
+    </a>
+    <a href="https://aditya-cmd-max.github.io/reverbit/about" class="mobile-nav-link">
+        <i class="fas fa-bullseye"></i>
+        The creator
+    </a>
+    <a href="https://aditya-cmd-max.github.io/reverbit/ecosystem" class="mobile-nav-link">
+        <i class="fas fa-tools"></i>
+        Tools
+    </a>
+</div>
+
+<!-- Sign In Link (Shown only when signed out) -->
+<a href="https://aditya-cmd-max.github.io/signin" class="mobile-nav-link" id="mobileSignInLink">
+    <i class="fas fa-sign-in-alt"></i>
+    Sign In
+</a>
     
     <!-- Mobile Theme Toggle -->
     <div class="mobile-theme-toggle">
@@ -4196,7 +4183,88 @@ document.addEventListener('DOMContentLoaded', () => {
       
       
   </script>
-  
+  <script>
+
+// Mobile Profile Avatar System
+function initMobileProfileAvatar() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileProfileAvatar = document.getElementById('mobileProfileAvatar');
+    
+    if (!mobileProfileAvatar || !mobileMenuBtn) return;
+    
+    // Create mobile avatar
+    function createMobileAvatar(user) {
+        mobileProfileAvatar.innerHTML = '';
+        
+        const avatarBtn = document.createElement('button');
+        avatarBtn.className = 'mobile-profile-avatar';
+        avatarBtn.setAttribute('aria-label', 'User profile menu');
+        
+        if (user.photoURL) {
+            const avatarImg = document.createElement('img');
+            avatarImg.src = user.photoURL;
+            avatarImg.alt = user.displayName || 'User';
+            avatarImg.onerror = function() {
+                const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+                const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+                avatarBtn.textContent = initials;
+                avatarBtn.style.background = 'linear-gradient(135deg, var(--md-primary), var(--md-secondary))';
+                avatarBtn.style.color = 'var(--md-on-primary)';
+                avatarBtn.style.display = 'flex';
+                avatarBtn.style.alignItems = 'center';
+                avatarBtn.style.justifyContent = 'center';
+                avatarBtn.style.fontWeight = '600';
+            };
+            avatarBtn.appendChild(avatarImg);
+        } else {
+            const displayName = user.displayName || user.email?.split('@')[0] || 'User';
+            const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+            avatarBtn.textContent = initials;
+            avatarBtn.style.background = 'linear-gradient(135deg, var(--md-primary), var(--md-secondary))';
+            avatarBtn.style.color = 'var(--md-on-primary)';
+            avatarBtn.style.display = 'flex';
+            avatarBtn.style.alignItems = 'center';
+            avatarBtn.style.justifyContent = 'center';
+            avatarBtn.style.fontWeight = '600';
+        }
+        
+        // Use auth.js popup
+        avatarBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (window.ReverbitAuth && window.ReverbitAuth.toggleProfilePopup) {
+                window.ReverbitAuth.toggleProfilePopup();
+            }
+        });
+        
+        mobileProfileAvatar.appendChild(avatarBtn);
+    }
+    
+    // Listen for auth state changes
+    if (window.ReverbitAuth && window.ReverbitAuth.auth) {
+        window.ReverbitAuth.auth.onAuthStateChanged((user) => {
+            if (user) {
+                createMobileAvatar(user);
+            } else {
+                mobileProfileAvatar.innerHTML = '';
+            }
+        });
+        
+        // Initialize immediately if user is already signed in
+        const currentUser = window.ReverbitAuth.getUser();
+        if (currentUser) {
+            createMobileAvatar(currentUser);
+        }
+    }
+}
+
+// Initialize mobile profile avatar
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(initMobileProfileAvatar, 1000); // Wait for auth.js to load
+});
+
+
+    
+  </script>
 
 </body>
 </html>
