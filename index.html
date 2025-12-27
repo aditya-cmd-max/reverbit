@@ -3279,7 +3279,7 @@
 
 
 
-        <script>
+            <script>
         // DOM Elements
         const themeToggle = document.getElementById('theme-toggle');
         const mobileThemeToggle = document.getElementById('mobileThemeToggle');
@@ -3295,6 +3295,31 @@
         const cursorDot = document.getElementById('cursorDot');
         const scrollProgress = document.getElementById('scrollProgress');
         const heroParticlesContainer = document.getElementById('heroParticles');
+
+        // Clean up any existing avatars before starting
+        function cleanupExistingAvatars() {
+            // Remove any existing desktop avatars
+            const existingDesktopAvatars = document.querySelectorAll('.reverbit-profile-avatar.desktop, #desktopProfileAvatar, #profileAvatarContainer > *');
+            existingDesktopAvatars.forEach(avatar => {
+                if (avatar && avatar.parentNode) {
+                    avatar.parentNode.removeChild(avatar);
+                }
+            });
+            
+            // Remove any mobile avatars from navbar
+            const existingMobileAvatars = document.querySelectorAll('#mobileProfileAvatar, .mobile-profile-avatar');
+            existingMobileAvatars.forEach(avatar => {
+                if (avatar && avatar.parentNode) {
+                    avatar.parentNode.removeChild(avatar);
+                }
+            });
+            
+            // Clear profile avatar container
+            const profileAvatarContainer = document.getElementById('profileAvatarContainer');
+            if (profileAvatarContainer) {
+                profileAvatarContainer.innerHTML = '';
+            }
+        }
 
         // NEW: Interactive cursor
         function initInteractiveCursor() {
@@ -3663,6 +3688,9 @@
 
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
+            // First, clean up any existing avatars
+            cleanupExistingAvatars();
+            
             // Hide loading screen
             setTimeout(() => {
                 loadingScreen.classList.add('hidden');
@@ -3694,8 +3722,6 @@
             const buttons = document.querySelectorAll('.btn, .nav-link, .tool-card, .stat-card');
             buttons.forEach(button => {
                 button.addEventListener('mouseenter', () => {
-                    // You could add a subtle sound effect here
-                    // For now, we'll just add a visual effect
                     button.style.transition = 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)';
                 });
             });
@@ -3729,11 +3755,25 @@
             const touchY = e.touches[0].clientY;
             const diff = touchStartY - touchY;
             
-            // If vertical swipe is small, prevent default to keep navbar visible
             if (Math.abs(diff) < 10) {
                 e.preventDefault();
             }
         }, { passive: false });
+
+        // FIX: Disable mobile avatar completely - let auth.js handle everything
+        // This prevents any duplicate avatars
+        document.addEventListener('DOMContentLoaded', () => {
+            // Remove any mobile avatar placeholder from HTML if it exists
+            const mobileAvatarPlaceholder = document.getElementById('mobileProfileAvatar');
+            if (mobileAvatarPlaceholder && mobileAvatarPlaceholder.parentNode) {
+                mobileAvatarPlaceholder.parentNode.removeChild(mobileAvatarPlaceholder);
+            }
+            
+            // Remove any existing profile avatars on page load
+            setTimeout(() => {
+                cleanupExistingAvatars();
+            }, 1000);
+        });
   </script>
 
 </body>
