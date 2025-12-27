@@ -3279,7 +3279,7 @@
 
 
 
-    <script>
+        <script>
         // DOM Elements
         const themeToggle = document.getElementById('theme-toggle');
         const mobileThemeToggle = document.getElementById('mobileThemeToggle');
@@ -3429,22 +3429,18 @@
             }
         }
 
-        // Mobile Navigation with Hamburger/Cross Toggle
+        // Mobile Navigation with Hamburger/Cross Toggle - SIMPLIFIED
         mobileMenuBtn.addEventListener('click', () => {
             mobileNav.classList.add('active');
-            mobileMenuBtn.classList.add('active'); // Add active class to button
+            mobileMenuBtn.classList.add('active');
             document.body.style.overflow = 'hidden';
-            
-            // Update aria-label for accessibility
             mobileMenuBtn.setAttribute('aria-label', 'Close menu');
         });
 
         mobileNavClose.addEventListener('click', () => {
             mobileNav.classList.remove('active');
-            mobileMenuBtn.classList.remove('active'); // Remove active class from button
+            mobileMenuBtn.classList.remove('active');
             document.body.style.overflow = 'auto';
-            
-            // Update aria-label for accessibility
             mobileMenuBtn.setAttribute('aria-label', 'Open menu');
         });
 
@@ -3452,15 +3448,13 @@
         mobileNav.querySelectorAll('.mobile-nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 mobileNav.classList.remove('active');
-                mobileMenuBtn.classList.remove('active'); // Remove active class from button
+                mobileMenuBtn.classList.remove('active');
                 document.body.style.overflow = 'auto';
-                
-                // Update aria-label for accessibility
                 mobileMenuBtn.setAttribute('aria-label', 'Open menu');
             });
         });
 
-        // Close mobile nav when clicking outside (optional enhancement)
+        // Close mobile nav when clicking outside
         document.addEventListener('click', (e) => {
             if (mobileNav.classList.contains('active') && 
                 !mobileNav.contains(e.target) && 
@@ -3472,15 +3466,13 @@
             }
         });
 
-        // Handle window resize - reset menu state when switching to desktop
+        // Handle window resize
         window.addEventListener('resize', () => {
-            if (window.innerWidth > 1024) {
-                if (mobileNav.classList.contains('active')) {
-                    mobileNav.classList.remove('active');
-                    mobileMenuBtn.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                    mobileMenuBtn.setAttribute('aria-label', 'Open menu');
-                }
+            if (window.innerWidth > 1024 && mobileNav.classList.contains('active')) {
+                mobileNav.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                mobileMenuBtn.setAttribute('aria-label', 'Open menu');
             }
         });
 
@@ -3742,7 +3734,6 @@
                 e.preventDefault();
             }
         }, { passive: false });
-   
   </script>
 
 </body>
