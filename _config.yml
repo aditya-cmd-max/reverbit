@@ -1,0 +1,52 @@
+# Site settings
+title: Reverbit
+tagline: A mission for AI & Tech.
+description: Reverbit is an AI-powered learning and innovation platform focused on practical education, science, technology, and next-gen AI tools.
+author: Aditya Jha
+email: exonova1104@gmail.com
+
+# URL settings (VERY IMPORTANT for subfolder sites)
+url: "https://aditya-cmd-max.github.io"
+baseurl: "/reverbit"
+
+# Build settings
+theme: minima
+markdown: kramdown
+permalink: pretty
+
+# SEO & indexing
+lang: en
+timezone: Asia/Kolkata
+future: false
+
+# Plugins (GitHub Pages safe)
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# Sitemap
+sitemap:
+  changefreq: weekly
+  priority: 0.8
+
+# Social profiles (used by jekyll-seo-tag)
+social:
+  name: Reverbit
+  links:
+    - https://www.linkedin.com/in/aditya-jha-2b0860399
+    - https://www.youtube.com/@Reverbit
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Exclude from build
+exclude:
+  - README.md
+  - node_modules
+  - package.json
+  - package-lock.json
