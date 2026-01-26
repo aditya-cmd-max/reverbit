@@ -82,31 +82,98 @@
          
          
          
-<!-- Schema.org JSON-LD -->
+<!-- Schema.org JSON-LD : Reverbit Innovations -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Reverbit Innovations",
-  "url": "https://aditya-cmd-max.github.io/reverbit/",
-  "logo": "https://aditya-cmd-max.github.io/reverbit/logo-insvg.svg",
-  "sameAs": [
-    "https://www.linkedin.com/in/aditya-jha-2b0860399",
-    "https://www.youtube.com/@Reverbit"
-  ],
-  "description": "Reverbit Innovations is a forward-thinking platform dedicated to spreading knowledge, ideas, and innovation in a simple and engaging way. Built with the vision of making education practical and accessible, Reverbit focuses on delivering high-quality content across science, technology, and everyday learning. Its mission is to inspire curiosity, simplify complex concepts, and empower learners of all ages with knowledge that truly matters.",
-  "founder": {
-    "@type": "Person",
-    "name": "Aditya Jha",
-    "url": "https://aditya-cmd-max.github.io/reverbit/"
-  },
-  "foundingDate": "2025",
-  "foundingLocation": {
-    "@type": "Country",
-    "name": "India"
-  }
+  "@graph": [
+
+    {
+      "@type": "Organization",
+      "@id": "https://aditya-cmd-max.github.io/reverbit/#organization",
+      "name": "Reverbit Innovations",
+      "url": "https://aditya-cmd-max.github.io/reverbit/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://aditya-cmd-max.github.io/reverbit/logo-insvg.svg"
+      },
+      "description": "Reverbit Innovations is a forward-thinking educational platform focused on simplifying science, technology, and practical learning to empower curious minds.",
+      "founder": {
+        "@type": "Person",
+        "name": "Aditya Jha",
+        "url": "https://aditya-cmd-max.github.io/reverbit/"
+      },
+      "foundingDate": "2025",
+      "foundingLocation": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/aditya-jha-2b0860399",
+        "https://www.youtube.com/@Reverbit"
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://aditya-cmd-max.github.io/reverbit/#website",
+      "url": "https://aditya-cmd-max.github.io/reverbit/",
+      "name": "Reverbit",
+      "publisher": {
+        "@id": "https://aditya-cmd-max.github.io/reverbit/#organization"
+      },
+      "inLanguage": "en-IN"
+    },
+
+    {
+      "@type": "WebPage",
+      "@id": "https://aditya-cmd-max.github.io/reverbit/#homepage",
+      "url": "https://aditya-cmd-max.github.io/reverbit/",
+      "name": "Reverbit Innovations – Intelligence Meets Action.",
+      "description": "Reverbit is a modern platform delivering clear, practical knowledge in science, technology, and innovation.",
+      "isPartOf": {
+        "@id": "https://aditya-cmd-max.github.io/reverbit/#website"
+      },
+      "about": {
+        "@id": "https://aditya-cmd-max.github.io/reverbit/#organization"
+      }
+    },
+
+    {
+      "@type": "ItemList",
+      "name": "Main Site Navigation",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "Home",
+          "url": "https://aditya-cmd-max.github.io/reverbit/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "About",
+          "url": "https://aditya-cmd-max.github.io/reverbit/about/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Blogs",
+          "url": "https://aditya-cmd-max.github.io/reverbit/circuit/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "Reverbit Ecosystem",
+          "url": "https://aditya-cmd-max.github.io/reverbit/ecosystem/"
+        }
+      ]
+    }
+
+  ]
 }
 </script>
+
 
 
   
