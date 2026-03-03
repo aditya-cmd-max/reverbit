@@ -4379,5 +4379,99 @@
             });
         });
     </script>
+
+
+<script>
+  // Debug auth initialization
+  console.log('🔍 Checking auth status...');
+  
+  function checkAuth() {
+    if (window.ReverbitAuth) {
+      console.log('✅ Auth found:', window.ReverbitAuth);
+      
+      // Add auth listener
+      window.ReverbitAuth.addAuthListener((user, profile) => {
+        console.log('👤 Auth state:', user ? user.email : 'logged out');
+        
+        if (user) {
+          // Hide sign-in buttons
+          const signInBtn = document.getElementById('signInButton');
+          const mobileSignIn = document.getElementById('mobileSignInLink');
+          
+          if (signInBtn) signInBtn.style.display = 'none';
+          if (mobileSignIn) mobileSignIn.style.display = 'none';
+          
+          // Force avatar to appear after 1 second
+          setTimeout(() => {
+            if (!document.querySelector('.reverbit-profile-avatar')) {
+              console.log('⚠️ Avatar not found, forcing...');
+              window.ReverbitAuth.addProfileAvatar();
+            } else {
+              console.log('✅ Avatar found in DOM');
+            }
+          }, 1000);
+        } else {
+          const signInBtn = document.getElementById('signInButton');
+          const mobileSignIn = document.getElementById('mobileSignInLink');
+          
+          if (signInBtn) signInBtn.style.display = 'flex';
+          if (mobileSignIn) mobileSignIn.style.display = 'flex';
+        }
+      });
+      
+      // Connect theme toggles
+      const themeToggle = document.getElementById('themeToggle');
+      const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+      
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          window.ReverbitAuth.toggleTheme();
+        });
+      }
+      
+      if (mobileThemeToggle) {
+        mobileThemeToggle.addEventListener('click', () => {
+          window.ReverbitAuth.toggleTheme();
+        });
+      }
+      
+    } else {
+      console.log('⏳ Waiting for auth...');
+      setTimeout(checkAuth, 500);
+    }
+  }
+  
+  checkAuth();
+  
+  // Manual test in console
+  window.testAuth = function() {
+    console.log('Current user:', window.ReverbitAuth?.getUser());
+    console.log('Profile:', window.ReverbitAuth?.getProfile());
+    if (window.ReverbitAuth?.getUser()) {
+      window.ReverbitAuth.addProfileAvatar();
+    }
+  };
+</script>
+
+<style>
+  /* Hide sign-in button when logged in */
+  #signInButton[style*="display: none"],
+  #mobileSignInLink[style*="display: none"] {
+    display: none !important;
+  }
+  
+  /* Ensure avatar is visible */
+  .reverbit-profile-avatar {
+    display: inline-flex !important;
+    margin-left: 10px !important;
+  }
+  
+  /* Desktop avatar container */
+  #desktopAvatar {
+    display: inline-flex;
+    align-items: center;
+  }
+</style>
+    
 </body>
 </html>
